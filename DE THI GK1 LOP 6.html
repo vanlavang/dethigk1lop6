@@ -399,6 +399,43 @@
         color: #0f172a;
     }
 
+    /* Replay Button */
+    .btn-replay {
+        background: #f0fdf4;
+        border: 1.5px solid #86efac;
+        color: #15803d;
+        padding: 11px 18px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 14.5px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 6px rgba(22, 101, 52, 0.08);
+        user-select: none;
+    }
+    .btn-replay:hover {
+        background: #dcfce7;
+        border-color: #4ade80;
+        color: #14532d;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(22, 101, 52, 0.16);
+    }
+    .btn-replay:active {
+        transform: translateY(0);
+    }
+    @keyframes replay-shuffle {
+        0% { opacity: 0.35; transform: scale(0.98); }
+        50% { opacity: 0.75; transform: scale(1.01); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+    .options-list.shuffled {
+        animation: replay-shuffle 0.25s ease-out;
+    }
+
+
     /* Result Status Banner */
     .status-banner {
         margin-top: 20px;
@@ -3460,6 +3497,7 @@ const DICT_CACHE = {};
 let currentQuestionIndex = 0;
 let userAnswers = new Array(TOTAL_QUESTIONS).fill(null);
 let checkedState = new Array(TOTAL_QUESTIONS).fill(false);
+let questionOptionOrders = {}; // Lưu thứ tự xáo trộn các lựa chọn cho từng câu hỏi
 let currentWordToSpeak = '';
 let currentWritingTopic = 1;
 
@@ -4183,7 +4221,14 @@ document.addEventListener('keydown', function(e) {
     } else if (e.key === 'Enter') {
         if (!checkedState[currentQuestionIndex]) checkCurrentAnswer();
     } else if (['1', '2', '3', '4'].includes(e.key)) {
-        selectOption(parseInt(e.key) - 1);
+        const displayIdx = parseInt(e.key) - 1;
+        const q = quizData[currentQuestionIndex];
+        if (q && q.opts && q.opts.length > displayIdx) {
+            const currentOrder = (questionOptionOrders[currentQuestionIndex] && questionOptionOrders[currentQuestionIndex].length === q.opts.length)
+                ? questionOptionOrders[currentQuestionIndex]
+                : q.opts.map((_, i) => i);
+            selectOption(currentOrder[displayIdx]);
+        }
     }
 });
 
@@ -4270,19 +4315,26 @@ function renderCurrentQuestion() {
             </div>
         `;
     } else {
-        q.opts.forEach((opt, idx) => {
+        // Trắc nghiệm lựa chọn A, B, C, D (hỗ trợ tính năng REPLAY xáo trộn)
+        const letters = ['A', 'B', 'C', 'D'];
+        const currentOrder = (questionOptionOrders[currentQuestionIndex] && questionOptionOrders[currentQuestionIndex].length === q.opts.length)
+            ? questionOptionOrders[currentQuestionIndex]
+            : q.opts.map((_, i) => i);
+
+        currentOrder.forEach((origOptIdx, displayIdx) => {
+            const opt = q.opts[origOptIdx];
             let optClass = 'option-item';
             if (isChecked) {
                 optClass += ' locked';
-                if (idx === q.ans) optClass += ' correct';
-                else if (idx === userAns) optClass += ' wrong';
+                if (origOptIdx === q.ans) optClass += ' correct';
+                else if (origOptIdx === userAns) optClass += ' wrong';
             } else {
-                if (idx === userAns) optClass += ' selected';
+                if (origOptIdx === userAns) optClass += ' selected';
             }
 
             optionsHtml += `
-                <div class="${optClass}" onclick="selectOption(${idx})">
-                    <div class="option-key">${String.fromCharCode(65 + idx)}</div>
+                <div class="${optClass}" data-orig-idx="${origOptIdx}" data-display-idx="${displayIdx}" onclick="selectOption(${origOptIdx})">
+                    <div class="option-key">${letters[displayIdx]}</div>
                     <div class="option-text">${opt}</div>
                 </div>
             `;
@@ -4302,12 +4354,23 @@ function renderCurrentQuestion() {
                 statusHtml = `<div class="status-banner wrong">✗ <b>Chưa chính xác!</b> Câu của em: <b>${userAnsStr}</b>.<br>👉 Đáp án đúng là: <b>${q.correctSentence}</b></div>`;
             }
         } else {
+            const letters = ['A', 'B', 'C', 'D'];
+            const currentOrder = (questionOptionOrders[currentQuestionIndex] && questionOptionOrders[currentQuestionIndex].length === q.opts.length)
+                ? questionOptionOrders[currentQuestionIndex]
+                : q.opts.map((_, i) => i);
+            const correctDisplayIdx = currentOrder.indexOf(q.ans);
+            const correctLetter = (correctDisplayIdx !== -1) ? letters[correctDisplayIdx] : String.fromCharCode(65 + q.ans);
+            const correctText = q.opts[q.ans];
+
             if (userAns === q.ans) {
-                statusHtml = `<div class="status-banner correct">✓ <b>Chính xác!</b> Bạn đã chọn đúng đáp án ${String.fromCharCode(65 + q.ans)}.</div>`;
-            } else if (userAns !== null) {
-                statusHtml = `<div class="status-banner wrong">✗ <b>Chưa chính xác!</b> Bạn chọn <b>${String.fromCharCode(65 + userAns)}. ${q.opts[userAns]}</b>.<br>👉 Đáp án đúng là: <b>${String.fromCharCode(65 + q.ans)}. ${q.opts[q.ans]}</b></div>`;
+                statusHtml = `<div class="status-banner correct">✓ <b>Chính xác!</b> Bạn đã chọn đúng đáp án <b>${correctLetter}</b>.</div>`;
+            } else if (userAns !== null && userAns !== undefined) {
+                const userDisplayIdx = currentOrder.indexOf(userAns);
+                const userLetter = (userDisplayIdx !== -1) ? letters[userDisplayIdx] : String.fromCharCode(65 + userAns);
+                const userText = q.opts[userAns];
+                statusHtml = `<div class="status-banner wrong">✗ <b>Chưa chính xác!</b> Bạn chọn <b>${userLetter}. ${userText}</b>.<br>👉 Đáp án đúng là: <b>${correctLetter}. ${correctText}</b></div>`;
             } else {
-                statusHtml = `<div class="status-banner warn">⚠ <b>Bạn chưa chọn phương án nào!</b> Đáp án đúng là: <b>${String.fromCharCode(65 + q.ans)}. ${q.opts[q.ans]}</b></div>`;
+                statusHtml = `<div class="status-banner warn">⚠ <b>Bạn chưa chọn phương án nào!</b> Đáp án đúng là: <b>${correctLetter}. ${correctText}</b></div>`;
             }
         }
 
@@ -4334,6 +4397,12 @@ function renderCurrentQuestion() {
         checkBtnHtml = `<button class="btn-redo" onclick="redoCurrentQuestion()">🔄 Làm lại câu này</button>`;
     }
 
+    // Nút REPLAY (chỉ hiển thị cho câu hỏi trắc nghiệm có lựa chọn)
+    let replayBtnHtml = '';
+    if (q.type !== 'scramble' && q.opts && q.opts.length > 1) {
+        replayBtnHtml = `<button class="btn-replay" onclick="replayCurrentQuestion()" title="Xáo trộn thứ tự các lựa chọn A, B, C, D của câu này">🔄 REPLAY</button>`;
+    }
+
     // Toàn bộ HTML của câu hỏi hiện tại
     container.innerHTML = `
         <div class="question-card">
@@ -4349,6 +4418,7 @@ function renderCurrentQuestion() {
                         ⬅ Câu trước
                     </button>
                     ${checkBtnHtml}
+                    ${replayBtnHtml}
                 </div>
                 <div class="action-group-right">
                     <button class="btn-nav" onclick="nextQuestion()">
@@ -4368,19 +4438,51 @@ function renderCurrentQuestion() {
 }
 
 // Xử lý khi học sinh click chọn đáp án
-function selectOption(idx) {
+function selectOption(origOptIdx) {
     if (checkedState[currentQuestionIndex]) return;
-    userAnswers[currentQuestionIndex] = idx;
+    userAnswers[currentQuestionIndex] = origOptIdx;
     
     // Cập nhật UI ngay lập tức
     const opts = document.querySelectorAll('.option-item');
-    opts.forEach((el, i) => {
-        if (i === idx) el.classList.add('selected');
+    opts.forEach(el => {
+        const itemOrig = parseInt(el.getAttribute('data-orig-idx'), 10);
+        if (itemOrig === origOptIdx) el.classList.add('selected');
         else el.classList.remove('selected');
     });
 
     updateBottomStrip();
     updateStatsBar();
+}
+
+// Tính năng REPLAY: Xáo trộn các lựa chọn A, B, C, D của câu hỏi hiện tại
+function replayCurrentQuestion() {
+    const q = quizData[currentQuestionIndex];
+    if (q.type === 'scramble' || !q.opts || q.opts.length <= 1) return;
+
+    const n = q.opts.length;
+    let oldOrder = (questionOptionOrders[currentQuestionIndex] && questionOptionOrders[currentQuestionIndex].length === n)
+        ? questionOptionOrders[currentQuestionIndex]
+        : q.opts.map((_, i) => i);
+    
+    let newOrder = [...oldOrder];
+    let attempts = 0;
+    while (attempts < 12) {
+        for (let i = n - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+        }
+        if (newOrder.some((val, idx) => val !== oldOrder[idx])) break;
+        attempts++;
+    }
+
+    questionOptionOrders[currentQuestionIndex] = newOrder;
+    renderCurrentQuestion();
+
+    // Hiệu ứng visual nhấp nháy chuyển động xáo trộn mượt mà
+    const optList = document.querySelector('.options-list');
+    if (optList) {
+        optList.classList.add('shuffled');
+    }
 }
 
 // Xử lý khi nhấn nút "KIỂM TRA ĐÁP ÁN"
@@ -4632,6 +4734,7 @@ function resetAllQuiz() {
     if (confirm("Em có chắc chắn muốn làm lại toàn bộ 66 câu hỏi từ đầu không?")) {
         userAnswers = new Array(TOTAL_QUESTIONS).fill(null);
         checkedState = new Array(TOTAL_QUESTIONS).fill(false);
+        questionOptionOrders = {};
         currentQuestionIndex = 0;
         closeAllDrawers();
         renderCurrentQuestion();
