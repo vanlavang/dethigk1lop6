@@ -1,0 +1,4659 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ÔN THI GIỮA HỌC KỲ I TIẾNG ANH 6 - GLOBAL SUCCESS</title>
+<style>
+    :root {
+        --primary: #1976d2;
+        --primary-hover: #1565c0;
+        --primary-light: #eff6ff;
+        --success: #16a34a;
+        --success-light: #dcfce7;
+        --danger: #dc2626;
+        --danger-light: #fee2e2;
+        --warning: #d97706;
+        --warning-light: #fef3c7;
+        --bg: #f1f5f9;
+        --card: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --border-active: #93c5fd;
+    }
+
+    * { box-sizing: border-box; }
+
+    body { 
+        font-family: "Segoe UI", Arial, sans-serif; 
+        background: var(--bg);
+        margin: 0; 
+        padding-top: 70px;
+        padding-bottom: 20px;
+        min-height: 100vh; 
+        line-height: 1.6; 
+        color: var(--text);
+    }
+    
+    /* Top Sticky Navigation Bar */
+    .top-navbar {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        height: 65px;
+        background: white;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    .nav-badge {
+        background: #e0f2fe;
+        color: #0369a1;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 13.5px;
+        font-weight: 700;
+    }
+
+    .nav-center {
+        flex: 1;
+        max-width: 480px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .progress-track {
+        height: 8px;
+        background: #e2e8f0;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+        width: 1.5%;
+        transition: width 0.3s ease;
+    }
+
+    .progress-info {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12.5px;
+        color: var(--text-muted);
+        font-weight: 600;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-btn {
+        background: white;
+        border: 1.5px solid var(--border);
+        color: var(--text);
+        padding: 7px 13px;
+        border-radius: 8px;
+        font-size: 13.5px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s;
+    }
+
+    .nav-btn:hover {
+        background: #f8fafc;
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    .nav-btn.primary {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: white;
+    }
+
+    .nav-btn.primary:hover {
+        background: var(--primary-hover);
+    }
+
+    /* Main Container */
+    .container { 
+        max-width: 900px; 
+        margin: 20px auto; 
+        padding: 0 15px;
+    }
+
+    /* Tip Banner for Quick Dictionary */
+    .dict-tip-banner {
+        background: #eff6ff;
+        border: 1.5px solid #bfdbfe;
+        color: #1e40af;
+        border-radius: 10px;
+        padding: 10px 16px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        line-height: 1.45;
+    }
+
+    /* Question Screen Card */
+    .question-card {
+        background: var(--card);
+        border-radius: 16px;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        border: 1px solid var(--border);
+        padding: 30px 35px;
+        animation: cardFadeIn 0.25s ease-out;
+        position: relative;
+    }
+
+    @keyframes cardFadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Section Category Badge */
+    .section-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        color: #1d4ed8;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        letter-spacing: 0.3px;
+    }
+
+    /* Passage & Notice Cards */
+    .passage-card {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        padding: 18px 22px;
+        margin-bottom: 22px;
+        line-height: 1.75;
+        font-size: 15.5px;
+    }
+
+    .passage-card-title {
+        font-weight: 700;
+        font-size: 16px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    /* Question Title */
+    .question-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 22px;
+        line-height: 1.6;
+    }
+
+    .question-title .q-num {
+        color: var(--primary);
+        font-weight: 800;
+        margin-right: 6px;
+    }
+
+    /* Options List */
+    .options-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .option-item {
+        background: #f8fafc;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 14px 18px;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease;
+        line-height: 1.5;
+        user-select: none;
+    }
+
+    .option-item:hover:not(.locked) {
+        background: #f0f7ff;
+        border-color: #93c5fd;
+        transform: translateY(-1px);
+    }
+
+    .option-item.selected {
+        background: #eff6ff;
+        border-color: var(--primary);
+        font-weight: 600;
+        color: #1e3a8a;
+    }
+
+    .option-item.correct {
+        background: #dcfce7 !important;
+        border-color: var(--success) !important;
+        color: #14532d !important;
+        font-weight: 700;
+    }
+
+    .option-item.wrong {
+        background: #fee2e2 !important;
+        border-color: var(--danger) !important;
+        color: #7f1d1d !important;
+    }
+
+    .option-key {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: white;
+        border: 1.5px solid #cbd5e1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        color: #475569;
+        margin-right: 14px;
+        flex-shrink: 0;
+        font-size: 14px;
+        transition: all 0.2s;
+    }
+
+    .option-item.selected .option-key {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: white;
+    }
+
+    .option-item.correct .option-key {
+        background: var(--success);
+        border-color: var(--success);
+        color: white;
+    }
+
+    .option-item.wrong .option-key {
+        background: var(--danger);
+        border-color: var(--danger);
+        color: white;
+    }
+
+    .option-text {
+        flex: 1;
+    }
+
+    /* Action Control Bar */
+    .action-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-top: 15px;
+        border-top: 1px solid var(--border);
+        flex-wrap: wrap;
+    }
+
+    .action-group-left, .action-group-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .btn-nav {
+        background: white;
+        border: 2px solid #cbd5e1;
+        color: #334155;
+        padding: 11px 22px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s;
+    }
+
+    .btn-nav:hover:not(:disabled) {
+        border-color: var(--primary);
+        color: var(--primary);
+        background: #f8fafc;
+    }
+
+    .btn-nav:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+
+    /* Big Check Button */
+    .btn-check {
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 10px;
+        font-weight: 800;
+        font-size: 15.5px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.28);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s;
+    }
+
+    .btn-check:hover {
+        background: linear-gradient(135deg, #059669, #047857);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+    }
+
+    .btn-redo {
+        background: #f1f5f9;
+        border: 1.5px solid #cbd5e1;
+        color: #475569;
+        padding: 11px 18px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 14.5px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s;
+    }
+
+    .btn-redo:hover {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+
+    /* Result Status Banner */
+    .status-banner {
+        margin-top: 20px;
+        padding: 12px 18px;
+        border-radius: 10px;
+        font-size: 15px;
+        line-height: 1.5;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .status-banner.correct {
+        background: #f0fdf4;
+        border: 1.5px solid #86efac;
+        color: #15803d;
+        font-weight: 700;
+    }
+
+    .status-banner.wrong {
+        background: #fef2f2;
+        border: 1.5px solid #fecaca;
+        color: #b91c1c;
+    }
+
+    .status-banner.warn {
+        background: #fffbeb;
+        border: 1.5px solid #fde68a;
+        color: #b45309;
+        font-weight: 600;
+    }
+
+    /* Explanation Box */
+    .explain-card {
+        margin-top: 18px;
+        padding: 18px 22px;
+        background: #f8fafc;
+        border: 1.5px solid #93c5fd;
+        border-left: 5px solid #2563eb;
+        border-radius: 10px;
+        font-size: 15px;
+        line-height: 1.7;
+        color: #1e293b;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .explain-card-title {
+        font-weight: 800;
+        color: #1d4ed8;
+        margin-bottom: 8px;
+        font-size: 15.5px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    /* Drawer / Modal for All 66 Questions Navigator */
+    .drawer-overlay {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        animation: fadeIn 0.2s ease;
+    }
+
+    .drawer-overlay.active {
+        display: flex;
+    }
+
+    .drawer-content {
+        background: white;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 760px;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 25px 30px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .drawer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 12px;
+    }
+
+    .drawer-header h3 {
+        margin: 0;
+        color: var(--primary);
+        font-size: 20px;
+    }
+
+    .drawer-close {
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: #94a3b8;
+        cursor: pointer;
+    }
+
+    .drawer-close:hover { color: var(--danger); }
+
+    .legend-row {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 18px;
+        font-size: 13.5px;
+        flex-wrap: wrap;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .legend-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 4px;
+    }
+
+    .grid-scroller {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+        gap: 8px;
+    }
+
+    .grid-btn {
+        height: 44px;
+        border-radius: 8px;
+        border: 1.5px solid #cbd5e1;
+        background: white;
+        font-size: 14.5px;
+        font-weight: 700;
+        color: #334155;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.15s;
+    }
+
+    .grid-btn:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+        transform: scale(1.05);
+    }
+
+    .grid-btn.current {
+        border-color: var(--primary) !important;
+        background: var(--primary) !important;
+        color: white !important;
+        box-shadow: 0 0 0 2px #bfdbfe;
+    }
+
+    .grid-btn.answered {
+        background: #eff6ff;
+        border-color: #93c5fd;
+        color: #1d4ed8;
+    }
+
+    .grid-btn.checked-correct {
+        background: #22c55e !important;
+        border-color: #16a34a !important;
+        color: white !important;
+    }
+
+    .grid-btn.checked-wrong {
+        background: #ef4444 !important;
+        border-color: #dc2626 !important;
+        color: white !important;
+    }
+
+    /* Theory Modal & Writing Modal */
+    .modal-box {
+        background: white;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 900px;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 30px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .theory-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 10px;
+    }
+
+    .theory-tab-btn {
+        background: #e2e8f0;
+        border: none;
+        padding: 9px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14.5px;
+        color: #475569;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .theory-tab-btn:hover { background: #cbd5e1; color: #0f172a; }
+    .theory-tab-btn.active { background: var(--primary); color: white; }
+
+    .theory-panel { display: none; }
+    .theory-panel.active { display: block; }
+
+    .theory-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 15px;
+        font-size: 14px;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .theory-table th, .theory-table td {
+        border: 1px solid #e2e8f0;
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .theory-table th { background: #e0f2fe; color: #0369a1; font-weight: 700; }
+
+    .theory-card-item {
+        background: #f8fafc;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        padding: 14px 18px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+
+    .theory-card-title {
+        font-weight: bold;
+        color: var(--primary);
+        font-size: 15.5px;
+        margin-bottom: 6px;
+    }
+
+    /* Writing Section */
+    .writing-topic-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 18px;
+        flex-wrap: wrap;
+    }
+
+    .writing-topic-btn {
+        flex: 1;
+        min-width: 180px;
+        padding: 11px 14px;
+        background: #f1f5f9;
+        border: 2px solid transparent;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+        color: #475569;
+        transition: all 0.2s;
+        text-align: center;
+    }
+
+    .writing-topic-btn:hover { background: #e2e8f0; color: #0f172a; }
+    .writing-topic-btn.active { background: #eff6ff; border-color: var(--primary); color: var(--primary); }
+
+    .writing-prompt-card {
+        background: #f8fafc;
+        border-left: 4px solid var(--primary);
+        padding: 14px 18px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        font-size: 14.5px;
+    }
+
+    .writing-textarea {
+        width: 100%;
+        min-height: 140px;
+        padding: 14px;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 15.5px;
+        line-height: 1.6;
+        resize: vertical;
+        outline: none;
+    }
+
+    .writing-textarea:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+    }
+
+    .model-essay-box {
+        margin-top: 18px;
+        background: #f0fdf4;
+        border: 1.5px solid #86efac;
+        border-radius: 10px;
+        padding: 18px;
+        display: none;
+        line-height: 1.7;
+    }
+
+    /* Quick Dictionary Floating Popup */
+    .dict-popup {
+        position: absolute;
+        z-index: 3000;
+        width: 255px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16), 0 2px 6px rgba(0, 0, 0, 0.08);
+        border: 1.5px solid #3b82f6;
+        padding: 10px 13px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        animation: popupFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+        color: #1e293b;
+        pointer-events: auto;
+    }
+
+    @keyframes popupFadeIn {
+        from { opacity: 0; transform: translateY(4px) scale(0.98); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dict-popup-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #f1f5f9;
+        padding-bottom: 6px;
+        margin-bottom: 6px;
+    }
+
+    .dict-word-container {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .dict-word {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1d4ed8;
+    }
+
+    .dict-audio-btn {
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        color: #2563eb;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 13px;
+    }
+
+    .dict-audio-btn:hover { background: #2563eb; color: #ffffff; transform: scale(1.1); }
+
+    .dict-close-btn {
+        background: none;
+        border: none;
+        font-size: 15px;
+        color: #94a3b8;
+        cursor: pointer;
+        padding: 2px 5px;
+    }
+
+    .dict-close-btn:hover { color: #ef4444; }
+
+    .dict-meta {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 6px;
+        flex-wrap: wrap;
+    }
+
+    .dict-phonetic {
+        font-size: 12.5px;
+        color: #0284c7;
+        font-weight: 600;
+        background: #f0f9ff;
+        padding: 1px 6px;
+        border-radius: 4px;
+        border: 1px solid #e0f2fe;
+    }
+
+    .dict-pos {
+        font-size: 11.5px;
+        font-weight: 600;
+        color: #7c3aed;
+        background: #f5f3ff;
+        padding: 1px 6px;
+        border-radius: 10px;
+        border: 1px solid #ddd6fe;
+    }
+
+    .dict-meaning {
+        font-size: 13.5px;
+        line-height: 1.45;
+        color: #334155;
+        font-weight: 500;
+    }
+
+    .dict-w {
+        cursor: pointer;
+        border-bottom: 1.5px dotted #93c5fd;
+        transition: all 0.15s ease;
+        border-radius: 3px;
+        padding: 0 1px;
+    }
+
+    .dict-w:hover {
+        background-color: #dbeafe;
+        color: #1d4ed8;
+        border-bottom: 1.5px solid #2563eb;
+    }
+
+    .dict-w.active-word {
+        background-color: #fef08a !important;
+        color: #854d0e !important;
+        border-radius: 4px;
+        box-shadow: 0 0 0 2px #eab308;
+    }
+
+    @media (max-width: 768px) {
+        body { padding-top: 110px; }
+        .top-navbar {
+            height: auto;
+            padding: 10px 15px;
+            flex-wrap: wrap;
+        }
+        .nav-center {
+            order: 3;
+            max-width: 100%;
+            flex-basis: 100%;
+            margin-top: 5px;
+        }
+        .question-card { padding: 20px 18px; }
+        .action-bar { flex-direction: column; align-items: stretch; }
+        .action-group-left, .action-group-right { width: 100%; justify-content: space-between; }
+        .btn-check { width: 100%; justify-content: center; }
+        .writing-topic-btn { min-width: 100%; }
+    }
+    
+    /* Scramble UI */
+    .scramble-container { margin-bottom: 25px; }
+    .scramble-dropzone {
+        min-height: 65px;
+        border: 2px dashed #94a3b8;
+        border-radius: 12px;
+        padding: 12px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        background: #f8fafc;
+    }
+    .scramble-wordbank {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px;
+        background: #ffffff;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 12px;
+    }
+    .s-word {
+        background: white;
+        border: 1.5px solid #cbd5e1;
+        padding: 8px 16px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #334155;
+        cursor: pointer;
+        box-shadow: 0 3px 0 #cbd5e1;
+        user-select: none;
+        transition: all 0.1s;
+    }
+    .s-word:active { transform: translateY(3px); box-shadow: 0 0 0 #cbd5e1; }
+    .s-word.in-dropzone {
+        background: #eff6ff;
+        border-color: var(--primary);
+        color: var(--primary);
+        box-shadow: 0 3px 0 #bfdbfe;
+    }
+
+    /* ===== READING AUDIO PLAYER & KARAOKE HIGHLIGHT STYLES ===== */
+    .reading-passage-card {
+        box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+        transition: box-shadow 0.2s ease;
+    }
+    .reading-guide-chip {
+        font-size: 12px;
+        padding: 3px 10px;
+        border-radius: 12px;
+        background: #e0f2fe;
+        color: #0369a1;
+        border: 1px solid #bae6fd;
+        font-weight: 600;
+        text-transform: none;
+        letter-spacing: normal;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .reading-audio-bar {
+        background: #f0f9ff;
+        border: 1px solid #bae6fd;
+        border-radius: 10px;
+        padding: 10px 14px;
+        margin: 12px 0 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 1px 4px rgba(2, 132, 199, 0.08);
+    }
+    .reading-audio-bar.theme-p6 {
+        background: #faf5ff;
+        border: 1px solid #e9d5ff;
+        box-shadow: 0 1px 4px rgba(168, 85, 247, 0.08);
+    }
+    .audio-bar-left {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .audio-btn-play {
+        background: #0284c7;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-size: 13.5px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+    }
+    .audio-btn-play:hover {
+        background: #0369a1;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(2, 132, 199, 0.35);
+    }
+    .audio-btn-play.btn-p6 {
+        background: #9333ea;
+        box-shadow: 0 2px 6px rgba(147, 51, 234, 0.3);
+    }
+    .audio-btn-play.btn-p6:hover {
+        background: #7e22ce;
+        box-shadow: 0 4px 10px rgba(147, 51, 234, 0.35);
+    }
+    .audio-btn-icon {
+        background: white;
+        color: #475569;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 7px 10px;
+        font-size: 12.5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s;
+    }
+    .audio-btn-icon:hover {
+        background: #f1f5f9;
+        color: #0f172a;
+        border-color: #94a3b8;
+    }
+    .audio-bar-center {
+        flex: 1;
+        min-width: 190px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .audio-time-label {
+        font-size: 12.5px;
+        font-weight: 700;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        color: #475569;
+        min-width: 40px;
+    }
+    .audio-slider {
+        flex: 1;
+        height: 6px;
+        border-radius: 4px;
+        accent-color: #0284c7;
+        cursor: pointer;
+    }
+    .audio-slider.slider-p6 {
+        accent-color: #9333ea;
+    }
+    .audio-bar-right {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .audio-speed-label {
+        font-size: 12px;
+        color: #64748b;
+        font-weight: 600;
+    }
+    .audio-speed-select {
+        padding: 5px 8px;
+        border-radius: 6px;
+        border: 1px solid #cbd5e1;
+        background: white;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #334155;
+        cursor: pointer;
+    }
+    .audio-active-hint {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12.5px;
+        color: #475569;
+        margin-bottom: 12px;
+        padding: 5px 10px;
+        border-radius: 6px;
+        background: rgba(0,0,0,0.03);
+    }
+    .hint-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #0284c7;
+        display: inline-block;
+        flex-shrink: 0;
+    }
+    .reading-passage-body {
+        line-height: 1.85;
+        font-size: 16px;
+    }
+    .reading-sentence {
+        cursor: pointer;
+        padding: 2px 4px;
+        margin: 0 1px;
+        border-radius: 4px;
+        transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+        display: inline;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+    .reading-sentence:hover {
+        background-color: #fef08a !important;
+        color: #854d0e !important;
+        text-decoration: underline dotted #ca8a04;
+    }
+    .reading-sentence.active-sentence {
+        background-color: #fde047 !important; /* Vàng rực rỡ đồng bộ giọng đọc */
+        color: #1e3a8a !important; /* Đậm nét màu xanh biển đậm nổi bật */
+        font-weight: 700 !important; /* In đậm chữ */
+        box-shadow: 0 0 0 2px #eab308, 0 2px 8px rgba(234, 179, 8, 0.45) !important;
+        border-radius: 5px;
+    }
+
+    /* Question Answer Audio Button */
+    .audio-answer-box {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 12px 0 16px 0;
+        padding: 10px 14px;
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 10px;
+    }
+    .btn-sound-answer {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #16a34a;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-size: 13.5px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3);
+        transition: all 0.2s ease;
+    }
+    .btn-sound-answer:hover {
+        background: #15803d;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(22, 163, 74, 0.4);
+    }
+    .btn-sound-answer.playing {
+        background: #dc2626;
+        box-shadow: 0 2px 6px rgba(220, 38, 38, 0.4);
+        animation: pulseAudioBtn 1.2s infinite;
+    }
+    @keyframes pulseAudioBtn {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+    }
+    .audio-answer-hint {
+        font-size: 12.5px;
+        color: #166534;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+</style>
+<style>
+  .shared-home-button {
+    position: fixed; right: 22px; bottom: 22px; z-index: 10000;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 17px; border: 2px solid #14213d; border-radius: 999px;
+    background: #fff; color: #14213d; box-shadow: 3px 4px 0 #14213d;
+    font: 800 14px/1 "Segoe UI", Arial, sans-serif; text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .shared-home-button:hover, .shared-home-button:focus-visible { transform: translate(-2px, -2px); box-shadow: 5px 6px 0 #14213d; outline: none; }
+  .shared-home-button:focus-visible { outline: 3px solid #ffd765; outline-offset: 3px; }
+  @media (max-width: 600px) { .shared-home-button { right: 14px; bottom: 14px; padding: 10px 14px; } }
+</style>
+</head>
+<body>
+
+<!-- Top Sticky Navbar -->
+<div class="top-navbar">
+    <div class="nav-left">
+        <span>📖 TIẾNG ANH 6</span>
+        <span class="nav-badge" id="top-q-badge">CÂU 1 / 66</span>
+        
+        <!-- Dropdown chọn phần -->
+        <select id="section-selector" onchange="jumpToSelectedSection()" class="nav-btn" style="padding: 4px 10px; margin-left: 8px; font-size: 13px;">
+            <option value="p1">Phần I. Từ vựng</option>
+            <option value="p2">Phần II. Ngữ pháp</option>
+            <option value="p3">Phần III. Điền từ đoạn văn</option>
+            <option value="p4">Phần IV. Đọc biển báo</option>
+            <option value="p5">Phần V. Đọc hiểu 1</option>
+            <option value="p6">Phần VI. Đọc hiểu 2</option>
+            <option value="p7">Phần VII. Tìm lỗi sai</option>
+            <option value="p8">Phần VIII. Viết lại câu</option>
+        </select>
+    </div>
+
+    <div class="nav-center">
+        <div class="progress-track">
+            <div class="progress-fill" id="progress-bar"></div>
+        </div>
+        <div class="progress-info">
+            <span id="stat-progress-text">Tiến độ: 0 / 66 câu</span>
+            <span id="stat-score-text">Đúng: 0 | Sai: 0</span>
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <button class="nav-btn" onclick="openDrawer('theory')" title="Xem tóm tắt lý thuyết Unit 1-3">📚 Lý thuyết</button>
+        <button class="nav-btn" onclick="openDrawer('navigator')" title="Mở bảng 66 câu hỏi">📋 Bảng câu hỏi</button>
+        <button class="nav-btn" onclick="openDrawer('writing')" title="Luyện viết đoạn văn 40-60 từ">✍️ Luyện viết</button>
+        <button class="nav-btn primary" onclick="openDrawer('result')" title="Tổng kết kết quả">🏆 Kết quả</button>
+    </div>
+</div>
+<!-- The Single Question Card Area -->
+<div id="question-card-container">
+    <!-- Rendered by JavaScript -->
+</div>
+
+
+
+<!-- Drawer / Modal: Bảng 66 Câu Hỏi -->
+<div class="drawer-overlay" id="drawer-navigator" onclick="closeDrawerOnOutside(event, 'drawer-navigator')">
+    <div class="drawer-content">
+        <div class="drawer-header">
+            <h3>📋 BẢNG ĐIỀU HƯỚNG 66 CÂU HỎI</h3>
+            <button class="drawer-close" onclick="closeDrawer('navigator')">✕</button>
+        </div>
+
+        <div class="legend-row">
+            <div class="legend-item"><div class="legend-dot" style="background:#ffffff; border:1px solid #cbd5e1;"></div> Chưa làm</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#eff6ff; border:1px solid #93c5fd;"></div> Đã chọn đáp án</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#22c55e;"></div> Đã kiểm tra - Đúng</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div> Đã kiểm tra - Sai</div>
+        </div>
+
+        <div class="grid-scroller" id="grid-navigator">
+            <!-- 66 buttons rendered by JS -->
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Tóm tắt lý thuyết Unit 1-3 -->
+<div class="drawer-overlay" id="drawer-theory" onclick="closeDrawerOnOutside(event, 'drawer-theory')">
+    <div class="modal-box">
+        <div class="drawer-header">
+            <h3>📚 TÓM TẮT TRỌNG TÂM KIẾN THỨC GIỮA KỲ I (TỜ 1 & TỜ 2)</h3>
+            <button class="drawer-close" onclick="closeDrawer('theory')">✕</button>
+        </div>
+
+        <div class="theory-tabs">
+            <button class="theory-tab-btn active" onclick="switchTheoryTab('vocab')">📖 1. Từ vựng (Vocabulary)</button>
+            <button class="theory-tab-btn" onclick="switchTheoryTab('grammar')">📝 2. Ngữ pháp (Grammar)</button>
+            <button class="theory-tab-btn" onclick="switchTheoryTab('phonetics')">🔊 3. Phát âm (Pronunciation)</button>
+            <button class="theory-tab-btn" onclick="switchTheoryTab('comm')">💬 4. Giao tiếp (Everyday English)</button>
+        </div>
+
+        <!-- Tab 1: Từ vựng -->
+        <div class="theory-panel active" id="theory-tab-vocab">
+            <table class="theory-table">
+                <thead>
+                    <tr>
+                        <th style="width:33%;">Unit 1 - My New School</th>
+                        <th style="width:34%;">Unit 2 - My House</th>
+                        <th style="width:33%;">Unit 3 - My Friends</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <b>• School things (Đồ dùng học tập):</b><br>
+                            compass: com-pa<br>calculator: máy tính<br>ruler: thước kẻ<br>pencil sharpener: gọt bút chì<br>rubber: cục tẩy<br>school bag: cặp sách<br>uniform: đồng phục<br>notebook: vở ghi<br><br>
+                            <b>• Subjects (Môn học):</b><br>
+                            maths · science · history · English · music · art<br><br>
+                            <b>• Verbs + Noun:</b><br>
+                            <i>play:</i> football / the piano / sports<br>
+                            <i>do:</i> homework / exercise / judo<br>
+                            <i>have:</i> lessons / school lunch / breakfast<br>
+                            <i>study:</i> English / science / history<br><br>
+                            <b>• Other words:</b><br>
+                            classmate: bạn cùng lớp<br>playground: sân chơi<br>library: thư viện<br>boarding school: trường nội trú<br>share: chia sẻ<br>smart: bảnh bao, gọn gàng
+                        </td>
+                        <td>
+                            <b>• Types of house (Các kiểu nhà):</b><br>
+                            town house: nhà phố<br>country house: nhà ở nông thôn<br>villa: biệt thự<br>stilt house: nhà sàn<br>apartment / flat: căn hộ<br><br>
+                            <b>• Rooms (Các phòng):</b><br>
+                            living room · bedroom · kitchen · bathroom · hall (đại sảnh)<br><br>
+                            <b>• Furniture (Đồ đạc):</b><br>
+                            sofa: ghế sô-pha<br>lamp: đèn<br>cupboard: tủ chén<br>chest of drawers: tủ ngăn kéo<br>wardrobe: tủ quần áo<br>fridge: tủ lạnh<br>sink: bồn rửa<br>dishwasher: máy rửa bát<br>shower: vòi sen<br>picture: bức tranh<br>clock: đồng hồ treo tường<br>pillow: gối<br>poster: áp phích<br><br>
+                            <b>• Other words:</b><br>
+                            department store: cửa hàng bách hóa<br>messy: bừa bộn
+                        </td>
+                        <td>
+                            <b>• Body parts (Bộ phận cơ thể):</b><br>
+                            cheek: má · shoulder: vai<br>arm · leg · hand · foot (feet) · nose · mouth · eye · hair<br><br>
+                            <b>• Appearance (Ngoại hình):</b><br>
+                            long / short: dài / ngắn<br>big / small: to / nhỏ<br>curly / straight: xoăn / thẳng<br>blonde: vàng hoe<br>round face: mặt tròn<br><br>
+                            <b>• Personality (Tính cách):</b><br>
+                            kind: tốt bụng<br>clever: thông minh<br>creative: sáng tạo<br>friendly: thân thiện<br>shy: nhút nhát<br>careful: cẩn thận<br>funny: vui tính<br>confident: tự tin<br>caring: chu đáo<br>active: năng động<br>hard-working: chăm chỉ<br><br>
+                            <b>• Other words:</b><br>
+                            picnic: dã ngoại<br>biscuit: bánh quy
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tab 2: Ngữ pháp -->
+        <div class="theory-panel" id="theory-tab-grammar">
+            <div class="theory-card-item">
+                <div class="theory-card-title">📌 Unit 1: Thì hiện tại đơn (Present Simple)</div>
+                • <b>Cấu trúc:</b> (+) I/You/We/They + V | He/She/It + V-s/V-es. (-) don't / doesn't + V. (?) Do / Does + S + V ...?<br>
+                • <b>Trạng từ chỉ tần suất:</b> always (100%) > usually > often > sometimes > rarely > never (0%).<br>
+                • <b>Vị trí:</b> Đứng <b>TRƯỚC</b> động từ thường <i>(Tom usually takes the bus)</i>; Đứng <b>SAU</b> to be <i>(She is always late)</i>.
+            </div>
+
+            <div class="theory-card-item">
+                <div class="theory-card-title">📌 Unit 2: Sở hữu cách & Giới từ nơi chốn & There is / There are</div>
+                • <b>Sở hữu cách:</b> Danh từ số ít / Tên riêng + 's <i>(Elena's room, Nam's house)</i>. Danh từ số nhiều có 's' tận cùng chỉ thêm dấu nháy đơn <i>(my parents' house)</i>.<br>
+                • <b>Giới từ chỉ nơi chốn:</b> in (trong), on (trên), under (dưới), behind (sau), next to (bên cạnh), in front of (trước), between ... and ... (ở giữa).<br>
+                • <b>There is / There are:</b> <i>There is + N số ít</i>; <i>There are + N số nhiều</i>.
+            </div>
+
+            <div class="theory-card-item">
+                <div class="theory-card-title">📌 Unit 3: Thì hiện tại tiếp diễn (Present Continuous) & Phân biệt câu hỏi</div>
+                • <b>Cấu trúc:</b> S + am / is / are + V-ing | (-) S + am not / isn't / aren't + V-ing.<br>
+                • <b>Dấu hiệu:</b> now, at present, at the moment, Look!, Listen!<br>
+                • <b>Phân biệt câu hỏi:</b><br>
+                &nbsp;&nbsp;👉 <b>What does she look like?</b> -> Hỏi về <b>ngoại hình</b>: <i>She's tall with long hair.</i><br>
+                &nbsp;&nbsp;👉 <b>What's she like?</b> -> Hỏi về <b>tính cách</b>: <i>She's kind and creative.</i>
+            </div>
+        </div>
+
+        <!-- Tab 3: Phát âm -->
+        <div class="theory-panel" id="theory-tab-phonetics">
+            <div class="theory-card-item">
+                <div class="theory-card-title">🔊 Unit 1: Âm /ɑː/ và Âm /ʌ/</div>
+                • <b>Âm /ɑː/:</b> sm<u>ar</u>t, <u>ar</u>t, cl<u>a</u>ss, c<u>ar</u>ton.<br>
+                • <b>Âm /ʌ/:</b> s<u>u</u>bject, st<u>u</u>dy, M<u>o</u>nday, c<u>o</u>mpass.
+            </div>
+
+            <div class="theory-card-item">
+                <div class="theory-card-title">🔊 Unit 2: Quy tắc phát âm đuôi -s / -es</div>
+                • <b>Phát âm /s/:</b> Sau âm vô thanh /p/, /t/, /k/, /f/, /θ/ (thời phong kiến phương tây) -> lamp<u>s</u>, sink<u>s</u>, flat<u>s</u>.<br>
+                • <b>Phát âm /ɪz/:</b> Sau âm xuýt /s/, /z/, /ʃ/, /tʃ/, /ʒ/, /dʒ/ (s, ss, ch, sh, x, z, ge, ce) -> hous<u>es</u>, watch<u>es</u>.<br>
+                • <b>Phát âm /z/:</b> Các âm hữu thanh và nguyên âm còn lại -> sofa<u>s</u>, room<u>s</u>.
+            </div>
+
+            <div class="theory-card-item">
+                <div class="theory-card-title">🔊 Unit 3: Phân biệt âm /b/ và /p/</div>
+                • <b>Âm /b/:</b> <u>b</u>ig, <u>b</u>ear, <u>b</u>uy, ro<u>b</u>e.<br>
+                • <b>Âm /p/:</b> <u>p</u>ig, <u>p</u>ear, <u>p</u>ie, ro<u>p</u>e.
+            </div>
+        </div>
+
+        <!-- Tab 4: Giao tiếp -->
+        <div class="theory-panel" id="theory-tab-comm">
+            <div class="theory-card-item">
+                <div class="theory-card-title">💬 Giao tiếp hàng ngày (Everyday English)</div>
+                • <b>Giới thiệu người khác:</b> <i>- Phong, this is Duy, my new friend. - Nice to meet you. - Nice to meet you, too.</i><br>
+                • <b>Đưa ra lời gợi ý:</b> <i>- How about + V-ing ...? / Let's + V ... / Why don't we + V ...? -> Great idea! / OK. / Sorry, I can't.</i><br>
+                • <b>Hỏi đáp ngoại hình & tính cách:</b> <i>- What does your best friend look like? - What's she like?</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Luyện viết đoạn văn 40-60 từ -->
+<div class="drawer-overlay" id="drawer-writing" onclick="closeDrawerOnOutside(event, 'drawer-writing')">
+    <div class="modal-box">
+        <div class="drawer-header">
+            <h3>✍️ PHẦN IX. BÀI TẬP VIẾT ĐOẠN VĂN (40–60 TỪ)</h3>
+            <button class="drawer-close" onclick="closeDrawer('writing')">✕</button>
+        </div>
+
+        <div class="writing-topic-tabs">
+            <button class="writing-topic-btn active" onclick="switchWritingTopic(1)">Chủ đề 1: Your School</button>
+            <button class="writing-topic-btn" onclick="switchWritingTopic(2)">Chủ đề 2: Your Favourite Room</button>
+            <button class="writing-topic-btn" onclick="switchWritingTopic(3)">Chủ đề 3: Your Best Friend</button>
+        </div>
+
+        <div id="writing-prompt-1" class="writing-prompt-card">
+            <b>Topic 1: Write a paragraph (about 40–60 words) about your school.</b><br>
+            • Name and location of your school · What your school looks like · What subjects you study · What you usually do at break time
+        </div>
+
+        <div id="writing-prompt-2" class="writing-prompt-card" style="display:none;">
+            <b>Topic 2: Write a paragraph (about 40–60 words) about your favourite room in your house.</b><br>
+            • Which room is your favourite · What furniture is in the room · Where the furniture is · Why you like this room
+        </div>
+
+        <div id="writing-prompt-3" class="writing-prompt-card" style="display:none;">
+            <b>Topic 3: Write a paragraph (about 40–60 words) about your best friend.</b><br>
+            • Name and age · Appearance and personality · What you like doing together · Why you think he/she is a good friend
+        </div>
+
+        <textarea class="writing-textarea" id="student-writing-input" placeholder="Gõ bài viết tiếng Anh của em vào đây..." oninput="updateWordCount()"></textarea>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <div>Số từ hiện tại: <b id="word-count-num" style="color:var(--primary); font-size:16px;">0</b> từ (Mục tiêu: 40–60 từ)</div>
+            <button class="btn-check" style="padding:7px 15px; font-size:13.5px;" onclick="toggleModelEssay()">Xem bài văn mẫu & Dịch nghĩa</button>
+        </div>
+
+        <div id="model-essay-1" class="model-essay-box">
+            <b>🌟 Bài văn mẫu 1: My School (52 từ)</b>
+            <p>I study at Sunshine Lower Secondary School in Hanoi. My school is big and beautiful with twenty classrooms, a large library, and a modern computer room. At school, I study many interesting subjects such as English, Maths, and Science. At break time, I usually play badminton with my classmates in the playground. I really love my school.</p>
+            <p style="color:#166534; font-size:13.5px;"><i>Dịch:</i> Tôi học tại trường THCS Ánh Dương ở Hà Nội. Trường tôi to và đẹp với 20 phòng học, thư viện rộng và phòng máy tính hiện đại. Ở trường, tôi học nhiều môn thú vị như Tiếng Anh, Toán, Khoa học. Giờ giải lao, tôi thường chơi cầu lông với bạn cùng lớp ở sân trường. Tôi rất yêu trường mình.</p>
+        </div>
+
+        <div id="model-essay-2" class="model-essay-box">
+            <b>🌟 Bài văn mẫu 2: My Favourite Room (50 từ)</b>
+            <p>My favourite room in my house is my bedroom. It is not very big, but it is cosy and clean. There is a comfortable bed next to the window. There is also a study desk with a cute lamp and a big wardrobe for my clothes. I love my bedroom because I can relax and read books there.</p>
+            <p style="color:#166534; font-size:13.5px;"><i>Dịch:</i> Căn phòng yêu thích nhất của tôi trong nhà là phòng ngủ. Nó không quá lớn nhưng ấm cúng và sạch sẽ. Có một chiếc giường êm ái cạnh cửa sổ, bàn học có đèn xinh xắn và tủ lớn để quần áo. Tôi yêu phòng ngủ vì có thể thư giãn và đọc sách ở đó.</p>
+        </div>
+
+        <div id="model-essay-3" class="model-essay-box">
+            <b>🌟 Bài văn mẫu 3: My Best Friend (54 từ)</b>
+            <p>My best friend is Mai. She is twelve years old and we are in the same class. She is tall and slim with long straight black hair and big brown eyes. Mai is very friendly, clever and kind. She always helps me with difficult homework. After school, we often play sports together. She is a wonderful friend to me.</p>
+            <p style="color:#166534; font-size:13.5px;"><i>Dịch:</i> Bạn thân nhất của tôi là Mai, 12 tuổi và học cùng lớp với tôi. Bạn ấy cao và mảnh mai với mái tóc đen thẳng dài và đôi mắt nâu to. Mai rất thân thiện, thông minh và tốt bụng, luôn giúp tôi bài tập khó. Sau giờ học, chúng tôi thường chơi thể thao cùng nhau. Bạn ấy là người bạn tuyệt vời.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Bảng tổng kết kết quả -->
+<div class="drawer-overlay" id="drawer-result" onclick="closeDrawerOnOutside(event, 'drawer-result')">
+    <div class="modal-box" style="max-width:550px; text-align:center;">
+        <div class="drawer-header">
+            <h3 style="width:100%;">🏆 KẾT QUẢ BÀI LÀM HIỆN TẠI</h3>
+        </div>
+
+        <div style="margin:20px 0;">
+            <div style="font-size:42px; font-weight:800; color:var(--primary);" id="res-score-big">0.0</div>
+            <div style="font-size:16px; color:#64748b; margin-top:4px;">Thang điểm 10</div>
+        </div>
+
+        <div style="display:flex; justify-content:space-around; background:#f8fafc; border-radius:12px; padding:15px; margin-bottom:20px;">
+            <div><span style="display:block; font-size:22px; font-weight:700; color:#16a34a;" id="res-correct-cnt">0</span>Số câu đúng</div>
+            <div><span style="display:block; font-size:22px; font-weight:700; color:#dc2626;" id="res-wrong-cnt">0</span>Số câu sai</div>
+            <div><span style="display:block; font-size:22px; font-weight:700; color:#0284c7;" id="res-answered-cnt">0</span>Đã trả lời</div>
+            <div><span style="display:block; font-size:22px; font-weight:700; color:#64748b;" id="res-remaining-cnt">66</span>Chưa làm</div>
+        </div>
+
+        <p id="res-eval-text" style="font-size:16px; font-weight:600; color:#334155; margin-bottom:25px;"></p>
+
+        <div style="display:flex; gap:10px; justify-content:center;">
+            <button class="nav-btn" onclick="closeDrawer('result')">Tiếp tục làm bài</button>
+            <button class="btn-check" style="padding:10px 20px; font-size:14.5px;" onclick="resetAllQuiz()">Làm lại toàn bộ đề</button>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Dictionary Floating Popup -->
+<div id="quick-dict-popup" class="dict-popup" style="display: none;">
+    <div class="dict-popup-header">
+        <div class="dict-word-container">
+            <span class="dict-word" id="dict-word-text">word</span>
+            <button class="dict-audio-btn" onclick="playAudioCurrent()" title="Nghe lại phát âm">🔊</button>
+        </div>
+        <button class="dict-close-btn" onclick="closeDictPopup()" title="Đóng">✕</button>
+    </div>
+    <div class="dict-meta">
+        <span class="dict-phonetic" id="dict-phonetic-text">/.../</span>
+        <span class="dict-pos" id="dict-pos-text">từ vựng</span>
+    </div>
+    <div class="dict-meaning" id="dict-meaning-text">Nghĩa tiếng Việt</div>
+</div>
+
+<script>
+// DỮ LIỆU BÀI THI & TỪ ĐIỂN
+const quizData = [
+    {
+        "section": "p1",
+        "q": "Câu 1: My brother ______ the piano very well.",
+        "opts": [
+            "does",
+            "plays",
+            "has",
+            "studies"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. plays</b><br>• Cụm từ cố định (collocation): <b>play the piano</b> (chơi đàn piano). Với các loại nhạc cụ (the piano, the guitar, the violin...), ta dùng động từ <i>play</i> đi kèm mạo từ <i>the</i>.<br>• <i>does</i> (làm), <i>has</i> (có), <i>studies</i> (học) không kết hợp với <i>the piano</i>."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 2: Vy and I often ______ our homework after school.",
+        "opts": [
+            "play",
+            "have",
+            "do",
+            "make"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. do</b><br>• Cụm từ cố định: <b>do homework</b> (làm bài tập về nhà).<br>• <i>play</i> (chơi), <i>have</i> (có/ăn), <i>make</i> (chế tạo/tạo ra - vd: make a cake). Không dùng *make homework*."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 3: In maths lessons, we use a ______ to add numbers quickly.",
+        "opts": [
+            "compass",
+            "calculator",
+            "rubber",
+            "ruler"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. calculator</b><br>• <b>calculator</b> (máy tính cầm tay) dùng để cộng trừ tính toán các con số nhanh chóng.<br>• <i>compass</i> (com-pa để vẽ đường tròn), <i>rubber</i> (cục tẩy), <i>ruler</i> (thước kẻ)."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 4: At break time, we play games in the school ______.",
+        "opts": [
+            "library",
+            "playground",
+            "classroom",
+            "kitchen"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. playground</b><br>• <b>playground</b> (sân chơi, sân trường) là nơi học sinh vui chơi trong giờ giải lao (break time).<br>• <i>library</i> (thư viện), <i>classroom</i> (lớp học), <i>kitchen</i> (nhà bếp)."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 5: We keep food and drinks cold in the ______.",
+        "opts": [
+            "cupboard",
+            "dishwasher",
+            "fridge",
+            "sink"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. fridge</b><br>• <b>fridge / refrigerator</b> (tủ lạnh) dùng để giữ đồ ăn và thức uống luôn mát lạnh, tươi ngon.<br>• <i>cupboard</i> (tủ chén), <i>dishwasher</i> (máy rửa bát), <i>sink</i> (bồn rửa)."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 6: My mum is washing the dishes in the ______.",
+        "opts": [
+            "sofa",
+            "lamp",
+            "sink",
+            "bed"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. sink</b><br>• <b>sink</b> (bồn rửa bát/chậu rửa). Mẹ đang rửa bát trong bồn rửa.<br>• <i>sofa</i> (ghế sô-pha), <i>lamp</i> (đèn), <i>bed</i> (giường ngủ)."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 7: We watch TV in the ______ room.",
+        "opts": [
+            "living",
+            "bath",
+            "bed",
+            "dining"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. living</b><br>• <b>living room</b> (phòng khách) là căn phòng sinh hoạt chung và xem ti vi trong gia đình.<br>• <i>bathroom</i> (phòng tắm) và <i>bedroom</i> (phòng ngủ) thường viết liền là một từ đơn."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 8: Mina is very ______. She likes drawing and always has new ideas.",
+        "opts": [
+            "shy",
+            "creative",
+            "careful",
+            "lazy"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. creative</b><br>• <b>creative</b> (sáng tạo). Dấu hiệu: <i>likes drawing and always has new ideas</i> (thích vẽ tranh và luôn có ý tưởng mới mẻ).<br>• <i>shy</i> (nhút nhát), <i>careful</i> (cẩn thận), <i>lazy</i> (lười biếng)."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 9: Mai learns things quickly and easily. She's ______.",
+        "opts": [
+            "clever",
+            "shy",
+            "active",
+            "caring"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. clever</b><br>• <b>clever</b> (thông minh, nhanh nhẹn, sáng dạ). Dấu hiệu: <i>learns things quickly and easily</i> (tiếp thu mọi thứ nhanh chóng và dễ dàng).<br>• <i>shy</i> (nhút nhát), <i>active</i> (năng động), <i>caring</i> (chu đáo)."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 10: My best friend has long, ______ hair.",
+        "opts": [
+            "curly",
+            "round",
+            "big",
+            "kind"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. curly</b><br>• Tính từ miêu tả kiểu tóc: <b>curly hair</b> (tóc xoăn) hoặc <i>straight hair</i> (tóc thẳng).<br>• <i>round</i> (tròn - miêu tả khuôn mặt: round face), <i>big</i> (to lớn), <i>kind</i> (tốt bụng - miêu tả tính cách)."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 11: We carry things on our ______.",
+        "opts": [
+            "cheeks",
+            "noses",
+            "shoulders",
+            "eyes"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. shoulders</b><br>• <b>shoulders</b> (đôi vai). Chúng ta mang, vác cặp sách và đồ vật trên vai.<br>• <i>cheeks</i> (đôi má), <i>noses</i> (những chiếc mũi), <i>eyes</i> (đôi mắt)."
+    },
+    {
+        "section": "p1",
+        "q": "Câu 12: Phong is ______. He makes everyone laugh.",
+        "opts": [
+            "hard-working",
+            "funny",
+            "careful",
+            "shy"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. funny</b><br>• <b>funny</b> (hài hước, vui tính). Dấu hiệu: <i>He makes everyone laugh</i> (cậu ấy làm mọi người cười).<br>• <i>hard-working</i> (chăm chỉ), <i>careful</i> (cẩn thận), <i>shy</i> (nhút nhát)."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 13: Duy ______ to school every day.",
+        "opts": [
+            "cycle",
+            "cycling",
+            "cycles",
+            "is cycle"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. cycles</b><br>• Thì hiện tại đơn diễn tả hành động lặp đi lặp lại thường xuyên: dấu hiệu <b>every day</b> (mỗi ngày).<br>• Chủ ngữ <i>Duy</i> là ngôi thứ 3 số ít (He) -> động từ <i>cycle</i> thêm 's' thành <b>cycles</b>."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 14: My friend has a sister, but she ______ a brother.",
+        "opts": [
+            "not has",
+            "don't have",
+            "doesn't have",
+            "hasn't"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. doesn't have</b><br>• Phủ định của thì hiện tại đơn với động từ thường <i>have</i>: <b>S (số ít) + doesn't + have</b>.<br>• Chủ ngữ <i>she</i> là ngôi thứ 3 số ít nên dùng trợ động từ <b>doesn't have</b>."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 15: I live near here. Where ______ live?",
+        "opts": [
+            "do you",
+            "you",
+            "are you",
+            "does you"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. do you</b><br>• Cấu trúc câu hỏi Wh-question ở thì hiện tại đơn: <b>Where + do/does + S + V nguyên thể?</b><br>• Với chủ ngữ <i>you</i>, ta dùng trợ động từ <b>do</b> -> <i>Where do you live?</i>"
+    },
+    {
+        "section": "p2",
+        "q": "Câu 16: ______ at weekends?",
+        "opts": [
+            "Do you often travel",
+            "Often do you travel",
+            "You often travel",
+            "Do often you travel"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. Do you often travel</b><br>• Vị trí của trạng từ chỉ tần suất trong câu hỏi Yes/No thì hiện tại đơn:<br>  <b>Do/Does + S + Trạng từ tần suất (often) + V nguyên thể...?</b><br>• Do đó phương án đúng là: <i>Do you often travel at weekends?</i>"
+    },
+    {
+        "section": "p2",
+        "q": "Câu 17: She is ______ late for school. She always gets up early.",
+        "opts": [
+            "always",
+            "usually",
+            "never",
+            "often"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. never</b><br>• Dựa vào ngữ cảnh: <i>She always gets up early</i> (Cô ấy luôn luôn dậy sớm) -> Cô ấy <b>never</b> (không bao giờ) đi học muộn.<br>• Trạng từ tần suất <i>never</i> đứng sau động từ to be <i>is</i>."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 18: ______ house is small. (Nam)",
+        "opts": [
+            "Nam's",
+            "Nams'",
+            "Nam",
+            "Nams"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. Nam's</b><br>• Quy tắc sở hữu cách với tên riêng số ít: <b>Tên riêng + 's + danh từ</b>.<br>• <i>Nam's house</i> = ngôi nhà của Nam."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 19: The lamp is ______ the bed and the wardrobe.",
+        "opts": [
+            "between",
+            "next",
+            "under",
+            "in"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. between</b><br>• Giới từ chỉ vị trí: <b>between ... and ...</b> (ở giữa cái gì và cái gì).<br>• Chiếc đèn ở giữa giường ngủ và tủ quần áo. Nếu dùng <i>next</i> thì phải có <i>to</i> (next to)."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 20: There ______ two bedrooms in my flat.",
+        "opts": [
+            "is",
+            "are",
+            "be",
+            "am"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. are</b><br>• Cấu trúc: <b>There are + danh từ số nhiều</b>.<br>• <i>two bedrooms</i> (hai phòng ngủ) là danh từ số nhiều nên phải dùng <b>There are</b>."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 21: How about ______ a picture on the wall?",
+        "opts": [
+            "put",
+            "to put",
+            "putting",
+            "puts"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. putting</b><br>• Cấu trúc đưa ra lời gợi ý: <b>How about + V-ing...?</b> (Hay là chúng ta cùng làm gì đó đi?).<br>• Động từ <i>put</i> kết thúc bằng 1 phụ âm trước đó là 1 nguyên âm, khi thêm '-ing' phải gấp đôi phụ âm: <b>putting</b>."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 22: Look! The children ______ football in the playground.",
+        "opts": [
+            "play",
+            "plays",
+            "are playing",
+            "is playing"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. are playing</b><br>• Dấu hiệu thì hiện tại tiếp diễn: thán từ gây chú ý <b>Look!</b> (Nhìn kìa!).<br>• Chủ ngữ <i>The children</i> là danh từ số nhiều (những đứa trẻ, số ít là child) -> dùng <b>are playing</b>."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 23: I ______ my homework at the moment.",
+        "opts": [
+            "do",
+            "am doing",
+            "does",
+            "is doing"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. am doing</b><br>• Dấu hiệu thì hiện tại tiếp diễn: <b>at the moment</b> (ngay lúc này).<br>• Chủ ngữ <i>I</i> đi với động từ to be <i>am</i> -> <b>am doing</b>."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 24: My sister ______ a sandwich at present.",
+        "opts": [
+            "not making",
+            "isn't making",
+            "doesn't make",
+            "aren't making"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. isn't making</b><br>• Dấu hiệu thì hiện tại tiếp diễn: <b>at present</b> (hiện tại).<br>• Thể phủ định với chủ ngữ số ít <i>My sister</i>: <b>is not (isn't) + V-ing</b> -> <b>isn't making</b>."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 25: We ______ a picnic tomorrow. Do you want to come?",
+        "opts": [
+            "have",
+            "are having",
+            "has",
+            "is having"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. are having</b><br>• Cách dùng nâng cao của thì hiện tại tiếp diễn: diễn tả một kế hoạch/lịch trình đã được sắp xếp chắc chắn trong tương lai gần (<b>tomorrow</b>).<br>• Chủ ngữ <i>We</i> số nhiều nên dùng <b>are having</b>."
+    },
+    {
+        "section": "p2",
+        "q": "Câu 26: \"What does your best friend look like?\" – \"______\"",
+        "opts": [
+            "She's kind and creative.",
+            "She likes music.",
+            "She's tall with long black hair.",
+            "She's reading a book."
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. She's tall with long black hair.</b><br>• Cấu trúc: <b>What does S look like?</b> dùng để hỏi về <b>NGOẠI HÌNH</b> (diện mạo bên ngoài).<br>• Phương án C miêu tả ngoại hình: <i>Cô ấy cao với mái tóc đen dài</i>.<br>• Lưu ý: Câu A miêu tả tính cách (trả lời cho câu hỏi <i>What is she like?</i>); Câu B nói về sở thích; Câu D nói về hành động đang diễn ra."
+    },
+    {
+        "section": "p3",
+        "q": "Câu 27: Hi, I'm Lan. I (1) ______ in a town house in Hai Phong.",
+        "opts": [
+            "live",
+            "lives",
+            "living",
+            "am live"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. live</b><br>• Diễn tả sự thật, tình trạng cố định ở hiện tại: dùng thì hiện tại đơn.<br>• Chủ ngữ là đại từ ngôi thứ nhất <b>I</b> nên động từ giữ nguyên thể: <b>live</b>."
+    },
+    {
+        "section": "p3",
+        "q": "Câu 28: There is a bed (2) ______ the window.",
+        "opts": [
+            "between",
+            "on",
+            "in",
+            "next to"
+        ],
+        "ans": 3,
+        "explain": "<b>Đáp án đúng: D. next to</b><br>• Cụm giới từ chỉ nơi chốn: <b>next to the window</b> = ở cạnh cửa sổ.<br>• <i>between</i> cần 2 vật (between A and B); <i>on/in the window</i> không phù hợp vị trí đặt giường."
+    },
+    {
+        "section": "p3",
+        "q": "Câu 29: There is a desk next to the bed, and there is a lamp (3) ______ the desk.",
+        "opts": [
+            "on",
+            "in",
+            "between",
+            "behind of"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. on</b><br>• Cụm giới từ: <b>on the desk</b> = ở trên mặt bàn học (chiếc đèn được đặt trên bàn)."
+    },
+    {
+        "section": "p3",
+        "q": "Câu 30: My clothes are in the (4) ______.",
+        "opts": [
+            "fridge",
+            "sink",
+            "wardrobe",
+            "shower"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. wardrobe</b><br>• <b>wardrobe</b> (tủ quần áo): <i>My clothes are in the wardrobe</i> (Quần áo của tôi ở trong tủ đồ).<br>• <i>fridge</i> (tủ lạnh), <i>sink</i> (bồn rửa), <i>shower</i> (vòi sen)."
+    },
+    {
+        "section": "p3",
+        "q": "Câu 31: At the moment, she (5) ______ dinner...",
+        "opts": [
+            "cooks",
+            "is cooking",
+            "cook",
+            "are cooking"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. is cooking</b><br>• Dấu hiệu thời gian: <b>At the moment</b> (ngay lúc này) -> chia thì hiện tại tiếp diễn.<br>• Chủ ngữ <i>she</i> là số ít ngôi thứ 3 -> <b>is cooking</b>."
+    },
+    {
+        "section": "p3",
+        "q": "Câu 32: ...and I (6) ______ her.",
+        "opts": [
+            "help",
+            "helps",
+            "is helping",
+            "am helping"
+        ],
+        "ans": 3,
+        "explain": "<b>Đáp án đúng: D. am helping</b><br>• Nối tiếp hành động đang diễn ra lúc này (At the moment): <i>tôi đang giúp đỡ mẹ nấu cơm</i>.<br>• Chủ ngữ <b>I</b> chia với thì hiện tại tiếp diễn là <b>am helping</b>."
+    },
+    {
+        "section": "p4",
+        "q": "Câu 33: [LIBRARY: Please keep quiet. No food or drinks.] - What does the notice say?",
+        "opts": [
+            "You can eat in the library.",
+            "You must not talk loudly or eat in the library.",
+            "The library sells drinks.",
+            "The library is closed."
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. You must not talk loudly or eat in the library.</b><br>• Biển báo tại thư viện: <i>'Please keep quiet. No food or drinks'</i> (Xin vui lòng giữ trật tự. Không mang thức ăn hoặc đồ uống).<br>• Do đó: Bạn không được nói chuyện ồn ào và không được ăn trong thư viện."
+    },
+    {
+        "section": "p4",
+        "q": "Câu 34: [FLAT FOR RENT: 2 bedrooms, 1 bathroom, big kitchen. Near Hoa Binh Park.] - What does the notice say?",
+        "opts": [
+            "The flat has two bathrooms.",
+            "The flat is far from the park.",
+            "You can rent a flat with two bedrooms.",
+            "The flat has no kitchen."
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. You can rent a flat with two bedrooms.</b><br>• Biển quảng cáo: Căn hộ cho thuê (FLAT FOR RENT) có 2 phòng ngủ (2 bedrooms), 1 phòng tắm, bếp lớn, gần công viên Hòa Bình.<br>• Phương án C diễn đạt chuẩn xác: Bạn có thể thuê một căn hộ gồm 2 phòng ngủ.<br>• Câu A sai vì chỉ có 1 bathroom; Câu B sai vì căn hộ gần (near) chứ không xa (far); Câu D sai vì có bếp lớn (big kitchen)."
+    },
+    {
+        "section": "p4",
+        "q": "Câu 35: [PLAYGROUND: Children under 6 must be with an adult.] - What does the notice mean?",
+        "opts": [
+            "Only adults can play here.",
+            "Small children need an adult with them.",
+            "Children can't play here.",
+            "Children over 6 need an adult."
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. Small children need an adult with them.</b><br>• Biển báo ở sân chơi: <i>Children under 6 must be with an adult</i> (Trẻ em dưới 6 tuổi phải đi cùng người lớn).<br>• Nghĩa là: Trẻ nhỏ (dưới 6 tuổi) cần có người lớn đi kèm (<i>Small children need an adult with them</i>)."
+    },
+    {
+        "section": "p5",
+        "q": "Câu 36: What is the passage mainly about?",
+        "opts": [
+            "Linh's family",
+            "Linh's new school and her best friend",
+            "How to make sandwiches",
+            "A volleyball team"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. Linh's new school and her best friend</b><br>• Nội dung chính: Đoạn 1 và 2 giới thiệu về trường mới của Linh (Sunshine Lower Secondary School) và lịch sinh hoạt; Đoạn 3 giới thiệu về bạn thân mới của Linh là Ngọc."
+    },
+    {
+        "section": "p5",
+        "q": "Câu 37: Where is Linh's classroom?",
+        "opts": [
+            "on the first floor",
+            "next to the computer room",
+            "next to the library",
+            "in the garden"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. next to the library</b><br>• Dẫn chứng trong bài (cuối đoạn 1): <i>'My classroom is on the second floor, next to the library.'</i> (Phòng học của tôi ở tầng 2, bên cạnh thư viện)."
+    },
+    {
+        "section": "p5",
+        "q": "Câu 38: What does Linh think about the school lunch?",
+        "opts": [
+            "It's terrible.",
+            "It's good, but sometimes it's a bit salty.",
+            "It's too sweet.",
+            "She doesn't eat it."
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. It's good, but sometimes it's a bit salty.</b><br>• Dẫn chứng trong bài (đoạn 2): <i>'The food is good, but sometimes it's a bit salty.'</i> (Đồ ăn ngon, nhưng đôi khi hơi mặn một chút)."
+    },
+    {
+        "section": "p5",
+        "q": "Câu 39: The word \"encourages\" in paragraph 3 is closest in meaning to ______.",
+        "opts": [
+            "stops",
+            "helps and supports",
+            "asks",
+            "teaches"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. helps and supports</b><br>• Từ <b>encourage</b> nghĩa là 'khích lệ, động viên, cổ vũ', đồng nghĩa với <b>helps and supports</b> (giúp đỡ và ủng hộ).<br>• <i>stops</i> (ngăn cản), <i>asks</i> (hỏi/yêu cầu), <i>teaches</i> (dạy học)."
+    },
+    {
+        "section": "p5",
+        "q": "Câu 40: Which is TRUE about Ngoc?",
+        "opts": [
+            "She has long straight hair.",
+            "She's shy and quiet.",
+            "She's on the school volleyball team.",
+            "She doesn't like sports."
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. She's on the school volleyball team.</b><br>• Dẫn chứng đoạn 3: <i>'She plays volleyball for the school team...'</i> (Bạn ấy chơi bóng chuyền cho đội tuyển của trường).<br>• Câu A sai vì tóc bạn ấy xoăn ngắn (short curly hair); Câu B sai vì bạn ấy tự tự tin và năng động (confident and active)."
+    },
+    {
+        "section": "p5",
+        "q": "Câu 41: What are Linh and Ngoc doing now?",
+        "opts": [
+            "playing volleyball",
+            "doing homework",
+            "having school lunch",
+            "making sandwiches"
+        ],
+        "ans": 3,
+        "explain": "<b>Đáp án đúng: D. making sandwiches</b><br>• Dẫn chứng câu cuối bài: <i>'Ngoc and I are making sandwiches for everyone right now!'</i> (Ngọc và tôi đang làm bánh mì kẹp cho mọi người ngay lúc này!)."
+    },
+    {
+        "section": "p6",
+        "q": "Câu 42: What does Mai look like?",
+        "type": "scramble",
+        "words": ["hair", "eyes.", "slim", "long", "with", "is", "straight", "She", "tall", "big", "and", "black", "brown", "and"],
+        "correctSentence": "She is tall and slim with long straight black hair and big brown eyes.",
+        "explain": "<b>Đáp án đúng:</b> She is tall and slim with long straight black hair and big brown eyes.<br>• <b>Câu trả lời tự luận chuẩn:</b> <i>She is tall and slim. She has long straight black hair and big brown eyes.</i><br>• Dẫn chứng đoạn văn: <i>'She is tall and slim. She has long straight black hair and big brown eyes.'</i> (Mai cao và mảnh mai. Bạn ấy có mái tóc đen thẳng dài và đôi mắt nâu to)."
+    },
+    {
+        "section": "p6",
+        "q": "Câu 43: What is Mai like?",
+        "type": "scramble",
+        "words": ["friendly,", "hard-working.", "is", "very", "She", "and", "kind"],
+        "correctSentence": "She is very friendly, kind and hard-working.",
+        "explain": "<b>Đáp án đúng:</b> She is very friendly, kind and hard-working.<br>• Dẫn chứng: <i>'Mai is very friendly, kind and hard-working.'</i>"
+    },
+    {
+        "section": "p6",
+        "q": "Câu 44: Why does Mai like Art?",
+        "type": "scramble",
+        "words": ["pictures.", "she", "Because", "loves", "drawing"],
+        "correctSentence": "Because she loves drawing pictures.",
+        "explain": "<b>Đáp án đúng:</b> Because she loves drawing pictures.<br>• Dẫn chứng: <i>'...her favourite subject is Art because she loves drawing pictures.'</i>"
+    },
+    {
+        "section": "p6",
+        "q": "Câu 45: How often does Mai play badminton with her friends?",
+        "type": "scramble",
+        "words": ["plays", "her", "badminton", "She", "friends", "often", "in", "time.", "with", "free", "her"],
+        "correctSentence": "She often plays badminton with her friends in her free time.",
+        "explain": "<b>Đáp án đúng:</b> She often plays badminton with her friends in her free time.<br>• Dẫn chứng: <i>'In her free time, she often plays badminton with her friends.'</i>"
+    },
+    {
+        "section": "p6",
+        "q": "Câu 46: What is Mai doing at the moment?",
+        "type": "scramble",
+        "words": ["a", "bedroom.", "drawing", "She", "in", "picture", "is", "her"],
+        "correctSentence": "She is drawing a picture in her bedroom.",
+        "explain": "<b>Đáp án đúng:</b> She is drawing a picture in her bedroom.<br>• Dẫn chứng: <i>'At the moment, she is drawing a picture in her bedroom...'</i>"
+    },
+    {
+        "section": "p7",
+        "q": "Câu 47: My sister usually <u>go</u> to school by bicycle every morning.",
+        "opts": [
+            "My sister",
+            "usually",
+            "go",
+            "every morning"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. go</b> -> Sửa thành <b>goes</b>.<br>• Chủ ngữ <i>My sister</i> là ngôi thứ 3 số ít ở thì hiện tại đơn, động từ <i>go</i> kết thúc bằng chữ 'o' nên phải thêm '-es' thành <b>goes</b>."
+    },
+    {
+        "section": "p7",
+        "q": "Câu 48: Does your brother often <u>plays</u> football after school?",
+        "opts": [
+            "Does",
+            "often",
+            "plays",
+            "after school"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. plays</b> -> Sửa thành <b>play</b>.<br>• Trong câu hỏi Yes/No thì hiện tại đơn đã có trợ động từ <i>Does</i> đảo lên đầu, nên động từ chính phải ở dạng <b>nguyên thể không chia</b>: <i>Does your brother often play...</i>"
+    },
+    {
+        "section": "p7",
+        "q": "Câu 49: <u>There are</u> a big sofa and two armchairs in the living room.",
+        "opts": [
+            "There are",
+            "sofa",
+            "armchairs",
+            "in"
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. There are</b> -> Sửa thành <b>There is</b>.<br>• Quy tắc hòa hợp chủ vị với cấu trúc <i>There be</i>: động từ to be chia theo <b>danh từ đứng ngay sát sau nó</b>. Danh từ liền kề là <i>a big sofa</i> (số ít) nên phải dùng <b>There is</b>."
+    },
+    {
+        "section": "p7",
+        "q": "Câu 50: My parents' bedroom is <u>next</u> the bathroom on the second floor.",
+        "opts": [
+            "parents'",
+            "is",
+            "next",
+            "on"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. next</b> -> Sửa thành <b>next to</b>.<br>• Giới từ chỉ vị trí 'bên cạnh' luôn luôn là cụm <b>next to</b>, không đứng một mình là <i>next</i> khi chỉ vị trí."
+    },
+    {
+        "section": "p7",
+        "q": "Câu 51: Look! The children <u>play</u> badminton in the school playground.",
+        "opts": [
+            "Look",
+            "play",
+            "in",
+            "playground"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. play</b> -> Sửa thành <b>are playing</b>.<br>• Câu có thán từ mệnh lệnh <b>Look!</b> (Nhìn kìa!), diễn tả hành động đang xảy ra trước mắt. Chủ ngữ số nhiều <i>The children</i> đi với <b>are playing</b>."
+    },
+    {
+        "section": "p7",
+        "q": "Câu 52: My best friend has <u>a</u> long black hair and big brown eyes.",
+        "opts": [
+            "has",
+            "a",
+            "and",
+            "brown eyes"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. a</b> -> Sửa thành <b>bỏ 'a'</b>.<br>• Danh từ <b>hair</b> khi mang nghĩa là 'mái tóc' là danh từ <b>không đếm được</b>, do đó không dùng mạo từ <i>a/an</i> trước nó. Câu đúng là: <i>has long black hair</i>."
+    },
+    {
+        "section": "p7",
+        "q": "Câu 53: Lan is a careful student. She checks always her homework.",
+        "opts": [
+            "is",
+            "careful",
+            "checks always",
+            "homework"
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. checks always</b> -> Sửa thành <b>always checks</b>.<br>• Vị trí của trạng từ chỉ tần suất: đứng <b>TRƯỚC động từ thường</b> (always checks) và đứng sau động từ to be."
+    },
+    {
+        "section": "p7",
+        "q": "Câu 54: How often does your sisters go to the school library?",
+        "opts": [
+            "How often",
+            "does",
+            "go",
+            "school library"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. does</b> -> Sửa thành <b>do</b>.<br>• Chủ ngữ <i>your sisters</i> là danh từ số nhiều (những người chị/em gái), vì vậy trợ động từ phải dùng <b>do</b> thay vì <i>does</i>."
+    },
+    {
+        "section": "p7",
+        "q": "Câu 55: My brother is very friendly, and he always helps his classmates with his homeworks.",
+        "opts": [
+            "friendly",
+            "always",
+            "classmates",
+            "homeworks"
+        ],
+        "ans": 3,
+        "explain": "<b>Đáp án đúng: D. homeworks</b> -> Sửa thành <b>homework</b>.<br>• Danh từ <b>homework</b> (bài tập về nhà) là danh từ <b>không đếm được</b> trong tiếng Anh, tuyệt đối không thêm '-s' thành <i>homeworks</i>."
+    },
+    {
+        "section": "p7",
+        "q": "Câu 56: What is your new classmate look like? – She is tall and slim.",
+        "opts": [
+            "What",
+            "is",
+            "look like",
+            "is"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. is</b> -> Sửa thành <b>does</b>.<br>• Cấu trúc câu hỏi ngoại hình: <b>What + does + S + look like?</b> Vì có động từ thường <i>look</i> nên phải dùng trợ động từ <b>does</b>, không dùng <i>is</i>."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 57: My brother / go / school / every day.",
+        "opts": [
+            "My brother go to school every day.",
+            "My brother goes to school every day.",
+            "My brother going to school every day.",
+            "My brother is go to school every day."
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. My brother goes to school every day.</b><br>• Dấu hiệu <i>every day</i> -> thì hiện tại đơn.<br>• Chủ ngữ số ít <i>My brother</i> đi với động từ <b>goes</b> + giới từ <b>to</b>: <i>goes to school</i>."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 58: Lan / usually / do / homework / evening.",
+        "opts": [
+            "Lan usually do her homework in the evening.",
+            "Lan does usually her homework in the evening.",
+            "Lan usually does her homework in the evening.",
+            "Lan usually doing her homework in the evening."
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. Lan usually does her homework in the evening.</b><br>• Trạng từ tần suất <i>usually</i> đứng trước động từ thường.<br>• Chủ ngữ số ít <i>Lan</i> chia động từ <b>does</b>; cụm từ chỉ thời gian: <b>in the evening</b>."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 59: There / be / a sofa / living room.",
+        "opts": [
+            "There are a sofa in the living room.",
+            "There is a sofa on the living room.",
+            "There have a sofa in the living room.",
+            "There is a sofa in the living room."
+        ],
+        "ans": 3,
+        "explain": "<b>Đáp án đúng: D. There is a sofa in the living room.</b><br>• Danh từ số ít <i>a sofa</i> đi với <b>There is</b>.<br>• Vị trí trong phòng khách dùng giới từ <b>in the living room</b>."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 60: The cat / be / under / table.",
+        "opts": [
+            "The cat is under the table.",
+            "The cat under the table.",
+            "The cat is under table.",
+            "The cat are under the table."
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. The cat is under the table.</b><br>• Chủ ngữ số ít <i>The cat</i> đi với to be <b>is</b>.<br>• Giới từ <i>under</i> đi với danh từ có mạo từ xác định: <b>under the table</b>."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 61: The school bag / be / next to / desk.",
+        "opts": [
+            "The school bag is next the desk.",
+            "The school bag are next to the desk.",
+            "The school bag is next to the desk.",
+            "The school bag is next to desk."
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. The school bag is next to the desk.</b><br>• Chủ ngữ số ít <i>The school bag</i> đi với to be <b>is</b>.<br>• Cụm giới từ chỉ vị trí chuẩn xác: <b>next to the desk</b>."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 62: This / be / Nam / bedroom.",
+        "opts": [
+            "This is Nam bedroom.",
+            "This is Nam's bedroom.",
+            "This are Nam's bedroom.",
+            "This is Nams bedroom."
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. This is Nam's bedroom.</b><br>• Đại từ chỉ định <i>This</i> đi với <b>is</b>.<br>• Sở hữu cách với tên riêng số ít: <b>Nam's bedroom</b> (phòng ngủ của Nam)."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 63: My parents / house / be / big.",
+        "opts": [
+            "My parent's house is big.",
+            "My parents house are big.",
+            "My parents' house are big.",
+            "My parents' house is big."
+        ],
+        "ans": 3,
+        "explain": "<b>Đáp án đúng: D. My parents' house is big.</b><br>• Danh từ số nhiều kết thúc bằng 's' (<i>parents</i>) khi tạo sở hữu cách chỉ thêm dấu nháy đơn: <b>parents'</b>.<br>• Danh từ chính của câu là <i>house</i> (ngôi nhà - số ít) nên động từ to be phải là <b>is</b>."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 64: Look! / Hoa / read / book.",
+        "opts": [
+            "Look! Hoa reads a book.",
+            "Look! Hoa is read a book.",
+            "Look! Hoa is reading a book.",
+            "Look! Hoa reading a book."
+        ],
+        "ans": 2,
+        "explain": "<b>Đáp án đúng: C. Look! Hoa is reading a book.</b><br>• Thán từ <b>Look!</b> báo hiệu thì hiện tại tiếp diễn: <b>S + am/is/are + V-ing</b>.<br>• Chủ ngữ <i>Hoa</i> số ít đi với <b>is reading a book</b>."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 65: My best friend / have / short black hair.",
+        "opts": [
+            "My best friend has short black hair.",
+            "My best friend have short black hair.",
+            "My best friend has a short black hair.",
+            "My best friend is have short black hair."
+        ],
+        "ans": 0,
+        "explain": "<b>Đáp án đúng: A. My best friend has short black hair.</b><br>• Chủ ngữ <i>My best friend</i> (số ít) chia động từ <b>has</b>.<br>• <i>hair</i> là danh từ không đếm được nên không dùng mạo từ <i>a</i>."
+    },
+    {
+        "section": "p8",
+        "q": "Câu 66: What / your best friend / look like?",
+        "opts": [
+            "What is your best friend look like?",
+            "What does your best friend look like?",
+            "What does your best friend looks like?",
+            "What do your best friend look like?"
+        ],
+        "ans": 1,
+        "explain": "<b>Đáp án đúng: B. What does your best friend look like?</b><br>• Cấu trúc hỏi ngoại hình với chủ ngữ số ít: <b>What + does + S + look like?</b><br>• Sau trợ động từ <i>does</i>, động từ <i>look</i> trở về dạng nguyên thể không chia."
+    }
+];
+const TOTAL_QUESTIONS = quizData.length;
+
+const VOCAB_DB = {
+    "compass": {
+        "ipa": "/ˈkʌm.pəs/",
+        "pos": "danh từ (n)",
+        "vi": "com-pa (dụng cụ vẽ đường tròn)"
+    },
+    "calculator": {
+        "ipa": "/ˈkæl.kjə.leɪ.tər/",
+        "pos": "danh từ (n)",
+        "vi": "máy tính cầm tay"
+    },
+    "ruler": {
+        "ipa": "/ˈruː.lər/",
+        "pos": "danh từ (n)",
+        "vi": "thước kẻ"
+    },
+    "pencil": {
+        "ipa": "/ˈpen.səl/",
+        "pos": "danh từ (n)",
+        "vi": "bút chì"
+    },
+    "sharpener": {
+        "ipa": "/ˈʃɑː.pən.ər/",
+        "pos": "danh từ (n)",
+        "vi": "gọt bút chì"
+    },
+    "rubber": {
+        "ipa": "/ˈrʌb.ər/",
+        "pos": "danh từ (n)",
+        "vi": "cục tẩy, gôm tẩy"
+    },
+    "eraser": {
+        "ipa": "/ɪˈreɪ.zər/",
+        "pos": "danh từ (n)",
+        "vi": "cục tẩy, gôm tẩy"
+    },
+    "bag": {
+        "ipa": "/bæɡ/",
+        "pos": "danh từ (n)",
+        "vi": "cặp, túi xách"
+    },
+    "uniform": {
+        "ipa": "/ˈjuː.nɪ.fɔːm/",
+        "pos": "danh từ (n)",
+        "vi": "bộ đồng phục học sinh"
+    },
+    "notebook": {
+        "ipa": "/ˈnəʊt.bʊk/",
+        "pos": "danh từ (n)",
+        "vi": "quyển vở ghi bài"
+    },
+    "textbook": {
+        "ipa": "/ˈtekst.bʊk/",
+        "pos": "danh từ (n)",
+        "vi": "sách giáo khoa"
+    },
+    "book": {
+        "ipa": "/bʊk/",
+        "pos": "danh từ (n)",
+        "vi": "quyển sách"
+    },
+    "pen": {
+        "ipa": "/pen/",
+        "pos": "danh từ (n)",
+        "vi": "bút mực, bút bi"
+    },
+    "desk": {
+        "ipa": "/desk/",
+        "pos": "danh từ (n)",
+        "vi": "bàn học, bàn làm việc"
+    },
+    "board": {
+        "ipa": "/bɔːd/",
+        "pos": "danh từ (n)",
+        "vi": "bảng viết phấn/bút dạ"
+    },
+    "classroom": {
+        "ipa": "/ˈklɑːs.ruːm/",
+        "pos": "danh từ (n)",
+        "vi": "phòng học, lớp học"
+    },
+    "classmate": {
+        "ipa": "/ˈklɑːs.meɪt/",
+        "pos": "danh từ (n)",
+        "vi": "bạn cùng lớp"
+    },
+    "playground": {
+        "ipa": "/ˈpleɪ.ɡraʊnd/",
+        "pos": "danh từ (n)",
+        "vi": "sân chơi, sân trường"
+    },
+    "library": {
+        "ipa": "/ˈlaɪ.brər.i/",
+        "pos": "danh từ (n)",
+        "vi": "thư viện"
+    },
+    "canteen": {
+        "ipa": "/kænˈtiːn/",
+        "pos": "danh từ (n)",
+        "vi": "căng-tin, nhà ăn trường học"
+    },
+    "school": {
+        "ipa": "/skuːl/",
+        "pos": "danh từ (n)",
+        "vi": "trường học"
+    },
+    "secondary": {
+        "ipa": "/ˈsek.ən.dri/",
+        "pos": "tính từ (adj)",
+        "vi": "bậc trung học (THCS)"
+    },
+    "primary": {
+        "ipa": "/ˈpraɪ.mər.i/",
+        "pos": "tính từ (adj)",
+        "vi": "bậc tiểu học"
+    },
+    "boarding": {
+        "ipa": "/ˈbɔː.dɪŋ/",
+        "pos": "tính từ (adj)",
+        "vi": "nội trú (trường nội trú)"
+    },
+    "lesson": {
+        "ipa": "/ˈles.ən/",
+        "pos": "danh từ (n)",
+        "vi": "bài học, tiết học"
+    },
+    "subject": {
+        "ipa": "/ˈsʌb.dʒekt/",
+        "pos": "danh từ (n)",
+        "vi": "môn học"
+    },
+    "homework": {
+        "ipa": "/ˈhəʊm.wɜːk/",
+        "pos": "danh từ (n)",
+        "vi": "bài tập về nhà (không đếm được)"
+    },
+    "exercise": {
+        "ipa": "/ˈek.sə.saɪz/",
+        "pos": "danh từ (n)",
+        "vi": "bài tập; thể dục"
+    },
+    "judo": {
+        "ipa": "/ˈdʒuː.dəʊ/",
+        "pos": "danh từ (n)",
+        "vi": "môn võ judo"
+    },
+    "football": {
+        "ipa": "/ˈfʊt.bɔːl/",
+        "pos": "danh từ (n)",
+        "vi": "môn bóng đá"
+    },
+    "piano": {
+        "ipa": "/piˈæn.əʊ/",
+        "pos": "danh từ (n)",
+        "vi": "đàn piano, dương cầm"
+    },
+    "sport": {
+        "ipa": "/spɔːt/",
+        "pos": "danh từ (n)",
+        "vi": "môn thể thao"
+    },
+    "break": {
+        "ipa": "/breɪk/",
+        "pos": "danh từ (n)",
+        "vi": "giờ nghỉ giải lao, giờ ra chơi"
+    },
+    "maths": {
+        "ipa": "/mæθs/",
+        "pos": "danh từ (n)",
+        "vi": "môn Toán học"
+    },
+    "science": {
+        "ipa": "/ˈsaɪ.əns/",
+        "pos": "danh từ (n)",
+        "vi": "môn Khoa học tự nhiên"
+    },
+    "history": {
+        "ipa": "/ˈhɪs.tər.i/",
+        "pos": "danh từ (n)",
+        "vi": "môn Lịch sử"
+    },
+    "english": {
+        "ipa": "/ˈɪŋ.ɡlɪʃ/",
+        "pos": "danh từ (n)",
+        "vi": "môn Tiếng Anh"
+    },
+    "music": {
+        "ipa": "/ˈmjuː.zɪk/",
+        "pos": "danh từ (n)",
+        "vi": "môn Âm nhạc"
+    },
+    "art": {
+        "ipa": "/ɑːt/",
+        "pos": "danh từ (n)",
+        "vi": "môn Mỹ thuật, nghệ thuật"
+    },
+    "geography": {
+        "ipa": "/dʒiˈɒɡ.rə.fi/",
+        "pos": "danh từ (n)",
+        "vi": "môn Địa lý"
+    },
+    "physics": {
+        "ipa": "/ˈfɪz.ɪks/",
+        "pos": "danh từ (n)",
+        "vi": "môn Vật lý"
+    },
+    "literature": {
+        "ipa": "/ˈlɪt.rə.tʃər/",
+        "pos": "danh từ (n)",
+        "vi": "môn Ngữ văn"
+    },
+    "share": {
+        "ipa": "/ʃeər/",
+        "pos": "động từ (v)",
+        "vi": "chia sẻ, dùng chung"
+    },
+    "smart": {
+        "ipa": "/smɑːt/",
+        "pos": "tính từ (adj)",
+        "vi": "bảnh bao, gọn gàng, thông minh"
+    },
+    "house": {
+        "ipa": "/haʊs/",
+        "pos": "danh từ (n)",
+        "vi": "ngôi nhà, căn nhà"
+    },
+    "town": {
+        "ipa": "/taʊn/",
+        "pos": "danh từ (n)",
+        "vi": "thị trấn, phố xá"
+    },
+    "country": {
+        "ipa": "/ˈkʌn.tri/",
+        "pos": "danh từ (n)",
+        "vi": "vùng nông thôn, đất nước"
+    },
+    "villa": {
+        "ipa": "/ˈvɪl.ə/",
+        "pos": "danh từ (n)",
+        "vi": "biệt thự khang trang"
+    },
+    "stilt": {
+        "ipa": "/stɪlt/",
+        "pos": "danh từ (n)",
+        "vi": "cột sàn, cọc nhà sàn"
+    },
+    "apartment": {
+        "ipa": "/əˈpɑːt.mənt/",
+        "pos": "danh từ (n)",
+        "vi": "căn hộ chung cư"
+    },
+    "flat": {
+        "ipa": "/flæt/",
+        "pos": "danh từ (n)",
+        "vi": "căn hộ chung cư"
+    },
+    "room": {
+        "ipa": "/ruːm/",
+        "pos": "danh từ (n)",
+        "vi": "căn phòng"
+    },
+    "living": {
+        "ipa": "/ˈlɪv.ɪŋ/",
+        "pos": "danh từ (n)",
+        "vi": "sự sống, sinh hoạt (living room: phòng khách)"
+    },
+    "bedroom": {
+        "ipa": "/ˈbed.ruːm/",
+        "pos": "danh từ (n)",
+        "vi": "phòng ngủ"
+    },
+    "kitchen": {
+        "ipa": "/ˈkɪtʃ.ən/",
+        "pos": "danh từ (n)",
+        "vi": "nhà bếp, gian bếp"
+    },
+    "bathroom": {
+        "ipa": "/ˈbɑːθ.ruːm/",
+        "pos": "danh từ (n)",
+        "vi": "phòng tắm, nhà vệ sinh"
+    },
+    "hall": {
+        "ipa": "/hɔːl/",
+        "pos": "danh từ (n)",
+        "vi": "đại sảnh, hành lang, lối vào"
+    },
+    "furniture": {
+        "ipa": "/ˈfɜː.nɪ.tʃər/",
+        "pos": "danh từ (n)",
+        "vi": "đồ đạc nội thất trong nhà"
+    },
+    "sofa": {
+        "ipa": "/ˈsəʊ.fə/",
+        "pos": "danh từ (n)",
+        "vi": "ghế sô-pha, ghế băng êm"
+    },
+    "armchair": {
+        "ipa": "/ˈɑːm.tʃeər/",
+        "pos": "danh từ (n)",
+        "vi": "ghế bành có chỗ tựa tay"
+    },
+    "chair": {
+        "ipa": "/tʃeər/",
+        "pos": "danh từ (n)",
+        "vi": "chiếc ghế ngồi"
+    },
+    "table": {
+        "ipa": "/ˈteɪ.bəl/",
+        "pos": "danh từ (n)",
+        "vi": "chiếc bàn"
+    },
+    "lamp": {
+        "ipa": "/læmp/",
+        "pos": "danh từ (n)",
+        "vi": "chiếc đèn ngủ, đèn bàn"
+    },
+    "cupboard": {
+        "ipa": "/ˈkʌb.əd/",
+        "pos": "danh từ (n)",
+        "vi": "tủ chén, tủ bát đĩa"
+    },
+    "chest": {
+        "ipa": "/tʃest/",
+        "pos": "danh từ (n)",
+        "vi": "rương, hòm (chest of drawers: tủ ngăn kéo)"
+    },
+    "drawer": {
+        "ipa": "/drɔːr/",
+        "pos": "danh từ (n)",
+        "vi": "ngăn kéo tủ"
+    },
+    "wardrobe": {
+        "ipa": "/ˈwɔː.drəʊb/",
+        "pos": "danh từ (n)",
+        "vi": "tủ quần áo"
+    },
+    "fridge": {
+        "ipa": "/frɪdʒ/",
+        "pos": "danh từ (n)",
+        "vi": "tủ lạnh"
+    },
+    "sink": {
+        "ipa": "/sɪŋk/",
+        "pos": "danh từ (n)",
+        "vi": "bồn rửa bát, bồn rửa mặt"
+    },
+    "dishwasher": {
+        "ipa": "/ˈdɪʃˌwɒʃ.ər/",
+        "pos": "danh từ (n)",
+        "vi": "máy rửa bát đĩa tự động"
+    },
+    "shower": {
+        "ipa": "/ʃaʊər/",
+        "pos": "danh từ (n)",
+        "vi": "vòi sen tắm"
+    },
+    "picture": {
+        "ipa": "/ˈpɪk.tʃər/",
+        "pos": "danh từ (n)",
+        "vi": "bức tranh, bức ảnh"
+    },
+    "clock": {
+        "ipa": "/klɒk/",
+        "pos": "danh từ (n)",
+        "vi": "đồng hồ treo tường"
+    },
+    "pillow": {
+        "ipa": "/ˈpɪl.əʊ/",
+        "pos": "danh từ (n)",
+        "vi": "chiếc gối nằm"
+    },
+    "poster": {
+        "ipa": "/ˈpəʊ.stər/",
+        "pos": "danh từ (n)",
+        "vi": "tấm áp phích, tranh cổ động"
+    },
+    "window": {
+        "ipa": "/ˈwɪn.dəʊ/",
+        "pos": "danh từ (n)",
+        "vi": "cửa sổ"
+    },
+    "door": {
+        "ipa": "/dɔːr/",
+        "pos": "danh từ (n)",
+        "vi": "cửa ra vào"
+    },
+    "wall": {
+        "ipa": "/wɔːl/",
+        "pos": "danh từ (n)",
+        "vi": "bức tường"
+    },
+    "department": {
+        "ipa": "/dɪˈpɑːt.mənt/",
+        "pos": "danh từ (n)",
+        "vi": "gian hàng, khoa (department store: cửa hàng bách hóa)"
+    },
+    "store": {
+        "ipa": "/stɔːr/",
+        "pos": "danh từ (n)",
+        "vi": "cửa hàng, tiệm tạp hóa"
+    },
+    "messy": {
+        "ipa": "/ˈmes.i/",
+        "pos": "tính từ (adj)",
+        "vi": "bừa bộn, lộn xộn"
+    },
+    "clean": {
+        "ipa": "/kliːn/",
+        "pos": "tính từ, động từ",
+        "vi": "sạch sẽ; lau dọn sạch"
+    },
+    "garden": {
+        "ipa": "/ˈɡɑː.dən/",
+        "pos": "danh từ (n)",
+        "vi": "khu vườn, vườn cây"
+    },
+    "bed": {
+        "ipa": "/bed/",
+        "pos": "danh từ (n)",
+        "vi": "chiếc giường ngủ"
+    },
+    "floor": {
+        "ipa": "/flɔːr/",
+        "pos": "danh từ (n)",
+        "vi": "tầng lầu, sàn nhà"
+    },
+    "friend": {
+        "ipa": "/frend/",
+        "pos": "danh từ (n)",
+        "vi": "người bạn, bạn bè"
+    },
+    "cheek": {
+        "ipa": "/tʃiːk/",
+        "pos": "danh từ (n)",
+        "vi": "gò má, má"
+    },
+    "shoulder": {
+        "ipa": "/ˈʃəʊl.dər/",
+        "pos": "danh từ (n)",
+        "vi": "bờ vai, đôi vai"
+    },
+    "arm": {
+        "ipa": "/ɑːm/",
+        "pos": "danh từ (n)",
+        "vi": "cánh tay"
+    },
+    "leg": {
+        "ipa": "/leɡ/",
+        "pos": "danh từ (n)",
+        "vi": "cẳng chân, chân"
+    },
+    "hand": {
+        "ipa": "/hænd/",
+        "pos": "danh từ (n)",
+        "vi": "bàn tay"
+    },
+    "foot": {
+        "ipa": "/fʊt/",
+        "pos": "danh từ (n)",
+        "vi": "bàn chân (số ít)"
+    },
+    "feet": {
+        "ipa": "/fiːt/",
+        "pos": "danh từ (n)",
+        "vi": "đôi bàn chân (số nhiều)"
+    },
+    "nose": {
+        "ipa": "/nəʊz/",
+        "pos": "danh từ (n)",
+        "vi": "chiếc mũi"
+    },
+    "mouth": {
+        "ipa": "/maʊθ/",
+        "pos": "danh từ (n)",
+        "vi": "khuôn miệng"
+    },
+    "eye": {
+        "ipa": "/aɪ/",
+        "pos": "danh từ (n)",
+        "vi": "con mắt"
+    },
+    "hair": {
+        "ipa": "/heər/",
+        "pos": "danh từ (n)",
+        "vi": "mái tóc (không đếm được)"
+    },
+    "face": {
+        "ipa": "/feɪs/",
+        "pos": "danh từ (n)",
+        "vi": "khuôn mặt"
+    },
+    "long": {
+        "ipa": "/lɒŋ/",
+        "pos": "tính từ (adj)",
+        "vi": "dài (tóc dài)"
+    },
+    "short": {
+        "ipa": "/ʃɔːt/",
+        "pos": "tính từ (adj)",
+        "vi": "ngắn, thấp"
+    },
+    "big": {
+        "ipa": "/bɪɡ/",
+        "pos": "tính từ (adj)",
+        "vi": "to lớn, bự"
+    },
+    "small": {
+        "ipa": "/smɔːl/",
+        "pos": "tính từ (adj)",
+        "vi": "nhỏ bé, bé xinh"
+    },
+    "curly": {
+        "ipa": "/ˈkɜː.li/",
+        "pos": "tính từ (adj)",
+        "vi": "xoăn, quăn (tóc xoăn)"
+    },
+    "straight": {
+        "ipa": "/streɪt/",
+        "pos": "tính từ (adj)",
+        "vi": "thẳng (tóc thẳng)"
+    },
+    "blonde": {
+        "ipa": "/blɒnd/",
+        "pos": "tính từ (adj)",
+        "vi": "vàng hoe (màu tóc)"
+    },
+    "black": {
+        "ipa": "/blæk/",
+        "pos": "tính từ (adj)",
+        "vi": "màu đen"
+    },
+    "brown": {
+        "ipa": "/braʊn/",
+        "pos": "tính từ (adj)",
+        "vi": "màu nâu"
+    },
+    "round": {
+        "ipa": "/raʊnd/",
+        "pos": "tính từ (adj)",
+        "vi": "tròn (mặt tròn)"
+    },
+    "tall": {
+        "ipa": "/tɔːl/",
+        "pos": "tính từ (adj)",
+        "vi": "cao ráo (chiều cao)"
+    },
+    "slim": {
+        "ipa": "/slɪm/",
+        "pos": "tính từ (adj)",
+        "vi": "mảnh mai, thon thả"
+    },
+    "kind": {
+        "ipa": "/kaɪnd/",
+        "pos": "tính từ (adj)",
+        "vi": "tốt bụng, nhân hậu"
+    },
+    "clever": {
+        "ipa": "/ˈklev.ər/",
+        "pos": "tính từ (adj)",
+        "vi": "thông minh, nhanh dạ"
+    },
+    "creative": {
+        "ipa": "/kriˈeɪ.tɪv/",
+        "pos": "tính từ (adj)",
+        "vi": "sáng tạo, giàu ý tưởng"
+    },
+    "friendly": {
+        "ipa": "/ˈfrend.li/",
+        "pos": "tính từ (adj)",
+        "vi": "thân thiện, hòa đồng"
+    },
+    "shy": {
+        "ipa": "/ʃaɪ/",
+        "pos": "tính từ (adj)",
+        "vi": "nhút nhát, e dè"
+    },
+    "careful": {
+        "ipa": "/ˈkeə.fəl/",
+        "pos": "tính từ (adj)",
+        "vi": "cẩn thận, chu đáo"
+    },
+    "careless": {
+        "ipa": "/ˈkeə.ləs/",
+        "pos": "tính từ (adj)",
+        "vi": "bất cẩn, cẩu thả"
+    },
+    "funny": {
+        "ipa": "/ˈfʌn.i/",
+        "pos": "tính từ (adj)",
+        "vi": "hài hước, vui tính"
+    },
+    "confident": {
+        "ipa": "/ˈkɒn.fɪ.dənt/",
+        "pos": "tính từ (adj)",
+        "vi": "tự tin vào bản thân"
+    },
+    "caring": {
+        "ipa": "/ˈkeə.rɪŋ/",
+        "pos": "tính từ (adj)",
+        "vi": "chu đáo, quan tâm người khác"
+    },
+    "active": {
+        "ipa": "/ˈæk.tɪv/",
+        "pos": "tính từ (adj)",
+        "vi": "năng động, hoạt bát"
+    },
+    "hard-working": {
+        "ipa": "/ˌhɑːdˈwɜː.kɪŋ/",
+        "pos": "tính từ (adj)",
+        "vi": "chăm chỉ, siêng năng"
+    },
+    "lazy": {
+        "ipa": "/ˈleɪ.zi/",
+        "pos": "tính từ (adj)",
+        "vi": "lười biếng"
+    },
+    "helpful": {
+        "ipa": "/ˈhelp.fəl/",
+        "pos": "tính từ (adj)",
+        "vi": "hay giúp đỡ người khác, có ích"
+    },
+    "picnic": {
+        "ipa": "/ˈpɪk.nɪk/",
+        "pos": "danh từ (n)",
+        "vi": "chuyến dã ngoại ngoài trời"
+    },
+    "biscuit": {
+        "ipa": "/ˈbɪs.kɪt/",
+        "pos": "danh từ (n)",
+        "vi": "bánh quy giòn"
+    },
+    "sandwich": {
+        "ipa": "/ˈsæn.wɪdʒ/",
+        "pos": "danh từ (n)",
+        "vi": "bánh mì kẹp tam giác"
+    },
+    "play": {
+        "ipa": "/pleɪ/",
+        "pos": "động từ (v)",
+        "vi": "chơi (thể thao, nhạc cụ)"
+    },
+    "do": {
+        "ipa": "/duː/",
+        "pos": "động từ (v)",
+        "vi": "làm (bài tập, võ thuật, việc nhà)"
+    },
+    "have": {
+        "ipa": "/hæv/",
+        "pos": "động từ (v)",
+        "vi": "có; ăn, uống"
+    },
+    "study": {
+        "ipa": "/ˈstʌd.i/",
+        "pos": "động từ (v)",
+        "vi": "học tập, nghiên cứu"
+    },
+    "live": {
+        "ipa": "/lɪv/",
+        "pos": "động từ (v)",
+        "vi": "sống, cư ngụ"
+    },
+    "cycle": {
+        "ipa": "/ˈsaɪ.kəl/",
+        "pos": "động từ (v)",
+        "vi": "đi xe đạp, đạp xe"
+    },
+    "bicycle": {
+        "ipa": "/ˈbaɪ.sɪ.kəl/",
+        "pos": "danh từ (n)",
+        "vi": "xe đạp"
+    },
+    "travel": {
+        "ipa": "/ˈtræv.əl/",
+        "pos": "động từ (v)",
+        "vi": "đi du lịch, di chuyển"
+    },
+    "cook": {
+        "ipa": "/kʊk/",
+        "pos": "động từ (v)",
+        "vi": "nấu ăn, nấu nướng"
+    },
+    "help": {
+        "ipa": "/help/",
+        "pos": "động từ, danh từ",
+        "vi": "giúp đỡ; sự trợ giúp"
+    },
+    "wash": {
+        "ipa": "/wɒʃ/",
+        "pos": "động từ (v)",
+        "vi": "rửa, giặt giũ (wash dishes)"
+    },
+    "watch": {
+        "ipa": "/wɒtʃ/",
+        "pos": "động từ (v)",
+        "vi": "xem, theo dõi (watch TV)"
+    },
+    "draw": {
+        "ipa": "/drɔː/",
+        "pos": "động từ (v)",
+        "vi": "vẽ tranh bằng bút"
+    },
+    "read": {
+        "ipa": "/riːd/",
+        "pos": "động từ (v)",
+        "vi": "đọc sách, báo"
+    },
+    "make": {
+        "ipa": "/meɪk/",
+        "pos": "động từ (v)",
+        "vi": "chế tạo, làm ra (make sandwiches)"
+    },
+    "laugh": {
+        "ipa": "/lɑːf/",
+        "pos": "động từ (v)",
+        "vi": "cười to, bật cười"
+    },
+    "carry": {
+        "ipa": "/ˈkær.i/",
+        "pos": "động từ (v)",
+        "vi": "mang, xách, vác"
+    },
+    "wear": {
+        "ipa": "/weər/",
+        "pos": "động từ (v)",
+        "vi": "mặc quần áo, đeo kính"
+    },
+    "check": {
+        "ipa": "/tʃek/",
+        "pos": "động từ (v)",
+        "vi": "kiểm tra, soát lại bài"
+    },
+    "look": {
+        "ipa": "/lʊk/",
+        "pos": "động từ (v)",
+        "vi": "nhìn, trông có vẻ"
+    },
+    "listen": {
+        "ipa": "/ˈlɪs.ən/",
+        "pos": "động từ (v)",
+        "vi": "lắng nghe cẩn thận"
+    },
+    "encourage": {
+        "ipa": "/ɪnˈkʌr.ɪdʒ/",
+        "pos": "động từ (v)",
+        "vi": "khuyến khích, động viên, cổ vũ"
+    },
+    "finish": {
+        "ipa": "/ˈfɪn.ɪʃ/",
+        "pos": "động từ (v)",
+        "vi": "kết thúc, hoàn thành"
+    },
+    "start": {
+        "ipa": "/stɑːt/",
+        "pos": "động từ (v)",
+        "vi": "bắt đầu, khởi hành"
+    },
+    "rent": {
+        "ipa": "/rent/",
+        "pos": "động từ, danh từ",
+        "vi": "thuê; tiền thuê nhà"
+    },
+    "always": {
+        "ipa": "/ˈɔːl.weɪz/",
+        "pos": "trạng từ (adv)",
+        "vi": "luôn luôn (100%)"
+    },
+    "usually": {
+        "ipa": "/ˈjuː.ʒu.ə.li/",
+        "pos": "trạng từ (adv)",
+        "vi": "thường xuyên (80-90%)"
+    },
+    "often": {
+        "ipa": "/ˈɒf.ən/",
+        "pos": "trạng từ (adv)",
+        "vi": "thường, hay (60-70%)"
+    },
+    "sometimes": {
+        "ipa": "/ˈsʌm.taɪmz/",
+        "pos": "trạng từ (adv)",
+        "vi": "thỉnh thoảng, đôi khi (50%)"
+    },
+    "rarely": {
+        "ipa": "/ˈreə.li/",
+        "pos": "trạng từ (adv)",
+        "vi": "hiếm khi (10-20%)"
+    },
+    "never": {
+        "ipa": "/ˈnev.ər/",
+        "pos": "trạng từ (adv)",
+        "vi": "không bao giờ (0%)"
+    },
+    "every": {
+        "ipa": "/ˈev.ri/",
+        "pos": "từ chỉ định",
+        "vi": "mỗi, mọi (every day: mỗi ngày)"
+    },
+    "now": {
+        "ipa": "/naʊ/",
+        "pos": "trạng từ (adv)",
+        "vi": "bây giờ, lúc này"
+    },
+    "present": {
+        "ipa": "/ˈprez.ənt/",
+        "pos": "danh từ, tính từ",
+        "vi": "hiện tại (at present: vào lúc này)"
+    },
+    "moment": {
+        "ipa": "/ˈməʊ.mənt/",
+        "pos": "danh từ (n)",
+        "vi": "khoảnh khắc (at the moment: ngay lúc này)"
+    },
+    "tomorrow": {
+        "ipa": "/təˈmɒr.əʊ/",
+        "pos": "danh từ, trạng từ",
+        "vi": "ngày mai"
+    },
+    "morning": {
+        "ipa": "/ˈmɔː.nɪŋ/",
+        "pos": "danh từ (n)",
+        "vi": "buổi sáng"
+    },
+    "afternoon": {
+        "ipa": "/ˌɑːf.təˈnuːn/",
+        "pos": "danh từ (n)",
+        "vi": "buổi chiều"
+    },
+    "evening": {
+        "ipa": "/ˈiːv.nɪŋ/",
+        "pos": "danh từ (n)",
+        "vi": "buổi tối"
+    },
+    "weekend": {
+        "ipa": "/ˌwiːkˈend/",
+        "pos": "danh từ (n)",
+        "vi": "ngày cuối tuần (thứ 7 & chủ nhật)"
+    },
+    "in": {
+        "ipa": "/ɪn/",
+        "pos": "giới từ (prep)",
+        "vi": "ở trong"
+    },
+    "on": {
+        "ipa": "/ɒn/",
+        "pos": "giới từ (prep)",
+        "vi": "ở trên bề mặt"
+    },
+    "under": {
+        "ipa": "/ˈʌn.dər/",
+        "pos": "giới từ (prep)",
+        "vi": "ở bên dưới"
+    },
+    "behind": {
+        "ipa": "/bɪˈhaɪnd/",
+        "pos": "giới từ (prep)",
+        "vi": "ở phía sau"
+    },
+    "between": {
+        "ipa": "/bɪˈtwiːn/",
+        "pos": "giới từ (prep)",
+        "vi": "ở giữa (hai người hoặc hai vật)"
+    },
+    "near": {
+        "ipa": "/nɪər/",
+        "pos": "giới từ, tính từ",
+        "vi": "gần, ở gần"
+    },
+    "next": {
+        "ipa": "/nekst/",
+        "pos": "giới từ (prep)",
+        "vi": "bên cạnh (next to)"
+    },
+    "cat": {
+        "ipa": "/kæt/",
+        "pos": "danh từ (n)",
+        "vi": "con mèo"
+    },
+    "sister": {
+        "ipa": "/ˈsɪs.tər/",
+        "pos": "danh từ (n)",
+        "vi": "chị gái, em gái"
+    },
+    "brother": {
+        "ipa": "/ˈbrʌð.ər/",
+        "pos": "danh từ (n)",
+        "vi": "anh trai, em trai"
+    },
+    "parent": {
+        "ipa": "/ˈpeə.rənt/",
+        "pos": "danh từ (n)",
+        "vi": "cha mẹ, phụ huynh"
+    },
+    "mum": {
+        "ipa": "/mʌm/",
+        "pos": "danh từ (n)",
+        "vi": "mẹ, má"
+    },
+    "father": {
+        "ipa": "/ˈfɑː.ðər/",
+        "pos": "danh từ (n)",
+        "vi": "người cha, người bố"
+    },
+    "adult": {
+        "ipa": "/ˈæd.ʌlt/",
+        "pos": "danh từ (n)",
+        "vi": "người lớn, người trưởng thành"
+    },
+    "child": {
+        "ipa": "/tʃaɪld/",
+        "pos": "danh từ (n)",
+        "vi": "đứa trẻ (số ít)"
+    },
+    "children": {
+        "ipa": "/ˈtʃɪl.drən/",
+        "pos": "danh từ (n)",
+        "vi": "những đứa trẻ, con cái (số nhiều)"
+    },
+    "park": {
+        "ipa": "/pɑːk/",
+        "pos": "danh từ (n)",
+        "vi": "công viên"
+    },
+    "food": {
+        "ipa": "/fuːd/",
+        "pos": "danh từ (n)",
+        "vi": "thức ăn, món ăn"
+    },
+    "drink": {
+        "ipa": "/drɪŋk/",
+        "pos": "danh từ, động từ",
+        "vi": "đồ uống; uống nước"
+    },
+    "quiet": {
+        "ipa": "/ˈkwaɪ.ət/",
+        "pos": "tính từ (adj)",
+        "vi": "yên lặng, trật tự, ít nói"
+    },
+    "loud": {
+        "ipa": "/laʊd/",
+        "pos": "tính từ (adj)",
+        "vi": "to tiếng, ồn ào"
+    },
+    "loudly": {
+        "ipa": "/ˈlaʊd.li/",
+        "pos": "trạng từ (adv)",
+        "vi": "một cách ồn ào, lớn tiếng"
+    },
+    "salty": {
+        "ipa": "/ˈsɒl.ti/",
+        "pos": "tính từ (adj)",
+        "vi": "mặn (vị mặn của muối)"
+    },
+    "sweet": {
+        "ipa": "/swiːt/",
+        "pos": "tính từ (adj)",
+        "vi": "ngọt ngào, dịu ngọt"
+    },
+    "terrible": {
+        "ipa": "/ˈter.ə.bəl/",
+        "pos": "tính từ (adj)",
+        "vi": "tồi tệ, kinh khủng"
+    },
+    "beautiful": {
+        "ipa": "/ˈbjuː.tɪ.fəl/",
+        "pos": "tính từ (adj)",
+        "vi": "xinh đẹp, tuyệt đẹp"
+    },
+    "favourite": {
+        "ipa": "/ˈfeɪ.vər.ɪt/",
+        "pos": "tính từ, danh từ",
+        "vi": "được yêu thích nhất"
+    },
+    "volleyball": {
+        "ipa": "/ˈvɒl.i.bɔːl/",
+        "pos": "danh từ (n)",
+        "vi": "môn bóng chuyền"
+    },
+    "badminton": {
+        "ipa": "/ˈbæd.mɪn.tən/",
+        "pos": "danh từ (n)",
+        "vi": "môn cầu lông"
+    },
+    "notice": {
+        "ipa": "/ˈnəʊ.tɪs/",
+        "pos": "danh từ (n)",
+        "vi": "biển thông báo, thông cáo"
+    },
+    "everyone": {
+        "ipa": "/ˈev.ri.wʌn/",
+        "pos": "đại từ (pronoun)",
+        "vi": "mọi người, tất cả mọi người"
+    },
+    "special": {
+        "ipa": "/ˈspeʃ.əl/",
+        "pos": "tính từ (adj)",
+        "vi": "đặc biệt, riêng biệt"
+    },
+    "difficult": {
+        "ipa": "/ˈdɪf.ɪ.kəlt/",
+        "pos": "tính từ (adj)",
+        "vi": "khó khăn, hóc búa"
+    },
+    "easy": {
+        "ipa": "/ˈiː.zi/",
+        "pos": "tính từ (adj)",
+        "vi": "dễ dàng, thuận lợi"
+    },
+    "easily": {
+        "ipa": "/ˈiː.zəl.i/",
+        "pos": "trạng từ (adv)",
+        "vi": "một cách dễ dàng"
+    },
+    "quickly": {
+        "ipa": "/ˈkwɪk.li/",
+        "pos": "trạng từ (adv)",
+        "vi": "một cách nhanh chóng"
+    },
+    "close": {
+        "ipa": "/kləʊz/",
+        "pos": "tính từ, động từ",
+        "vi": "gần gũi, thân thiết; đóng lại"
+    }
+};
+const PROPER_NOUNS = {
+    "nam": {
+        "word": "Nam",
+        "ipa": "/næm/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Nam)"
+    },
+    "lan": {
+        "word": "Lan",
+        "ipa": "/læn/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Lan)"
+    },
+    "linh": {
+        "word": "Linh",
+        "ipa": "/lɪŋ/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Linh)"
+    },
+    "ngoc": {
+        "word": "Ngọc",
+        "ipa": "/ŋɒk/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Ngọc)"
+    },
+    "mai": {
+        "word": "Mai",
+        "ipa": "/maɪ/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Mai)"
+    },
+    "hoa": {
+        "word": "Hoa",
+        "ipa": "/hwɑː/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Hoa)"
+    },
+    "phong": {
+        "word": "Phong",
+        "ipa": "/fɒŋ/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Phong)"
+    },
+    "duy": {
+        "word": "Duy",
+        "ipa": "/dwiː/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Duy)"
+    },
+    "vy": {
+        "word": "Vy",
+        "ipa": "/viː/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Vy)"
+    },
+    "mina": {
+        "word": "Mina",
+        "ipa": "/ˈmiː.nə/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Mina)"
+    },
+    "elena": {
+        "word": "Elena",
+        "ipa": "/ˈel.ə.nə/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Elena)"
+    },
+    "tom": {
+        "word": "Tom",
+        "ipa": "/tɒm/",
+        "pos": "danh từ riêng",
+        "vi": "tên riêng (Tom)"
+    },
+    "hai phong": {
+        "word": "Hai Phong",
+        "ipa": "/haɪ fɒŋ/",
+        "pos": "danh từ riêng",
+        "vi": "thành phố Hải Phòng"
+    },
+    "sunshine": {
+        "word": "Sunshine",
+        "ipa": "/ˈsʌn.ʃaɪn/",
+        "pos": "danh từ riêng",
+        "vi": "trường THCS Sunshine (Ánh Dương)"
+    },
+    "hoa binh": {
+        "word": "Hoa Binh",
+        "ipa": "/hwɑː bɪŋ/",
+        "pos": "danh từ riêng",
+        "vi": "công viên Hòa Bình"
+    }
+};
+const CONTRACTIONS = {
+    "i'm": {
+        "ipa": "/aɪm/",
+        "pos": "viết tắt",
+        "base": "I am",
+        "meaning": "tôi là / tôi thì"
+    },
+    "you're": {
+        "ipa": "/jɔːr/",
+        "pos": "viết tắt",
+        "base": "you are",
+        "meaning": "bạn là / các bạn thì"
+    },
+    "he's": {
+        "ipa": "/hiːz/",
+        "pos": "viết tắt",
+        "base": "he is / he has",
+        "meaning": "anh ấy là / anh ấy có"
+    },
+    "she's": {
+        "ipa": "/ʃiːz/",
+        "pos": "viết tắt",
+        "base": "she is / she has",
+        "meaning": "cô ấy là / cô ấy có"
+    },
+    "it's": {
+        "ipa": "/ɪts/",
+        "pos": "viết tắt",
+        "base": "it is / it has",
+        "meaning": "nó là / nó thì"
+    },
+    "we're": {
+        "ipa": "/wɪər/",
+        "pos": "viết tắt",
+        "base": "we are",
+        "meaning": "chúng tôi là / chúng ta thì"
+    },
+    "they're": {
+        "ipa": "/ðeər/",
+        "pos": "viết tắt",
+        "base": "they are",
+        "meaning": "họ là / chúng là"
+    },
+    "don't": {
+        "ipa": "/dəʊnt/",
+        "pos": "viết tắt",
+        "base": "do not",
+        "meaning": "không (trợ động từ phủ định)"
+    },
+    "doesn't": {
+        "ipa": "/ˈdʌz.ənt/",
+        "pos": "viết tắt",
+        "base": "does not",
+        "meaning": "không (ngôi thứ 3 số ít)"
+    },
+    "isn't": {
+        "ipa": "/ˈɪz.ənt/",
+        "pos": "viết tắt",
+        "base": "is not",
+        "meaning": "không phải là / không thì"
+    },
+    "aren't": {
+        "ipa": "/ɑːnt/",
+        "pos": "viết tắt",
+        "base": "are not",
+        "meaning": "không phải là / không thì"
+    },
+    "what's": {
+        "ipa": "/wɒts/",
+        "pos": "viết tắt",
+        "base": "what is",
+        "meaning": "cái gì là / cái gì thế"
+    },
+    "that's": {
+        "ipa": "/ðæts/",
+        "pos": "viết tắt",
+        "base": "that is",
+        "meaning": "đó là / điều đó thì"
+    },
+    "there's": {
+        "ipa": "/ðeəz/",
+        "pos": "viết tắt",
+        "base": "there is",
+        "meaning": "có một (sự hiện diện)"
+    },
+    "let's": {
+        "ipa": "/lets/",
+        "pos": "viết tắt",
+        "base": "let us",
+        "meaning": "chúng ta hãy cùng"
+    },
+    "can't": {
+        "ipa": "/kɑːnt/",
+        "pos": "viết tắt",
+        "base": "cannot",
+        "meaning": "không thể"
+    }
+};
+const IRREGULAR_FORMS = {
+    "children": {
+        "ipa": "/ˈtʃɪl.drən/",
+        "vi": "những đứa trẻ",
+        "form": "số nhiều của child"
+    },
+    "feet": {
+        "ipa": "/fiːt/",
+        "vi": "những bàn chân",
+        "form": "số nhiều của foot"
+    },
+    "teeth": {
+        "ipa": "/tiːθ/",
+        "vi": "những chiếc răng",
+        "form": "số nhiều của tooth"
+    },
+    "has": {
+        "ipa": "/hæz/",
+        "vi": "có",
+        "form": "ngôi thứ 3 số ít của have"
+    },
+    "does": {
+        "ipa": "/dʌz/",
+        "vi": "làm",
+        "form": "ngôi thứ 3 số ít của do"
+    },
+    "goes": {
+        "ipa": "/ɡəʊz/",
+        "vi": "đi",
+        "form": "ngôi thứ 3 số ít của go"
+    }
+};
+
+const DICT_CACHE = {};
+let currentQuestionIndex = 0;
+let userAnswers = new Array(TOTAL_QUESTIONS).fill(null);
+let checkedState = new Array(TOTAL_QUESTIONS).fill(false);
+let currentWordToSpeak = '';
+let currentWritingTopic = 1;
+
+function scrambleSelect(wIdx) {
+    if (checkedState[currentQuestionIndex]) return;
+    if (!userAnswers[currentQuestionIndex]) userAnswers[currentQuestionIndex] = [];
+    userAnswers[currentQuestionIndex].push(wIdx);
+    renderCurrentQuestion();
+    updateBottomStrip();
+}
+function scrambleDeselect(ansIdx) {
+    if (checkedState[currentQuestionIndex]) return;
+    if (!userAnswers[currentQuestionIndex]) return;
+    userAnswers[currentQuestionIndex].splice(ansIdx, 1);
+    renderCurrentQuestion();
+    updateBottomStrip();
+}
+
+// Section info mapping
+const SECTION_INFO = {
+    "p1": "PHẦN I. TỪ VỰNG (VOCABULARY)",
+    "p2": "PHẦN II. NGỮ PHÁP (GRAMMAR)",
+    "p3": "PHẦN III. ĐIỀN TỪ VÀO ĐOẠN VĂN (CLOZE READING)",
+    "p4": "PHẦN IV. ĐỌC BIỂN BÁO & THÔNG BÁO (NOTICES)",
+    "p5": "PHẦN V. ĐỌC HIỂU 1 (READING COMPREHENSION 1)",
+    "p6": "PHẦN VI. ĐỌC HIỂU 2 (READING COMPREHENSION 2)",
+    "p7": "PHẦN VII. TÌM LỖI SAI (FIND THE MISTAKE)",
+    "p8": "PHẦN VIII. VIẾT LẠI CÂU (SENTENCE BUILDING)"
+};
+
+// Passages text mapping
+const PASSAGES_MAP = {
+    "p3": `<div class="passage-card" style="background:#f0fdf4; border-left:5px solid #16a34a;">
+        <div class="passage-card-title" style="color:#15803d;">📖 ĐOẠN VĂN BÀI TẬP: LAN'S TOWN HOUSE IN HAI PHONG</div>
+        Hi, I'm Lan. I <b>(27)</b> ______ in a town house in Hai Phong. My house has a living room, a kitchen, two bedrooms and a bathroom. My bedroom is small, but I love it. There is a bed <b>(28)</b> ______ the window. There is a desk next to the bed, and there is a lamp <b>(29)</b> ______ the desk. My clothes are in the <b>(30)</b> ______. My favourite room is the kitchen because my mum often cooks nice food there. At the moment, she <b>(31)</b> ______ dinner, and I <b>(32)</b> ______ her.
+    </div>`,
+
+    "q33": `<div class="passage-card" style="background:#fefce8; border:2px dashed #ca8a04; text-align:center; max-width:380px; margin:0 auto 20px auto;">
+        <div style="font-weight:700; color:#a16207; font-size:13.5px; margin-bottom:4px;">📖 BIỂN BÁO 1 (NOTICE 1)</div>
+        <div style="font-size:22px; font-weight:800; color:#1e293b;">LIBRARY</div>
+        <div style="font-size:15.5px; color:#475569; margin-top:4px;">Please keep quiet.<br>No food or drinks.</div>
+    </div>`,
+
+    "q34": `<div class="passage-card" style="background:#eff6ff; border:2px dashed #2563eb; text-align:center; max-width:400px; margin:0 auto 20px auto;">
+        <div style="font-weight:700; color:#1d4ed8; font-size:13.5px; margin-bottom:4px;">🏡 THÔNG BÁO 2 (NOTICE 2)</div>
+        <div style="font-size:22px; font-weight:800; color:#1e293b;">FLAT FOR RENT</div>
+        <div style="font-size:15.5px; color:#475569; margin-top:4px;">2 bedrooms, 1 bathroom, big kitchen.<br>Near Hoa Binh Park.</div>
+    </div>`,
+
+    "q35": `<div class="passage-card" style="background:#f0fdf4; border:2px dashed #16a34a; text-align:center; max-width:400px; margin:0 auto 20px auto;">
+        <div style="font-weight:700; color:#15803d; font-size:13.5px; margin-bottom:4px;">🛝 BIỂN BÁO 3 (NOTICE 3)</div>
+        <div style="font-size:22px; font-weight:800; color:#1e293b;">PLAYGROUND</div>
+        <div style="font-size:15.5px; color:#475569; margin-top:4px;">Children under 6 must be with an adult.</div>
+    </div>`,
+
+    "p5": `<div class="passage-card reading-passage-card theme-p5" id="passage-card-p5" style="background:#f8fafc; border-left:5px solid #0284c7;">
+        <div class="passage-card-title" style="color:#0369a1; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <span>📖 BÀI ĐỌC 1: SUNSHINE LOWER SECONDARY SCHOOL</span>
+            <span class="reading-guide-chip">💡 Nhấp câu bất kỳ để nghe lại</span>
+        </div>
+
+        <!-- Audio Player Bar -->
+        <div class="reading-audio-bar" id="audio-bar-p5">
+            <div class="audio-bar-left">
+                <button class="audio-btn-play" id="btn-play-p5" onclick="toggleReadingAudio('p5')" title="Phát / Tạm dừng">
+                    <span class="audio-play-icon" id="icon-play-p5">▶</span>
+                    <span class="audio-play-txt" id="txt-play-p5">Phát audio</span>
+                </button>
+                <button class="audio-btn-icon" onclick="skipReadingAudio('p5', -5)" title="Lùi 5 giây">⏪ 5s</button>
+                <button class="audio-btn-icon" onclick="skipReadingAudio('p5', 5)" title="Tới 5 giây">5s ⏩</button>
+                <button class="audio-btn-icon" onclick="replayReadingAudio('p5')" title="Nghe lại từ đầu">⏮ Lại từ đầu</button>
+            </div>
+            <div class="audio-bar-center">
+                <span class="audio-time-label" id="time-cur-p5">00:00</span>
+                <input type="range" class="audio-slider" id="scrubber-p5" min="0" max="73.02" step="0.1" value="0" oninput="onScrubInput('p5', this.value)" onchange="onScrubChange('p5', this.value)">
+                <span class="audio-time-label" id="time-dur-p5">01:13</span>
+            </div>
+            <div class="audio-bar-right">
+                <span class="audio-speed-label">Tốc độ:</span>
+                <select class="audio-speed-select" id="speed-p5" onchange="setReadingSpeed('p5', this.value)">
+                    <option value="0.8">0.8x Chậm</option>
+                    <option value="1.0" selected>1.0x Chuẩn</option>
+                    <option value="1.2">1.2x Nhanh</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="audio-active-hint" id="audio-hint-p5">
+            <span class="hint-dot"></span>
+            <span id="hint-text-p5">Sẵn sàng phát (reading 1.mp3). Nhấp nút Phát hoặc nhấp vào câu bất kỳ để nghe.</span>
+        </div>
+
+        <!-- Passage Text with Synchronized Sentences -->
+        <div class="reading-passage-body passage-text-p5">
+        <p style="margin:0 0 10px 0;"><span class="reading-sentence" data-sid="r1-s1" onclick="playSentence('p5', 'r1-s1')">Hi! My name is Linh, and I'm a new student at Sunshine Lower Secondary School.</span> <span class="reading-sentence" data-sid="r1-s2" onclick="playSentence('p5', 'r1-s2')">My school is not very big, but it is beautiful.</span> <span class="reading-sentence" data-sid="r1-s3" onclick="playSentence('p5', 'r1-s3')">There are twenty classrooms, a computer room, a library and a large garden.</span> <span class="reading-sentence" data-sid="r1-s4" onclick="playSentence('p5', 'r1-s4')">My classroom is on the second floor, next to the library.</span> </p>
+        <p style="margin:0 0 10px 0;"><span class="reading-sentence" data-sid="r1-s5" onclick="playSentence('p5', 'r1-s5')">I have lessons from Monday to Friday.</span> <span class="reading-sentence" data-sid="r1-s6" onclick="playSentence('p5', 'r1-s6')">School starts at 7 a.m. and finishes at 4.30 p.m.</span> <span class="reading-sentence" data-sid="r1-s7" onclick="playSentence('p5', 'r1-s7')">I usually have school lunch with my classmates in the canteen.</span> <span class="reading-sentence" data-sid="r1-s8" onclick="playSentence('p5', 'r1-s8')">The food is good, but sometimes it's a bit salty.</span> <span class="reading-sentence" data-sid="r1-s9" onclick="playSentence('p5', 'r1-s9')">In the afternoon, I often do my homework in the library before I go home.</span> </p>
+        <p style="margin:0;"><span class="reading-sentence" data-sid="r1-s10" onclick="playSentence('p5', 'r1-s10')">I have a new best friend at school.</span> <span class="reading-sentence" data-sid="r1-s11" onclick="playSentence('p5', 'r1-s11')">Her name is Ngoc.</span> <span class="reading-sentence" data-sid="r1-s12" onclick="playSentence('p5', 'r1-s12')">She has short curly hair and big brown eyes.</span> <span class="reading-sentence" data-sid="r1-s13" onclick="playSentence('p5', 'r1-s13')">She's very confident and active.</span> <span class="reading-sentence" data-sid="r1-s14" onclick="playSentence('p5', 'r1-s14')">She plays volleyball for the school team, and she always <u>encourages</u> me to do sports.</span> <span class="reading-sentence" data-sid="r1-s15" onclick="playSentence('p5', 'r1-s15')">Today is a special day: our class is having a picnic in the school garden.</span> <span class="reading-sentence" data-sid="r1-s16" onclick="playSentence('p5', 'r1-s16')">Ngoc and I are making sandwiches for everyone right now!</span> </p>
+        </div>
+    </div>`,
+
+    "p6": `<div class="passage-card reading-passage-card theme-p6" id="passage-card-p6" style="background:#fdf4ff; border-left:5px solid #a855f7;">
+        <div class="passage-card-title" style="color:#7e22ce; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <span>📖 BÀI ĐỌC 2: MY BEST FRIEND MAI</span>
+            <span class="reading-guide-chip" style="background:#fae8ff; color:#7e22ce; border-color:#e9d5ff;">💡 Nhấp câu bất kỳ để nghe lại</span>
+        </div>
+
+        <!-- Audio Player Bar -->
+        <div class="reading-audio-bar theme-p6" id="audio-bar-p6">
+            <div class="audio-bar-left">
+                <button class="audio-btn-play btn-p6" id="btn-play-p6" onclick="toggleReadingAudio('p6')" title="Phát / Tạm dừng">
+                    <span class="audio-play-icon" id="icon-play-p6">▶</span>
+                    <span class="audio-play-txt" id="txt-play-p6">Phát audio</span>
+                </button>
+                <button class="audio-btn-icon" onclick="skipReadingAudio('p6', -5)" title="Lùi 5 giây">⏪ 5s</button>
+                <button class="audio-btn-icon" onclick="skipReadingAudio('p6', 5)" title="Tới 5 giây">5s ⏩</button>
+                <button class="audio-btn-icon" onclick="replayReadingAudio('p6')" title="Nghe lại từ đầu">⏮ Lại từ đầu</button>
+            </div>
+            <div class="audio-bar-center">
+                <span class="audio-time-label" id="time-cur-p6">00:00</span>
+                <input type="range" class="audio-slider slider-p6" id="scrubber-p6" min="0" max="47.72" step="0.1" value="0" oninput="onScrubInput('p6', this.value)" onchange="onScrubChange('p6', this.value)">
+                <span class="audio-time-label" id="time-dur-p6">00:47</span>
+            </div>
+            <div class="audio-bar-right">
+                <span class="audio-speed-label">Tốc độ:</span>
+                <select class="audio-speed-select" id="speed-p6" onchange="setReadingSpeed('p6', this.value)">
+                    <option value="0.8">0.8x Chậm</option>
+                    <option value="1.0" selected>1.0x Chuẩn</option>
+                    <option value="1.2">1.2x Nhanh</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="audio-active-hint" id="audio-hint-p6">
+            <span class="hint-dot" style="background:#a855f7;"></span>
+            <span id="hint-text-p6">Sẵn sàng phát (reading 2.mp3). Nhấp nút Phát hoặc nhấp vào câu bất kỳ để nghe.</span>
+        </div>
+
+        <!-- Passage Text with Synchronized Sentences -->
+        <div class="reading-passage-body passage-text-p6">
+        <p style="margin:0;"><span class="reading-sentence" data-sid="r2-s1" onclick="playSentence('p6', 'r2-s1')">My best friend is Mai.</span> <span class="reading-sentence" data-sid="r2-s2" onclick="playSentence('p6', 'r2-s2')">She is twelve years old, and she is in class 6A at my school.</span> <span class="reading-sentence" data-sid="r2-s3" onclick="playSentence('p6', 'r2-s3')">She is tall and slim.</span> <span class="reading-sentence" data-sid="r2-s4" onclick="playSentence('p6', 'r2-s4')">She has long straight black hair and big brown eyes.</span> <span class="reading-sentence" data-sid="r2-s5" onclick="playSentence('p6', 'r2-s5')">Mai is very friendly, kind and hard-working.</span> <span class="reading-sentence" data-sid="r2-s6" onclick="playSentence('p6', 'r2-s6')">She always helps her classmates with difficult lessons.</span> <span class="reading-sentence" data-sid="r2-s7" onclick="playSentence('p6', 'r2-s7')">She likes English and Maths, but her favourite subject is Art because she loves drawing pictures.</span> <span class="reading-sentence" data-sid="r2-s8" onclick="playSentence('p6', 'r2-s8')">In her free time, she often plays badminton with her friends.</span> <span class="reading-sentence" data-sid="r2-s9" onclick="playSentence('p6', 'r2-s9')">Today is Sunday, so she is not going to school.</span> <span class="reading-sentence" data-sid="r2-s10" onclick="playSentence('p6', 'r2-s10')">At the moment, she is drawing a picture in her bedroom while her younger sister is reading a book.</span> <span class="reading-sentence" data-sid="r2-s11" onclick="playSentence('p6', 'r2-s11')">I like Mai because she is a caring and helpful friend.</span> </p>
+        </div>
+    </div>`
+};
+
+
+// ==========================================
+// HỆ THỐNG PHÁT AUDIO & TÔ SÁNG ĐỒNG BỘ BÀI ĐỌC 1 & 2
+// ==========================================
+const READING_DATA = {"p5": [{"id": "r1-s1", "para": 1, "text": "Hi! My name is Linh, and I'm a new student at Sunshine Lower Secondary School.", "start": 0.0, "end": 5.8}, {"id": "r1-s2", "para": 1, "text": "My school is not very big, but it is beautiful.", "start": 6.3, "end": 10.0}, {"id": "r1-s3", "para": 1, "text": "There are twenty classrooms, a computer room, a library and a large garden.", "start": 10.35, "end": 16.0}, {"id": "r1-s4", "para": 1, "text": "My classroom is on the second floor, next to the library.", "start": 16.4, "end": 20.6}, {"id": "r1-s5", "para": 2, "text": "I have lessons from Monday to Friday.", "start": 21.0, "end": 24.0}, {"id": "r1-s6", "para": 2, "text": "School starts at 7 a.m. and finishes at 4.30 p.m.", "start": 24.4, "end": 30.4}, {"id": "r1-s7", "para": 2, "text": "I usually have school lunch with my classmates in the canteen.", "start": 30.55, "end": 34.8}, {"id": "r1-s8", "para": 2, "text": "The food is good, but sometimes it's a bit salty.", "start": 35.2, "end": 39.0}, {"id": "r1-s9", "para": 2, "text": "In the afternoon, I often do my homework in the library before I go home.", "start": 39.4, "end": 45.0}, {"id": "r1-s10", "para": 3, "text": "I have a new best friend at school.", "start": 45.25, "end": 47.9}, {"id": "r1-s11", "para": 3, "text": "Her name is Ngoc.", "start": 48.15, "end": 49.9}, {"id": "r1-s12", "para": 3, "text": "She has short curly hair and big brown eyes.", "start": 50.15, "end": 53.9}, {"id": "r1-s13", "para": 3, "text": "She's very confident and active.", "start": 54.25, "end": 56.7}, {"id": "r1-s14", "para": 3, "text": "She plays volleyball for the school team, and she always <u>encourages</u> me to do sports.", "start": 57.1, "end": 62.8}, {"id": "r1-s15", "para": 3, "text": "Today is a special day: our class is having a picnic in the school garden.", "start": 63.25, "end": 68.3}, {"id": "r1-s16", "para": 3, "text": "Ngoc and I are making sandwiches for everyone right now!", "start": 68.6, "end": 73.02}], "p6": [{"id": "r2-s1", "text": "My best friend is Mai.", "start": 0.0, "end": 1.5}, {"id": "r2-s2", "text": "She is twelve years old, and she is in class 6A at my school.", "start": 1.75, "end": 6.0}, {"id": "r2-s3", "text": "She is tall and slim.", "start": 6.15, "end": 8.2}, {"id": "r2-s4", "text": "She has long straight black hair and big brown eyes.", "start": 8.55, "end": 12.6}, {"id": "r2-s5", "text": "Mai is very friendly, kind and hard-working.", "start": 12.95, "end": 16.6}, {"id": "r2-s6", "text": "She always helps her classmates with difficult lessons.", "start": 16.95, "end": 20.0}, {"id": "r2-s7", "text": "She likes English and Maths, but her favourite subject is Art because she loves drawing pictures.", "start": 20.25, "end": 27.2}, {"id": "r2-s8", "text": "In her free time, she often plays badminton with her friends.", "start": 27.2, "end": 32.5}, {"id": "r2-s9", "text": "Today is Sunday, so she is not going to school.", "start": 32.85, "end": 36.5}, {"id": "r2-s10", "text": "At the moment, she is drawing a picture in her bedroom while her younger sister is reading a book.", "start": 36.8, "end": 43.3}, {"id": "r2-s11", "text": "I like Mai because she is a caring and helpful friend.", "start": 43.7, "end": 47.72}]};
+
+const READING_AUDIOS = {
+    p5: new Audio('sounds/reading 1.mp3'),
+    p6: new Audio('sounds/reading 2.mp3')
+};
+READING_AUDIOS.p5.preload = 'metadata';
+READING_AUDIOS.p6.preload = 'metadata';
+
+let lastActiveSection = null;
+
+function formatAudioTime(seconds) {
+    if (isNaN(seconds) || seconds < 0) return '00:00';
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+}
+
+function initReadingAudioSystem() {
+    ['p5', 'p6'].forEach(sec => {
+        const aud = READING_AUDIOS[sec];
+        
+        aud.addEventListener('timeupdate', () => {
+            const cur = aud.currentTime;
+            const dur = aud.duration || (sec === 'p5' ? 73.02 : 47.72);
+            
+            const scrubber = document.getElementById('scrubber-' + sec);
+            const timeCur = document.getElementById('time-cur-' + sec);
+            const timeDur = document.getElementById('time-dur-' + sec);
+            if (scrubber && !scrubber.dataset.dragging) {
+                scrubber.value = cur;
+                scrubber.max = dur;
+            }
+            if (timeCur) timeCur.innerText = formatAudioTime(cur);
+            if (timeDur && dur) timeDur.innerText = formatAudioTime(dur);
+
+            highlightSentence(sec, cur);
+        });
+
+        aud.addEventListener('play', () => {
+            updateAudioPlayBtnUI(sec, true);
+        });
+
+        aud.addEventListener('pause', () => {
+            updateAudioPlayBtnUI(sec, false);
+        });
+
+        aud.addEventListener('ended', () => {
+            updateAudioPlayBtnUI(sec, false);
+            clearHighlight(sec);
+            const hint = document.getElementById('hint-text-' + sec);
+            if (hint) hint.innerText = 'Đã phát xong bài đọc. Nhấp vào câu bất kỳ để nghe lại.';
+        });
+
+        aud.addEventListener('loadedmetadata', () => {
+            const timeDur = document.getElementById('time-dur-' + sec);
+            const scrubber = document.getElementById('scrubber-' + sec);
+            if (timeDur) timeDur.innerText = formatAudioTime(aud.duration);
+            if (scrubber) scrubber.max = aud.duration;
+        });
+    });
+}
+
+function updateAudioPlayBtnUI(sec, isPlaying) {
+    const icon = document.getElementById('icon-play-' + sec);
+    const txt = document.getElementById('txt-play-' + sec);
+    if (icon) icon.innerText = isPlaying ? '⏸' : '▶';
+    if (txt) txt.innerText = isPlaying ? 'Tạm dừng' : 'Phát audio';
+}
+
+function toggleReadingAudio(sec) {
+    const otherSec = sec === 'p5' ? 'p6' : 'p5';
+    if (!READING_AUDIOS[otherSec].paused) {
+        READING_AUDIOS[otherSec].pause();
+    }
+    const aud = READING_AUDIOS[sec];
+    if (aud.paused) {
+        aud.play().catch(e => console.log('Audio play error:', e));
+    } else {
+        aud.pause();
+    }
+}
+
+function replayReadingAudio(sec) {
+    const otherSec = sec === 'p5' ? 'p6' : 'p5';
+    if (!READING_AUDIOS[otherSec].paused) {
+        READING_AUDIOS[otherSec].pause();
+    }
+    const aud = READING_AUDIOS[sec];
+    aud.currentTime = 0;
+    aud.play().catch(e => console.log('Audio play error:', e));
+    highlightSentence(sec, 0);
+}
+
+function skipReadingAudio(sec, offset) {
+    const aud = READING_AUDIOS[sec];
+    const dur = aud.duration || 100;
+    aud.currentTime = Math.max(0, Math.min(dur, aud.currentTime + offset));
+    highlightSentence(sec, aud.currentTime);
+}
+
+function onScrubInput(sec, val) {
+    const scrubber = document.getElementById('scrubber-' + sec);
+    if (scrubber) scrubber.dataset.dragging = "true";
+    const timeCur = document.getElementById('time-cur-' + sec);
+    if (timeCur) timeCur.innerText = formatAudioTime(parseFloat(val));
+}
+
+function onScrubChange(sec, val) {
+    const scrubber = document.getElementById('scrubber-' + sec);
+    if (scrubber) delete scrubber.dataset.dragging;
+    const aud = READING_AUDIOS[sec];
+    aud.currentTime = parseFloat(val);
+    highlightSentence(sec, aud.currentTime);
+}
+
+function setReadingSpeed(sec, speed) {
+    const aud = READING_AUDIOS[sec];
+    aud.playbackRate = parseFloat(speed);
+}
+
+function highlightSentence(sec, currentTime) {
+    const list = READING_DATA[sec];
+    if (!list) return;
+
+    let activeIdx = -1;
+    for (let i = 0; i < list.length; i++) {
+        if (currentTime >= list[i].start && currentTime < list[i].end) {
+            activeIdx = i;
+            break;
+        }
+    }
+
+    const container = document.querySelector('.passage-text-' + sec);
+    if (!container) return;
+
+    const spans = container.querySelectorAll('.reading-sentence');
+    spans.forEach((span, idx) => {
+        if (idx === activeIdx) {
+            if (!span.classList.contains('active-sentence')) {
+                span.classList.add('active-sentence');
+                span.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        } else {
+            span.classList.remove('active-sentence');
+        }
+    });
+
+    const hint = document.getElementById('hint-text-' + sec);
+    if (hint) {
+        if (activeIdx !== -1) {
+            const curText = list[activeIdx].text;
+            const shortText = curText.length > 55 ? curText.substring(0, 52) + '...' : curText;
+            hint.innerHTML = `🎧 <b>Đang đọc câu ${activeIdx + 1}/${list.length}:</b> "${shortText}"`;
+        } else {
+            hint.innerText = '💡 Nhấp vào câu bất kỳ để nghe lại';
+        }
+    }
+}
+
+function clearHighlight(sec) {
+    const container = document.querySelector('.passage-text-' + sec);
+    if (container) {
+        container.querySelectorAll('.reading-sentence').forEach(el => el.classList.remove('active-sentence'));
+    }
+}
+
+function playSentence(sec, sId) {
+    const list = READING_DATA[sec];
+    if (!list) return;
+    const item = list.find(s => s.id === sId);
+    if (!item) return;
+
+    const otherSec = sec === 'p5' ? 'p6' : 'p5';
+    if (!READING_AUDIOS[otherSec].paused) {
+        READING_AUDIOS[otherSec].pause();
+    }
+
+    const aud = READING_AUDIOS[sec];
+    aud.currentTime = item.start;
+    if (aud.paused) {
+        aud.play().catch(e => console.log('Audio play error:', e));
+    }
+    highlightSentence(sec, item.start + 0.05);
+}
+
+function syncReadingAudioUI(currentSection) {
+    if (lastActiveSection === 'p5' && currentSection !== 'p5') {
+        READING_AUDIOS.p5.pause();
+    }
+    if (lastActiveSection === 'p6' && currentSection !== 'p6') {
+        READING_AUDIOS.p6.pause();
+    }
+    lastActiveSection = currentSection;
+
+    if (currentSection === 'p5' || currentSection === 'p6') {
+        const sec = currentSection;
+        const aud = READING_AUDIOS[sec];
+        updateAudioPlayBtnUI(sec, !aud.paused);
+
+        const scrubber = document.getElementById('scrubber-' + sec);
+        const timeCur = document.getElementById('time-cur-' + sec);
+        const timeDur = document.getElementById('time-dur-' + sec);
+        const speedSel = document.getElementById('speed-' + sec);
+
+        const dur = aud.duration || (sec === 'p5' ? 73.02 : 47.72);
+        if (scrubber) {
+            scrubber.max = dur;
+            scrubber.value = aud.currentTime;
+        }
+        if (timeCur) timeCur.innerText = formatAudioTime(aud.currentTime);
+        if (timeDur && dur) timeDur.innerText = formatAudioTime(dur);
+        if (speedSel) speedSel.value = aud.playbackRate.toString();
+
+        highlightSentence(sec, aud.currentTime);
+    }
+}
+
+// Hỗ trợ tra từ nhanh khi nhấp đúp vào bất kỳ từ nào trong bài đọc
+document.addEventListener('dblclick', function(e) {
+    const sSpan = e.target.closest('.reading-sentence');
+    if (!sSpan) return;
+    const selection = window.getSelection();
+    let word = selection ? selection.toString().trim() : '';
+    const clean = word.replace(/^[^a-zA-Z]+|[^a-zA-Z]+$/g, '');
+    if (clean) {
+        playAudio(clean);
+        showDictPopup(clean, sSpan.getBoundingClientRect());
+    }
+});
+
+
+// ==========================================
+// HỆ THỐNG PHÁT ÂM THANH CÂU ĐÁP ÁN ĐÚNG TỪ LOP 6.MP3
+// ==========================================
+const QUESTION_AUDIO_MAP = [{"q": 1, "start": 0.0, "end": 2.5, "text": "My brother plays the piano very well."}, {"q": 2, "start": 2.8, "end": 6.0, "text": "Vi and I often do our homework after school."}, {"q": 3, "start": 6.4, "end": 11.2, "text": "In Maths lessons, we use a calculator to add numbers quickly."}, {"q": 4, "start": 11.6, "end": 15.3, "text": "At break time, we play games in the school playground."}, {"q": 5, "start": 15.8, "end": 19.1, "text": "We keep food and drinks cold in the fridge."}, {"q": 6, "start": 19.7, "end": 22.5, "text": "My mom is washing the dishes in the sink."}, {"q": 7, "start": 22.9, "end": 25.3, "text": "We watch TV in the living room."}, {"q": 8, "start": 25.7, "end": 30.6, "text": "Mina is very creative. She likes drawing and always has new ideas."}, {"q": 9, "start": 31.0, "end": 35.1, "text": "Mai learns things quickly and easily. She's clever."}, {"q": 10, "start": 35.5, "end": 38.5, "text": "My best friend has long, curly hair."}, {"q": 11, "start": 38.7, "end": 40.6, "text": "We carry things on our shoulders."}, {"q": 12, "start": 41.0, "end": 44.1, "text": "Phong is funny. He makes everyone laugh."}, {"q": 13, "start": 44.4, "end": 47.0, "text": "Duy cycles to school every day."}, {"q": 14, "start": 47.2, "end": 50.1, "text": "My friend has a sister, but she doesn't have a brother."}, {"q": 15, "start": 50.3, "end": 52.7, "text": "I live near here. Where do you live?"}, {"q": 16, "start": 52.9, "end": 54.8, "text": "Do you often travel at weekends?"}, {"q": 17, "start": 54.5, "end": 59.0, "text": "She is never late for school. She always gets up early."}, {"q": 18, "start": 59.5, "end": 61.3, "text": "Nam's house is small."}, {"q": 19, "start": 61.6, "end": 64.3, "text": "The lamp is between the bed and the wardrobe."}, {"q": 20, "start": 64.5, "end": 66.9, "text": "There are two bedrooms in my flat."}, {"q": 21, "start": 67.2, "end": 69.3, "text": "How about putting a picture on the wall?"}, {"q": 22, "start": 69.5, "end": 73.3, "text": "Look! The children are playing football in the playground."}, {"q": 23, "start": 73.8, "end": 76.4, "text": "I am doing my homework at the moment."}, {"q": 24, "start": 76.8, "end": 79.5, "text": "My sister isn't making a sandwich at present."}, {"q": 25, "start": 79.8, "end": 83.3, "text": "We are having a picnic tomorrow. Do you want to come?"}, {"q": 26, "start": 83.1, "end": 86.0, "text": "She's tall with long black hair."}, {"q": 27, "start": 86.5, "end": 91.3, "text": "Hi, I'm Lan. I live in a townhouse in Hai Phong."}, {"q": 28, "start": 91.7, "end": 93.8, "text": "There is a bed next to the window."}, {"q": 29, "start": 94.2, "end": 98.6, "text": "There is a desk next to the bed, and there is a lamp on the desk."}, {"q": 30, "start": 99.1, "end": 101.1, "text": "My clothes are in the wardrobe."}, {"q": 31, "start": 101.6, "end": 103.9, "text": "At the moment, she is cooking dinner,"}, {"q": 32, "start": 103.9, "end": 105.5, "text": "and I am helping her."}, {"q": 33, "start": 105.8, "end": 109.0, "text": "You must not talk loudly or eat in the library."}, {"q": 34, "start": 109.4, "end": 111.7, "text": "You can rent a flat with two bedrooms."}, {"q": 35, "start": 112.2, "end": 114.8, "text": "Small children need an adult with them."}, {"q": 36, "start": 115.0, "end": 117.7, "text": "Linh's new school and her best friend."}, {"q": 37, "start": 118.1, "end": 120.5, "text": "My classroom is next to the library."}, {"q": 38, "start": 121.1, "end": 124.3, "text": "It's good, but sometimes it's a bit salty."}, {"q": 39, "start": 124.9, "end": 127.7, "text": "Encourages means helps and supports."}, {"q": 40, "start": 128.3, "end": 130.7, "text": "She's on the school volleyball team."}, {"q": 41, "start": 131.1, "end": 133.7, "text": "Linh and Ngoc are making sandwiches."}, {"q": 42, "start": 134.3, "end": 139.6, "text": "She is tall and slim with long straight black hair and big brown eyes."}, {"q": 43, "start": 140.0, "end": 143.5, "text": "She is very friendly, kind and hardworking."}, {"q": 44, "start": 143.7, "end": 146.0, "text": "Because she loves drawing pictures."}, {"q": 45, "start": 146.6, "end": 150.6, "text": "She often plays badminton with her friends in her free time."}, {"q": 46, "start": 150.9, "end": 153.2, "text": "She is drawing a picture in her bedroom."}, {"q": 47, "start": 153.6, "end": 158.0, "text": "My sister usually goes to school by bicycle every morning."}, {"q": 48, "start": 158.4, "end": 161.3, "text": "Does your brother often play football after school?"}, {"q": 49, "start": 161.6, "end": 165.7, "text": "There is a big sofa and two armchairs in the living room."}, {"q": 50, "start": 166.1, "end": 170.2, "text": "My parents' bedroom is next to the bathroom on the second floor."}, {"q": 51, "start": 170.7, "end": 175.1, "text": "Look! The children are playing badminton in the school playground."}, {"q": 52, "start": 175.6, "end": 180.2, "text": "My best friend has long black hair and big brown eyes."}, {"q": 53, "start": 180.8, "end": 185.0, "text": "Linh is a careful student. She always checks her homework."}, {"q": 54, "start": 185.5, "end": 188.7, "text": "How often do your sisters go to the school library?"}, {"q": 55, "start": 189.3, "end": 194.5, "text": "My brother is very friendly, and he always helps his classmates with their homework."}, {"q": 56, "start": 194.3, "end": 199.1, "text": "What does your new classmate look like? She is tall and slim."}, {"q": 57, "start": 199.6, "end": 202.0, "text": "My brother goes to school every day."}, {"q": 58, "start": 202.4, "end": 205.1, "text": "Linh usually does her homework in the evening."}, {"q": 59, "start": 205.5, "end": 207.7, "text": "There is a sofa in the living room."}, {"q": 60, "start": 208.1, "end": 209.8, "text": "The cat is under the table."}, {"q": 61, "start": 210.1, "end": 212.4, "text": "The school bag is next to the desk."}, {"q": 62, "start": 212.7, "end": 214.5, "text": "This is Nam's bedroom."}, {"q": 63, "start": 215.0, "end": 216.8, "text": "My parents' house is big."}, {"q": 64, "start": 217.1, "end": 219.6, "text": "Look! Hoa is reading a book."}, {"q": 65, "start": 220.0, "end": 222.8, "text": "My best friend has short black hair."}, {"q": 66, "start": 222.6, "end": 225.0, "text": "What does your best friend look like?"}];
+
+const lop6Audio = new Audio('sounds/lop%206.mp3');
+lop6Audio.preload = 'metadata';
+
+let currentAnswerAudio = null;
+let questionAudioTimer = null;
+let currentPlayingQIdx = null;
+
+function updateQuestionAudioBtnUI(qIdx, isPlaying) {
+    const btn = document.getElementById('btn-sound-ans');
+    const icon = document.getElementById('icon-sound-ans');
+    const txt = document.getElementById('txt-sound-ans');
+    if (!btn) return;
+    if (isPlaying) {
+        btn.classList.add('playing');
+        if (icon) icon.innerText = '⏸';
+        if (txt) txt.innerText = 'Tạm dừng nghe đáp án';
+    } else {
+        btn.classList.remove('playing');
+        if (icon) icon.innerText = '🔊';
+        if (txt) txt.innerText = 'Nghe lại phát âm đáp án đúng';
+    }
+}
+
+function playQuestionAnswerAudio(qIdx) {
+    if (qIdx < 0 || qIdx >= QUESTION_AUDIO_MAP.length) return;
+
+    // Tạm dừng các audio bài đọc nếu đang phát
+    if (typeof READING_AUDIOS !== 'undefined') {
+        if (READING_AUDIOS.p5 && !READING_AUDIOS.p5.paused) READING_AUDIOS.p5.pause();
+        if (READING_AUDIOS.p6 && !READING_AUDIOS.p6.paused) READING_AUDIOS.p6.pause();
+    }
+
+    stopQuestionAnswerAudio();
+
+    currentPlayingQIdx = qIdx;
+    const qNum = qIdx + 1;
+    
+    // Ưu tiên phát file âm thanh từng câu riêng biệt trong thư mục sounds/
+    const soundPath = 'sounds/q' + qNum + '.mp3';
+    currentAnswerAudio = new Audio(soundPath);
+
+    currentAnswerAudio.play().then(() => {
+        updateQuestionAudioBtnUI(qIdx, true);
+    }).catch(err => {
+        // Fallback sang file lop 6.mp3 với timestamp
+        console.log('Phát ' + soundPath + ' không khả dụng, chuyển sang phát từ lop 6.mp3:', err);
+        playLop6TimestampFallback(qIdx);
+    });
+
+    currentAnswerAudio.onended = () => {
+        stopQuestionAnswerAudio();
+    };
+    currentAnswerAudio.onerror = () => {
+        playLop6TimestampFallback(qIdx);
+    };
+}
+
+function playLop6TimestampFallback(qIdx) {
+    const item = QUESTION_AUDIO_MAP[qIdx];
+    if (!item) return;
+
+    if (questionAudioTimer) {
+        clearInterval(questionAudioTimer);
+        questionAudioTimer = null;
+    }
+
+    lop6Audio.currentTime = item.start;
+    lop6Audio.play().then(() => {
+        updateQuestionAudioBtnUI(qIdx, true);
+    }).catch(e => console.log('lop6 audio play error:', e));
+
+    questionAudioTimer = setInterval(() => {
+        if (lop6Audio.currentTime >= item.end || lop6Audio.paused) {
+            stopQuestionAnswerAudio();
+        }
+    }, 40);
+}
+
+function stopQuestionAnswerAudio() {
+    if (questionAudioTimer) {
+        clearInterval(questionAudioTimer);
+        questionAudioTimer = null;
+    }
+    if (currentAnswerAudio && !currentAnswerAudio.paused) {
+        currentAnswerAudio.pause();
+        currentAnswerAudio = null;
+    }
+    if (typeof lop6Audio !== 'undefined' && !lop6Audio.paused) {
+        lop6Audio.pause();
+    }
+    if (currentPlayingQIdx !== null) {
+        updateQuestionAudioBtnUI(currentPlayingQIdx, false);
+        currentPlayingQIdx = null;
+    }
+}
+
+function toggleQuestionAnswerAudio(qIdx) {
+    const isPlaying = (currentAnswerAudio && !currentAnswerAudio.paused) || (lop6Audio && !lop6Audio.paused);
+    if (currentPlayingQIdx === qIdx && isPlaying) {
+        stopQuestionAnswerAudio();
+    } else {
+        playQuestionAnswerAudio(qIdx);
+    }
+}
+
+// Khởi tạo TTS
+let cachedVoice = null;
+function initVoices() {
+    if (!('speechSynthesis' in window)) return;
+    const voices = window.speechSynthesis.getVoices();
+    cachedVoice = voices.find(v => v.lang === 'en-US' && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('David'))) 
+               || voices.find(v => v.lang.startsWith('en')) 
+               || null;
+}
+if ('speechSynthesis' in window) {
+    window.speechSynthesis.onvoiceschanged = initVoices;
+    initVoices();
+}
+
+function playAudio(word) {
+    if (!word || !('speechSynthesis' in window)) return;
+    const clean = word.trim().replace(/^[^a-zA-Z0-9'’-]+|[^a-zA-Z0-9'’-]+$/g, '');
+    if (!clean) return;
+
+    if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+    if (!cachedVoice) initVoices();
+
+    const u = new SpeechSynthesisUtterance(clean);
+    u.lang = 'en-US';
+    u.rate = 0.90;
+    u.pitch = 1.0;
+    if (cachedVoice) u.voice = cachedVoice;
+
+    if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        setTimeout(() => window.speechSynthesis.speak(u), 15);
+    } else {
+        window.speechSynthesis.speak(u);
+    }
+}
+
+function playAudioCurrent() {
+    if (currentWordToSpeak) playAudio(currentWordToSpeak);
+}
+
+function closeDictPopup() {
+    const pop = document.getElementById('quick-dict-popup');
+    if (pop) pop.style.display = 'none';
+    document.querySelectorAll('.dict-w.active-word').forEach(el => el.classList.remove('active-word'));
+}
+
+function formatPos(pos) {
+    return pos || 'từ vựng';
+}
+
+function lookupWordInDb(rawWord) {
+    if (!rawWord) return null;
+    const w = rawWord.trim().replace(/^[^a-zA-Z0-9'’-]+|[^a-zA-Z0-9'’-]+$/g, '');
+    const wl = w.toLowerCase();
+    if (!wl) return null;
+
+    if (CONTRACTIONS[wl]) {
+        const c = CONTRACTIONS[wl];
+        return { word: w, ipa: c.ipa, pos: c.pos, vi: `${c.meaning} (viết tắt của ${c.base})` };
+    }
+    if (PROPER_NOUNS[wl]) {
+        const p = PROPER_NOUNS[wl];
+        return { word: p.word, ipa: p.ipa, pos: p.pos, vi: p.vi };
+    }
+    if (wl.endsWith("'s") || wl.endsWith("’s")) {
+        const base = wl.slice(0, -2);
+        const res = lookupWordInDb(base);
+        if (res) return { word: w, ipa: res.ipa, pos: "sở hữu cách", vi: `của ${res.vi} (sở hữu cách của ${res.word})` };
+    }
+    if (IRREGULAR_FORMS[wl]) {
+        const irr = IRREGULAR_FORMS[wl];
+        return { word: w, ipa: irr.ipa, pos: "từ đã chia", vi: `${irr.vi} (${irr.form})` };
+    }
+    if (VOCAB_DB[wl]) {
+        return { word: wl, ipa: VOCAB_DB[wl].ipa || '', pos: VOCAB_DB[wl].pos || 'từ vựng', vi: VOCAB_DB[wl].vi };
+    }
+    if (wl.endsWith('ing') && wl.length > 4) {
+        const b1 = wl.slice(0, -3);
+        if (VOCAB_DB[b1]) return { word: w, ipa: VOCAB_DB[b1].ipa || '', pos: "dạng V-ing", vi: `đang ${VOCAB_DB[b1].vi} (V-ing của ${b1})` };
+        const b2 = wl.slice(0, -3) + 'e';
+        if (VOCAB_DB[b2]) return { word: w, ipa: VOCAB_DB[b2].ipa || '', pos: "dạng V-ing", vi: `đang ${VOCAB_DB[b2].vi} (V-ing của ${b2})` };
+    }
+    if (wl.endsWith('es') && wl.length > 3) {
+        const b = wl.slice(0, -2);
+        if (VOCAB_DB[b]) return { word: w, ipa: VOCAB_DB[b].ipa || '', pos: "chia thì / số nhiều", vi: `${VOCAB_DB[b].vi} (dạng ${b})` };
+    }
+    if (wl.endsWith('s') && wl.length > 2) {
+        const b = wl.slice(0, -1);
+        if (VOCAB_DB[b]) return { word: w, ipa: VOCAB_DB[b].ipa || '', pos: "chia thì / số nhiều", vi: `${VOCAB_DB[b].vi} (dạng ${b})` };
+    }
+    return null;
+}
+
+function showDictPopup(word, rect) {
+    const pop = document.getElementById('quick-dict-popup');
+    if (!pop) return;
+
+    currentWordToSpeak = word;
+    const cleanWord = word.trim().replace(/^[^a-zA-Z0-9'’-]+|[^a-zA-Z0-9'’-]+$/g, '');
+    const cleanLower = cleanWord.toLowerCase();
+
+    document.getElementById('dict-word-text').innerText = word;
+    document.getElementById('dict-phonetic-text').innerText = '';
+    document.getElementById('dict-pos-text').innerText = '';
+    document.getElementById('dict-meaning-text').innerHTML = '<span style="color:#0284c7">🔍 Đang tra cứu...</span>';
+
+    pop.style.display = 'block';
+    const popWidth = 260;
+    let left = rect.left + window.scrollX;
+    let top = rect.bottom + window.scrollY + 6;
+
+    if (left + popWidth > window.innerWidth - 15) left = window.innerWidth - popWidth - 15;
+    if (left < 10) left = 10;
+    if (rect.bottom + 150 > window.innerHeight && rect.top > 130) {
+        top = rect.top + window.scrollY - 120;
+        if (top < 10) top = rect.bottom + window.scrollY + 6;
+    }
+
+    pop.style.left = left + 'px';
+    pop.style.top = top + 'px';
+
+    if (DICT_CACHE[cleanLower]) {
+        const c = DICT_CACHE[cleanLower];
+        document.getElementById('dict-phonetic-text').innerText = c.ipa || '';
+        document.getElementById('dict-pos-text').innerText = formatPos(c.pos);
+        document.getElementById('dict-meaning-text').innerText = c.vi;
+        return;
+    }
+
+    const localResult = lookupWordInDb(cleanWord);
+    if (localResult) {
+        document.getElementById('dict-phonetic-text').innerText = localResult.ipa || '';
+        document.getElementById('dict-pos-text').innerText = formatPos(localResult.pos);
+        document.getElementById('dict-meaning-text').innerText = localResult.vi;
+        DICT_CACHE[cleanLower] = { ipa: localResult.ipa || '', pos: localResult.pos, vi: localResult.vi };
+        return;
+    }
+
+    const encoded = encodeURIComponent(cleanWord);
+    const pTranslate = fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=vi&dt=t&dt=bd&dt=rm&q=${encoded}`).then(r => r.json()).catch(() => null);
+    const pIpa = fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encoded}`).then(r => r.json()).catch(() => null);
+
+    Promise.all([pTranslate, pIpa]).then(([transData, ipaData]) => {
+        let viMeaning = '', pos = '', ipa = '';
+        if (transData && transData[0] && transData[0][0]) {
+            viMeaning = transData[0][0][0] || '';
+            if (transData[1] && transData[1][0]) pos = transData[1][0][0] || '';
+        }
+        if (Array.isArray(ipaData) && ipaData.length > 0) {
+            const it = ipaData[0];
+            ipa = it.phonetic || (it.phonetics && it.phonetics.find(p => p.text) ? it.phonetics.find(p => p.text).text : '');
+            if (!pos && it.meanings && it.meanings.length > 0) pos = it.meanings[0].partOfSpeech || '';
+        }
+        if (!viMeaning) viMeaning = '(Chưa tìm thấy bản dịch)';
+        document.getElementById('dict-phonetic-text').innerText = ipa || '';
+        document.getElementById('dict-pos-text').innerText = formatPos(pos);
+        document.getElementById('dict-meaning-text').innerText = viMeaning;
+        DICT_CACHE[cleanLower] = { ipa, pos, vi: viMeaning };
+    }).catch(() => {
+        document.getElementById('dict-phonetic-text').innerText = '';
+        document.getElementById('dict-pos-text').innerText = 'từ vựng';
+        document.getElementById('dict-meaning-text').innerText = '(Không thể kết nối máy chủ tra từ)';
+    });
+}
+
+function makeWordsClickable(container) {
+    if (!container) return;
+    const walker = document.createTreeWalker(
+        container,
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode: function(node) {
+                if (!node.textContent.trim()) return NodeFilter.FILTER_REJECT;
+                const parent = node.parentElement;
+                if (!parent) return NodeFilter.FILTER_REJECT;
+                if (parent.closest('button, .dict-popup, script, style, .btn-nav, .btn-check, .dict-w, .top-navbar, .option-key, textarea, .nav-btn, .strip-btn, .grid-btn, select, option, .reading-passage-card')) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        }
+    );
+
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+    textNodes.forEach(node => {
+        const text = node.textContent;
+        if (!/[a-zA-Z]/.test(text)) return;
+        let hasWords = false;
+        const pattern = /(?<![a-zA-ZÀ-ɏẠ-ỹ])([a-zA-Z]+(?:['’\-][a-zA-Z]+)*)(?![a-zA-ZÀ-ɏẠ-ỹ])/g;
+        const newHtml = text.replace(pattern, function(match) {
+            if (match.length === 1 && match.toLowerCase() !== 'a' && match.toLowerCase() !== 'i') return match;
+            hasWords = true;
+            return `<span class="dict-w" data-word="${match}">${match}</span>`;
+        });
+        if (hasWords) {
+            const temp = document.createElement('span');
+            temp.innerHTML = newHtml;
+            while (temp.firstChild) node.parentNode.insertBefore(temp.firstChild, node);
+            node.parentNode.removeChild(node);
+        }
+    });
+}
+
+document.addEventListener('click', function(e) {
+    const popup = document.getElementById('quick-dict-popup');
+    if (popup && popup.contains(e.target)) return;
+
+    const wSpan = e.target.closest('.dict-w');
+    if (wSpan) {
+        const word = wSpan.getAttribute('data-word') || wSpan.innerText.trim();
+        playAudio(word);
+        document.querySelectorAll('.dict-w.active-word').forEach(el => el.classList.remove('active-word'));
+        wSpan.classList.add('active-word');
+        const rect = wSpan.getBoundingClientRect();
+        showDictPopup(word, rect);
+        return;
+    }
+    if (popup && popup.style.display !== 'none') closeDictPopup();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeDictPopup();
+        closeAllDrawers();
+    } else if (e.key === 'ArrowLeft') {
+        prevQuestion();
+    } else if (e.key === 'ArrowRight') {
+        nextQuestion();
+    } else if (e.key === 'Enter') {
+        if (!checkedState[currentQuestionIndex]) checkCurrentAnswer();
+    } else if (['1', '2', '3', '4'].includes(e.key)) {
+        selectOption(parseInt(e.key) - 1);
+    }
+});
+
+// Hàm chuyển nhanh đến phần được chọn từ dropdown
+function jumpToSelectedSection() {
+    const selectedSection = document.getElementById('section-selector').value;
+    
+    // Tìm vị trí câu hỏi đầu tiên thuộc phần đã chọn
+    const targetIndex = quizData.findIndex(q => q.section === selectedSection);
+    
+    if (targetIndex !== -1) {
+        jumpToQuestion(targetIndex);
+    }
+}
+
+// Hiển thị một câu hỏi trên màn hình
+function renderCurrentQuestion() {
+    const container = document.getElementById('question-card-container');
+    const q = quizData[currentQuestionIndex];
+    const isChecked = checkedState[currentQuestionIndex];
+    const userAns = userAnswers[currentQuestionIndex];
+
+    // Cập nhật Top Navbar
+    document.getElementById('top-q-badge').innerText = `CÂU ${currentQuestionIndex + 1} / ${TOTAL_QUESTIONS}`;
+    const percent = ((currentQuestionIndex + 1) / TOTAL_QUESTIONS) * 100;
+    document.getElementById('progress-bar').style.width = percent + '%';
+
+    // Cập nhật dropdown theo câu hỏi hiện tại
+    const sectionSelector = document.getElementById('section-selector');
+    if (sectionSelector) {
+        sectionSelector.value = q.section;
+    }
+
+    updateStatsBar();
+
+    // Xác định phần văn bản / biển báo đi kèm
+    let passageHtml = '';
+    if (q.section === 'p3') {
+        passageHtml = PASSAGES_MAP['p3'];
+    } else if (q.section === 'p4') {
+        if (currentQuestionIndex === 32) passageHtml = PASSAGES_MAP['q33'];
+        else if (currentQuestionIndex === 33) passageHtml = PASSAGES_MAP['q34'];
+        else if (currentQuestionIndex === 34) passageHtml = PASSAGES_MAP['q35'];
+    } else if (q.section === 'p5') {
+        passageHtml = PASSAGES_MAP['p5'];
+    } else if (q.section === 'p6') {
+        passageHtml = PASSAGES_MAP['p6'];
+    }
+
+    // Tách nhãn câu hỏi (Ví dụ: "Câu 1:")
+    let qTextHtml = q.q;
+    let colonIdx = q.q.indexOf(':');
+    if (colonIdx !== -1) {
+        let prefix = q.q.substring(0, colonIdx + 1);
+        let body = q.q.substring(colonIdx + 1);
+        qTextHtml = `<span class="q-num">${prefix}</span>${body}`;
+    }
+
+    // Render Options
+    let optionsHtml = '';
+    if (q.type === 'scramble') {
+        const userAnsList = Array.isArray(userAns) ? userAns : [];
+        let dropzoneHtml = '';
+        userAnsList.forEach((wordIdx, ansIdx) => {
+            let extraAttr = isChecked ? '' : `onclick="scrambleDeselect(${ansIdx})"`;
+            dropzoneHtml += `<div class="s-word in-dropzone" ${extraAttr}>${q.words[wordIdx]}</div>`;
+        });
+
+        let wordbankHtml = '';
+        q.words.forEach((w, wIdx) => {
+            if (userAnsList.includes(wIdx)) {
+                wordbankHtml += `<div class="s-word" style="visibility:hidden;">${w}</div>`;
+            } else {
+                let extraAttr = isChecked ? '' : `onclick="scrambleSelect(${wIdx})"`;
+                wordbankHtml += `<div class="s-word" ${extraAttr}>${w}</div>`;
+            }
+        });
+
+        optionsHtml = `
+            <div class="scramble-container">
+                <div style="font-weight:600; margin-bottom:8px; color:#475569;"></div>
+                <div class="scramble-dropzone">${dropzoneHtml}</div>
+                <div class="scramble-wordbank">${wordbankHtml}</div>
+            </div>
+        `;
+    } else {
+        q.opts.forEach((opt, idx) => {
+            let optClass = 'option-item';
+            if (isChecked) {
+                optClass += ' locked';
+                if (idx === q.ans) optClass += ' correct';
+                else if (idx === userAns) optClass += ' wrong';
+            } else {
+                if (idx === userAns) optClass += ' selected';
+            }
+
+            optionsHtml += `
+                <div class="${optClass}" onclick="selectOption(${idx})">
+                    <div class="option-key">${String.fromCharCode(65 + idx)}</div>
+                    <div class="option-text">${opt}</div>
+                </div>
+            `;
+        });
+    }
+
+    // Status Banner & Explain Box
+    let statusHtml = '';
+    let explainHtml = '';
+    if (isChecked) {
+        if (q.type === 'scramble') {
+            const userAnsList = Array.isArray(userAns) ? userAns : [];
+            const userAnsStr = userAnsList.map(idx => q.words[idx]).join(' ');
+            if (userAnsStr === q.correctSentence) {
+                statusHtml = `<div class="status-banner correct">✓ <b>Chính xác!</b> Câu của em rất hoàn hảo.</div>`;
+            } else {
+                statusHtml = `<div class="status-banner wrong">✗ <b>Chưa chính xác!</b> Câu của em: <b>${userAnsStr}</b>.<br>👉 Đáp án đúng là: <b>${q.correctSentence}</b></div>`;
+            }
+        } else {
+            if (userAns === q.ans) {
+                statusHtml = `<div class="status-banner correct">✓ <b>Chính xác!</b> Bạn đã chọn đúng đáp án ${String.fromCharCode(65 + q.ans)}.</div>`;
+            } else if (userAns !== null) {
+                statusHtml = `<div class="status-banner wrong">✗ <b>Chưa chính xác!</b> Bạn chọn <b>${String.fromCharCode(65 + userAns)}. ${q.opts[userAns]}</b>.<br>👉 Đáp án đúng là: <b>${String.fromCharCode(65 + q.ans)}. ${q.opts[q.ans]}</b></div>`;
+            } else {
+                statusHtml = `<div class="status-banner warn">⚠ <b>Bạn chưa chọn phương án nào!</b> Đáp án đúng là: <b>${String.fromCharCode(65 + q.ans)}. ${q.opts[q.ans]}</b></div>`;
+            }
+        }
+
+        explainHtml = `
+            <div class="audio-answer-box">
+                <button class="btn-sound-answer" id="btn-sound-ans" onclick="toggleQuestionAnswerAudio(${currentQuestionIndex})" title="Nghe phát âm chuẩn câu đáp án đúng từ lop 6.mp3">
+                    <span class="sound-icon" id="icon-sound-ans">🔊</span>
+                    <span id="txt-sound-ans">Nghe phát âm câu đáp án đúng</span>
+                </button>
+                <span class="audio-answer-hint">🎧 Giọng đọc bản ngữ (lop 6.mp3)</span>
+            </div>
+            <div class="explain-card">
+                <div class="explain-card-title">💡 Giải thích chi tiết & Phân tích ngữ pháp:</div>
+                <div>${q.explain}</div>
+            </div>
+        `;
+    }
+
+    // Button check / redo state
+    let checkBtnHtml = '';
+    if (!isChecked) {
+        checkBtnHtml = `<button class="btn-check" onclick="checkCurrentAnswer()">🔍 KIỂM TRA ĐÁP ÁN</button>`;
+    } else {
+        checkBtnHtml = `<button class="btn-redo" onclick="redoCurrentQuestion()">🔄 Làm lại câu này</button>`;
+    }
+
+    // Toàn bộ HTML của câu hỏi hiện tại
+    container.innerHTML = `
+        <div class="question-card">
+            <div class="section-badge">${SECTION_INFO[q.section] || 'BÀI TẬP ÔN THI'}</div>
+            ${passageHtml}
+            <div class="question-title">${qTextHtml}</div>
+            <div class="options-list">${optionsHtml}</div>
+            ${statusHtml}
+
+            <div class="action-bar">
+                <div class="action-group-left">
+                    <button class="btn-nav" onclick="prevQuestion()" ${currentQuestionIndex === 0 ? 'disabled' : ''}>
+                        ⬅ Câu trước
+                    </button>
+                    ${checkBtnHtml}
+                </div>
+                <div class="action-group-right">
+                    <button class="btn-nav" onclick="nextQuestion()">
+                        ${currentQuestionIndex === TOTAL_QUESTIONS - 1 ? 'Hoàn thành 🏆' : 'Câu tiếp ➡'}
+                    </button>
+                </div>
+            </div>
+
+            ${explainHtml}
+        </div>
+    `;
+
+    // Cập nhật thanh trượt câu hỏi phía dưới
+    updateBottomStrip();
+    makeWordsClickable(container);
+    syncReadingAudioUI(q.section);
+}
+
+// Xử lý khi học sinh click chọn đáp án
+function selectOption(idx) {
+    if (checkedState[currentQuestionIndex]) return;
+    userAnswers[currentQuestionIndex] = idx;
+    
+    // Cập nhật UI ngay lập tức
+    const opts = document.querySelectorAll('.option-item');
+    opts.forEach((el, i) => {
+        if (i === idx) el.classList.add('selected');
+        else el.classList.remove('selected');
+    });
+
+    updateBottomStrip();
+    updateStatsBar();
+}
+
+// Xử lý khi nhấn nút "KIỂM TRA ĐÁP ÁN"
+function checkCurrentAnswer() {
+    const q = quizData[currentQuestionIndex];
+    if (q.type === 'scramble') {
+        const userAns = userAnswers[currentQuestionIndex];
+        if (!userAns || userAns.length !== q.words.length) {
+            alert("Em vui lòng chọn đầy đủ các từ để ghép thành câu hoàn chỉnh trước khi kiểm tra nhé!");
+            return;
+        }
+    } else {
+        const userAns = userAnswers[currentQuestionIndex];
+        if (userAns === null) {
+            alert("Em vui lòng chọn một đáp án (A, B, C hoặc D) trước khi kiểm tra nhé!");
+            return;
+        }
+    }
+
+    checkedState[currentQuestionIndex] = true;
+    renderCurrentQuestion();
+    playQuestionAnswerAudio(currentQuestionIndex);
+}
+
+// Làm lại câu hỏi hiện tại
+function redoCurrentQuestion() {
+    stopQuestionAnswerAudio();
+    checkedState[currentQuestionIndex] = false;
+    userAnswers[currentQuestionIndex] = null;
+    renderCurrentQuestion();
+}
+
+// Chuyển sang câu kế tiếp
+function nextQuestion() {
+    stopQuestionAnswerAudio();
+    if (currentQuestionIndex < TOTAL_QUESTIONS - 1) {
+        currentQuestionIndex++;
+        renderCurrentQuestion();
+        scrollToTopQuestion();
+    } else {
+        openDrawer('result');
+    }
+}
+
+// Quay lại câu trước
+function prevQuestion() {
+    stopQuestionAnswerAudio();
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderCurrentQuestion();
+        scrollToTopQuestion();
+    }
+}
+
+// Nhảy đến câu hỏi bất kỳ
+function jumpToQuestion(idx) {
+    stopQuestionAnswerAudio();
+    if (idx >= 0 && idx < TOTAL_QUESTIONS) {
+        currentQuestionIndex = idx;
+        renderCurrentQuestion();
+        closeAllDrawers();
+        scrollToTopQuestion();
+    }
+}
+
+function scrollToTopQuestion() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Cập nhật dải nút bấm câu hỏi ở thanh dưới cùng
+function updateBottomStrip() {
+    const scroller = document.getElementById('bottom-strip-scroller');
+    if (!scroller) return;
+
+    let html = '';
+    quizData.forEach((q, i) => {
+        let cls = 'strip-btn';
+        if (i === currentQuestionIndex) cls += ' current';
+        else if (checkedState[i]) {
+            if (q.type === 'scramble') {
+                const userAnsStr = (userAnswers[i] || []).map(idx => q.words[idx]).join(' ');
+                if (userAnsStr === q.correctSentence) cls += ' checked-correct';
+                else cls += ' checked-wrong';
+            } else {
+                if (userAnswers[i] === q.ans) cls += ' checked-correct';
+                else cls += ' checked-wrong';
+            }
+        } else if (q.type === 'scramble' && Array.isArray(userAnswers[i]) && userAnswers[i].length > 0) {
+            cls += ' answered';
+        } else if (q.type !== 'scramble' && userAnswers[i] !== null) {
+            cls += ' answered';
+        }
+
+        html += `<button class="${cls}" onclick="jumpToQuestion(${i})">${i + 1}</button>`;
+    });
+    scroller.innerHTML = html;
+
+    // Cuộn pill hiện tại vào tầm nhìn
+    const currentBtn = scroller.querySelector('.strip-btn.current');
+    if (currentBtn) {
+        currentBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+}
+
+// Cập nhật Bảng điều hướng 66 câu dạng Grid
+function renderGridNavigator() {
+    const grid = document.getElementById('grid-navigator');
+    if (!grid) return;
+
+    let html = '';
+    quizData.forEach((q, i) => {
+        let cls = 'grid-btn';
+        if (i === currentQuestionIndex) cls += ' current';
+        else if (checkedState[i]) {
+            if (q.type === 'scramble') {
+                const userAnsStr = (userAnswers[i] || []).map(idx => q.words[idx]).join(' ');
+                if (userAnsStr === q.correctSentence) cls += ' checked-correct';
+                else cls += ' checked-wrong';
+            } else {
+                if (userAnswers[i] === q.ans) cls += ' checked-correct';
+                else cls += ' checked-wrong';
+            }
+        } else if (q.type === 'scramble' && Array.isArray(userAnswers[i]) && userAnswers[i].length > 0) {
+            cls += ' answered';
+        } else if (q.type !== 'scramble' && userAnswers[i] !== null) {
+            cls += ' answered';
+        }
+
+        html += `<button class="${cls}" onclick="jumpToQuestion(${i})">${i + 1}</button>`;
+    });
+    grid.innerHTML = html;
+}
+
+// Cập nhật thống kê và kết quả
+function updateStatsBar() {
+    let answered = 0;
+    let correct = 0;
+    let wrong = 0;
+
+    quizData.forEach((q, i) => {
+        if (q.type === 'scramble') {
+            if (Array.isArray(userAnswers[i]) && userAnswers[i].length > 0) answered++;
+            if (checkedState[i]) {
+                const userAnsStr = (userAnswers[i] || []).map(idx => q.words[idx]).join(' ');
+                if (userAnsStr === q.correctSentence) correct++;
+                else wrong++;
+            }
+        } else {
+            if (userAnswers[i] !== null) answered++;
+            if (checkedState[i]) {
+                if (userAnswers[i] === q.ans) correct++;
+                else wrong++;
+            }
+        }
+    });
+
+    document.getElementById('stat-progress-text').innerText = `Tiến độ: ${answered} / ${TOTAL_QUESTIONS} câu`;
+    document.getElementById('stat-score-text').innerText = `Đúng: ${correct} | Sai: ${wrong}`;
+
+    // Cập nhật dữ liệu cho modal kết quả
+    const score10 = ((correct / TOTAL_QUESTIONS) * 10).toFixed(1);
+    document.getElementById('res-score-big').innerText = score10;
+    document.getElementById('res-correct-cnt').innerText = correct;
+    document.getElementById('res-wrong-cnt').innerText = wrong;
+    document.getElementById('res-answered-cnt').innerText = answered;
+    document.getElementById('res-remaining-cnt').innerText = TOTAL_QUESTIONS - answered;
+
+    let evalText = '';
+    if (correct >= 60) evalText = '🌟 Xuất sắc! Em nắm rất vững toàn bộ kiến thức giữa kỳ 1!';
+    else if (correct >= 50) evalText = '👏 Rất giỏi! Cố gắng phát huy để đạt điểm 10 tuyệt đối nhé!';
+    else if (correct >= 40) evalText = '👍 Khá tốt! Em hãy ôn lại các câu sai để ghi nhớ kỹ hơn.';
+    else if (correct >= 30) evalText = '💪 Mức Trung bình, em hãy bấm vào nút "Lý thuyết" để ôn tập thêm.';
+    else evalText = '📖 Em hãy đọc kỹ lại phần Tóm tắt lý thuyết để làm bài tốt hơn nhé!';
+    document.getElementById('res-eval-text').innerText = evalText;
+}
+
+// Quản lý Modal & Drawers
+function openDrawer(type) {
+    closeAllDrawers();
+    const el = document.getElementById(`drawer-${type}`);
+    if (el) {
+        el.classList.add('active');
+        if (type === 'navigator') renderGridNavigator();
+    }
+}
+
+function closeDrawer(type) {
+    const el = document.getElementById(`drawer-${type}`);
+    if (el) el.classList.remove('active');
+}
+
+function closeAllDrawers() {
+    document.querySelectorAll('.drawer-overlay').forEach(el => el.classList.remove('active'));
+}
+
+function closeDrawerOnOutside(e, drawerId) {
+    if (e.target.id === drawerId) closeAllDrawers();
+}
+
+// Điều khiển Tabs Lý thuyết
+function switchTheoryTab(tab) {
+    document.querySelectorAll('.theory-tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.theory-panel').forEach(p => p.classList.remove('active'));
+
+    const activeBtn = Array.from(document.querySelectorAll('.theory-tab-btn')).find(b => b.getAttribute('onclick').includes(tab));
+    if (activeBtn) activeBtn.classList.add('active');
+
+    const panel = document.getElementById(`theory-tab-${tab}`);
+    if (panel) panel.classList.add('active');
+}
+
+// Điều khiển Phần Luyện viết
+function switchWritingTopic(topicNum) {
+    currentWritingTopic = topicNum;
+    const btns = document.querySelectorAll('.writing-topic-btn');
+    btns.forEach((b, idx) => {
+        if (idx === topicNum - 1) b.classList.add('active');
+        else b.classList.remove('active');
+    });
+
+    for (let i = 1; i <= 3; i++) {
+        const prompt = document.getElementById(`writing-prompt-${i}`);
+        const model = document.getElementById(`model-essay-${i}`);
+        if (prompt) prompt.style.display = (i === topicNum) ? 'block' : 'none';
+        if (model) model.style.display = 'none';
+    }
+}
+
+function updateWordCount() {
+    const text = document.getElementById('student-writing-input').value.trim();
+    const count = text ? text.split(/\s+/).filter(w => w.length > 0).length : 0;
+    const countEl = document.getElementById('word-count-num');
+    countEl.innerText = count;
+
+    if (count >= 40 && count <= 60) countEl.style.color = 'var(--success)';
+    else if (count > 60) countEl.style.color = 'var(--danger)';
+    else countEl.style.color = 'var(--primary)';
+}
+
+function toggleModelEssay() {
+    const model = document.getElementById(`model-essay-${currentWritingTopic}`);
+    if (model) {
+        model.style.display = (model.style.display === 'block') ? 'none' : 'block';
+    }
+}
+
+// Làm lại toàn bộ đề
+function resetAllQuiz() {
+    if (confirm("Em có chắc chắn muốn làm lại toàn bộ 66 câu hỏi từ đầu không?")) {
+        userAnswers = new Array(TOTAL_QUESTIONS).fill(null);
+        checkedState = new Array(TOTAL_QUESTIONS).fill(false);
+        currentQuestionIndex = 0;
+        closeAllDrawers();
+        renderCurrentQuestion();
+    }
+}
+
+// Khởi chạy ban đầu
+window.onload = () => {
+    initReadingAudioSystem();
+    initVoices();
+    renderCurrentQuestion();
+    renderGridNavigator();
+
+    // Kích hoạt click từ vựng cho các phần lý thuyết
+    const theoryBox = document.getElementById('drawer-theory');
+    if (theoryBox) makeWordsClickable(theoryBox);
+
+    const writingBox = document.getElementById('drawer-writing');
+    if (writingBox) makeWordsClickable(writingBox);
+};
+</script>
+
+<a class="shared-home-button" href="index.html" aria-label="Quay về trang chủ">⌂ <span>Trang chủ</span></a>
+</body>
+</html>

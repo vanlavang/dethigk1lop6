@@ -1,0 +1,3546 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>ENGLISH 6 GLOBAL SUCCESS — PRONUNCIATION PRACTICE PRO</title>
+  <style>
+    /* ==========================================================================
+       CSS STYLES — PRO LIGHT MODERN THEME (MOBILE & PC)
+       ========================================================================== */
+    :root {
+      --font-family: "UTM Avo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #94a3b8;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --primary-border: #bfdbfe;
+      --secondary: #4f46e5;
+      --secondary-light: #eef2ff;
+      --success: #16a34a;
+      --success-light: #dcfce7;
+      --success-border: #86efac;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --danger-border: #fca5a5;
+      --warning: #d97706;
+      --warning-light: #fef3c7;
+      --border: #e2e8f0;
+      --border-focus: #3b82f6;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .top-bar-inner {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .brand-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--primary-border);
+      letter-spacing: 0.5px;
+    }
+
+    .module-nav {
+      display: flex;
+      background: #f1f5f9;
+      padding: 3px;
+      border-radius: var(--radius-full);
+      gap: 2px;
+    }
+
+    .mod-tab {
+      border: none;
+      background: transparent;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .mod-tab:hover {
+      color: var(--text-main);
+    }
+
+    .mod-tab.active {
+      background: var(--bg-card);
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .icon-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+
+    .icon-btn:hover {
+      background: #e2e8f0;
+      transform: translateY(-1px);
+    }
+
+    .icon-btn.muted {
+      color: var(--danger);
+      background: var(--danger-light);
+      border-color: var(--danger-border);
+    }
+
+    /* Main Container */
+    .app-container {
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 16px;
+      flex: 1;
+    }
+
+    /* Screens */
+    .screen {
+      display: none;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #4338ca 100%);
+      color: white;
+      padding: 24px 20px;
+      border-radius: var(--radius-lg);
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: "🗣️";
+      position: absolute;
+      right: 15px;
+      bottom: -15px;
+      font-size: 5rem;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(4px);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 0.92rem;
+      opacity: 0.92;
+      max-width: 600px;
+    }
+
+    /* Settings Bar */
+    .settings-bar {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .setting-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .styled-select {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .styled-select:focus {
+      border-color: var(--primary);
+    }
+
+    /* Switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 42px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #cbd5e1;
+      transition: .25s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .25s;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    input:checked + .slider {
+      background-color: var(--primary);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(18px);
+    }
+
+    /* Section Title */
+    .section-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: 0.3px;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--primary-border);
+    }
+
+    .badge-original {
+      background: #fef3c7;
+      color: #b45309;
+      border-color: #fde68a;
+      font-weight: 700;
+    }
+
+    /* Grid Layouts */
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .pill-grid.counts {
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    }
+
+    .pill-btn {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      user-select: none;
+    }
+
+    .pill-btn:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pill-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    .pill-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .pill-btn.active .pill-title {
+      color: var(--primary);
+    }
+
+    .pill-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Tip Box / Mẹo nhỏ */
+    .unit-tip {
+      font-size: 0.85rem;
+      background: #eef2ff;
+      color: #4338ca;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 16px;
+      border-left: 3px solid #4f46e5;
+      font-weight: 600;
+      display: none; /* Sẽ được JS bật lên */
+      line-height: 1.4;
+    }
+    .unit-tip b {
+      color: #1d4ed8;
+    }
+
+    /* Task Grid */
+    .task-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .task-btn {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      user-select: none;
+    }
+
+    .task-btn:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .task-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    .task-num {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: #f1f5f9;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+
+    .task-btn.active .task-num {
+      background: var(--primary);
+      color: white;
+    }
+
+    .task-info {
+      flex: 1;
+    }
+
+    .task-name {
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+
+    .task-btn.active .task-name {
+      color: var(--primary);
+    }
+
+    .task-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* Mode Selection Pill */
+    .mode-toggle-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .mode-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none;
+    }
+
+    .mode-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+    }
+
+    .mode-card.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    .mode-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mode-card.active .mode-title {
+      color: var(--primary);
+    }
+
+    .mode-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Start Button */
+    .btn-start {
+      width: 100%;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 8px 16px -4px rgba(37, 99, 235, 0.4);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px -4px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-start:active {
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       EXERCISE SCREEN
+       ========================================================================== */
+    .exercise-header {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+      flex-wrap: wrap;
+    }
+
+    .progress-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .progress-count {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .progress-bar-wrap {
+      width: 140px;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: var(--radius-full);
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #2563eb, #4f46e5);
+      border-radius: var(--radius-full);
+      transition: width 0.3s ease;
+    }
+
+    .stat-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .stat-badge.timer {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat-badge.score-correct {
+      color: var(--success);
+    }
+
+    .stat-badge.score-wrong {
+      color: var(--danger);
+    }
+
+    /* Card Container */
+    .exercise-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .task-label-badge {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .card-prompt {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    /* Target Word Display */
+    .target-word-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .target-word-text {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .target-focus {
+      color: var(--primary);
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 4px;
+    }
+    .target-meaning {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-top: 4px;
+    }
+
+    /* Audio Speaker Button */
+    .btn-speaker {
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.25rem;
+      transition: var(--transition);
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .btn-speaker:hover {
+      background: #dbeafe;
+      transform: scale(1.05);
+    }
+
+    .btn-speaker:active {
+      transform: scale(0.95);
+    }
+
+    .btn-speaker.speaking {
+      animation: pulseWave 1s infinite alternate;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.2);
+    }
+
+    @keyframes pulseWave {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+
+    .big-speaker-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      margin-bottom: 20px;
+      background: #f8fafc;
+      border-radius: var(--radius-md);
+      border: 1px dashed var(--border);
+      gap: 10px;
+    }
+
+    .big-speaker-btn {
+      width: 76px;
+      height: 76px;
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      border: none;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      box-shadow: 0 8px 16px -3px rgba(37, 99, 235, 0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .big-speaker-btn:hover {
+      transform: scale(1.06);
+    }
+
+    .big-speaker-btn:active {
+      transform: scale(0.96);
+    }
+
+    .big-speaker-btn.speaking {
+      animation: pulseWave 0.8s infinite alternate;
+      box-shadow: 0 0 0 8px rgba(37, 99, 235, 0.25);
+    }
+
+    .speaker-hint {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Option Grid (Tasks 1, 2, 4, 5) */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .option-btn {
+      background: #f8fafc;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 14px;
+      text-align: center;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-height: 72px;
+      user-select: none;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background: #f1f5f9;
+      transform: translateY(-2px);
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .option-btn.correct {
+      border-color: var(--success) !important;
+      background: var(--success-light) !important;
+      color: var(--success) !important;
+    }
+
+    .option-btn.wrong {
+      border-color: var(--danger) !important;
+      background: var(--danger-light) !important;
+      color: var(--danger) !important;
+    }
+
+    .option-btn.disabled {
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .option-ipa {
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      font-weight: normal;
+      color: var(--text-muted);
+    }
+
+    .option-sub {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    /* Task 3: Classification Interactive Dropzones */
+    .classify-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .buckets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .bucket-zone {
+      background: #f8fafc;
+      border: 2px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 12px;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .bucket-zone.dragover, .bucket-zone.active-target {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      box-shadow: 0 0 0 2px var(--primary-border);
+    }
+
+    .bucket-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+
+    .bucket-sound {
+      font-size: 1.25rem;
+      font-weight: 800;
+      font-family: Georgia, serif;
+      color: var(--primary);
+    }
+
+    .bucket-count {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: #e2e8f0;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+    }
+
+    .bucket-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      flex: 1;
+      align-content: flex-start;
+    }
+
+    .word-bank-wrap {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+    }
+
+    .bank-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bank-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 48px;
+    }
+
+    .word-chip {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: grab;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .word-chip:hover {
+      border-color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .word-chip.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    .word-chip.in-bucket {
+      cursor: pointer;
+    }
+
+    .word-chip.in-bucket:hover {
+      background: #fee2e2;
+      border-color: #fca5a5;
+      color: #b91c1c;
+    }
+
+    .chip-speaker {
+      font-size: 0.8rem;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    .chip-speaker:hover {
+      opacity: 1;
+    }
+
+    /* Task 4: Odd One Out Cards */
+    .odd-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .odd-card {
+      background: #f8fafc;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition);
+      user-select: none;
+    }
+
+    .odd-card:hover {
+      border-color: #cbd5e1;
+      transform: translateY(-2px);
+    }
+
+    .odd-card.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .odd-card.correct {
+      border-color: var(--success) !important;
+      background: var(--success-light) !important;
+    }
+
+    .odd-card.wrong {
+      border-color: var(--danger) !important;
+      background: var(--danger-light) !important;
+    }
+
+    .odd-word-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .odd-word {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .odd-ipa {
+      font-family: Georgia, serif;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: none;
+    }
+
+    .odd-ipa.show {
+      display: block;
+    }
+
+    /* Task 5: Minimal Pairs Comparison */
+    .pair-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .pair-choice-card {
+      background: #f8fafc;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pair-choice-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .pair-choice-card.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .pair-choice-card.correct {
+      border-color: var(--success) !important;
+      background: var(--success-light) !important;
+    }
+
+    .pair-choice-card.wrong {
+      border-color: var(--danger) !important;
+      background: var(--danger-light) !important;
+    }
+
+    .pair-word {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--text-main);
+    }
+
+    .pair-ipa {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .pair-meaning {
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    .pair-compare-drawer {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 10px;
+    }
+
+    .compare-side {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    /* Task 6: Listen and Type Input */
+    .typing-box-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    .typing-input {
+      width: 100%;
+      max-width: 400px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 12px 16px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      outline: none;
+      transition: var(--transition);
+      background: #ffffff;
+    }
+
+    .typing-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .typing-input.correct {
+      border-color: var(--success);
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .typing-input.wrong {
+      border-color: var(--danger);
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .btn-check-typing {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 12px 28px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-check-typing:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Feedback Banner (Practice Mode) */
+    .feedback-banner {
+      display: none;
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      margin-top: 20px;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    .feedback-banner.show {
+      display: block;
+    }
+
+    .feedback-banner.correct {
+      background: var(--success-light);
+      border: 1px solid var(--success-border);
+      color: #14532d;
+    }
+
+    .feedback-banner.wrong {
+      background: var(--danger-light);
+      border: 1px solid var(--danger-border);
+      color: #7f1d1d;
+    }
+
+    .fb-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .fb-explain {
+      font-size: 0.85rem;
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .fb-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn-next-question {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 8px 18px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .btn-next-question:hover {
+      background: var(--primary-hover);
+      transform: translateX(2px);
+    }
+
+    /* Action Footer */
+    .exercise-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .btn-exit-exercise {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-exit-exercise:hover {
+      background: #f1f5f9;
+      color: var(--text-main);
+    }
+
+    .btn-submit-test {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 10px 20px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-submit-test:hover {
+      background: var(--primary-hover);
+    }
+
+    /* ==========================================================================
+       RESULT SCREEN
+       ========================================================================== */
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+    }
+
+    .score-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary) 0%, #e2e8f0 0%);
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .score-circle-inner {
+      width: 96px;
+      height: 96px;
+      background: var(--bg-card);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score-percent {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    .score-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .result-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .result-message {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      background: #f8fafc;
+      border-radius: var(--radius-md);
+      padding: 12px 8px;
+      margin-bottom: 24px;
+    }
+
+    .stat-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-val {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--text-main);
+    }
+
+    .stat-desc {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    /* Review List */
+    .review-section {
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .review-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .review-item {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-left: 4px solid #cbd5e1;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .review-item.correct {
+      border-left-color: var(--success);
+    }
+
+    .review-item.wrong {
+      border-left-color: var(--danger);
+    }
+
+    .review-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .review-q-text {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .review-ans-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.82rem;
+    }
+
+    .review-ans-you {
+      color: var(--text-muted);
+    }
+
+    .review-ans-correct {
+      font-weight: 800;
+      color: var(--success);
+    }
+
+    .review-explain {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      background: white;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px dashed var(--border);
+    }
+
+    .result-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .btn-retry-mistakes {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 14px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px -2px rgba(217, 119, 6, 0.35);
+    }
+
+    .btn-retry-mistakes:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-new-session {
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 14px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-new-session:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 16px;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+
+    .modal-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .modal-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.45;
+    }
+
+    .modal-btns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Toast */
+    .toast-box {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(50px);
+      background: #1e293b;
+      color: white;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 300;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .toast-box.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* History Table */
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      margin-top: 12px;
+      text-align: left;
+    }
+
+    .history-table th {
+      background: #f1f5f9;
+      padding: 8px 10px;
+      font-weight: 800;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .history-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    /* Footer */
+    .app-footer {
+      border-top: 1px solid var(--border);
+      background: var(--bg-card);
+      padding: 14px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: auto;
+    }
+
+    /* Responsive cho Điện thoại (Giao diện đơn giản hóa) */
+    @media (max-width: 640px) {
+      /* 1. TOP BAR: Cuộn ngang hoặc ẩn bớt các nút không cần thiết */
+      .top-bar-inner {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 10px;
+      }
+      /* Ẩn bộ chuyển module trên điện thoại để tiết kiệm không gian */
+      .module-nav {
+        display: none; 
+      }
+      .brand {
+        font-size: 0.95rem;
+      }
+
+      /* 2. CÀI ĐẶT: Xếp dọc để dễ bấm */
+      .settings-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .setting-item {
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      /* 3. LƯỚI NÚT BẤM (Unit, Task, Mode): Chuyển thành 1 cột to, rõ */
+      .pill-grid, 
+      .task-grid, 
+      .mode-toggle-group {
+        grid-template-columns: 1fr; /* Trải dài 1 cột */
+      }
+      
+      /* Riêng phần chọn số lượng câu hỏi: Cho phép cuộn ngang (vuốt) */
+      .pill-grid.counts {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+      }
+      .pill-grid.counts .pill-btn {
+        flex: 0 0 90px;
+        text-align: center;
+      }
+
+      /* 4. NÚT BẮT ĐẦU: Neo chặt ở đáy màn hình (Sticky Bottom) */
+      /* Học sinh không cần cuộn mỏi tay mới thấy nút bắt đầu */
+      .btn-start {
+        position: sticky;
+        bottom: 16px;
+        z-index: 90;
+        box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.6);
+        padding: 18px;
+        font-size: 1.15rem;
+      }
+
+      /* 5. MÀN HÌNH BÀI TẬP: Đơn giản hóa Header */
+      .exercise-header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .progress-info {
+        width: 100%;
+      }
+      .progress-bar-wrap {
+        flex: 1; /* Thanh tiến trình dài hết màn hình */
+      }
+      
+      /* Giao diện nút đáp án to hơn */
+      .options-grid {
+        grid-template-columns: 1fr; /* Đáp án xếp 1 cột dọc */
+      }
+      .odd-grid {
+        grid-template-columns: 1fr;
+      }
+      .pair-container {
+        grid-template-columns: 1fr;
+      }
+      
+      /* Bảng kết quả cuối cùng xếp 2 cột */
+      .stat-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+    }
+  </style>
+  <style>
+    .shared-home-button {
+      position: fixed; right: 22px; bottom: 22px; z-index: 10000;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 17px; border: 2px solid #14213d; border-radius: 999px;
+      background: #fff; color: #14213d; box-shadow: 3px 4px 0 #14213d;
+      font: 800 14px/1 "Segoe UI", Arial, sans-serif; text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .shared-home-button:hover, .shared-home-button:focus-visible { transform: translate(-2px, -2px); box-shadow: 5px 6px 0 #14213d; outline: none; }
+    .shared-home-button:focus-visible { outline: 3px solid #ffd765; outline-offset: 3px; }
+    @media (max-width: 600px) { .shared-home-button { right: 14px; bottom: 14px; padding: 10px 14px; } }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="brand-group">
+        <div class="brand" id="brandBtn" title="Về trang chủ">
+          <span>📘 ENGLISH 6 PRO</span>
+          <span class="brand-badge">GLOBAL SUCCESS</span>
+        </div>
+        <!-- Module Navigation Switcher -->
+        <nav class="module-nav" aria-label="Chọn module luyện tập">
+          <a class="mod-tab" href="VOCABULARY_PRACTICE_PRO.html" id="tabVocabBtn">
+            <span>📚 TỪ VỰNG</span>
+          </a>
+          <a class="mod-tab" href="GRAMMAR_PRACTICE_PRO.html" id="tabGrammarBtn">
+            <span>📝 NGỮ PHÁP</span>
+          </a>
+          <button class="mod-tab active" id="tabPronunBtn">
+            <span>🗣️ PHÁT ÂM</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="top-actions">
+        <button class="icon-btn" id="audioToggleBtn" title="Bật/Tắt âm thanh">🔊</button>
+        <button class="icon-btn" id="historyBtn" title="Xem lịch sử luyện tập">📜</button>
+        <button class="icon-btn" id="fullscreenToggleBtn" title="Toàn màn hình">⛶</button>
+        <button class="icon-btn" id="homeBtn" title="Về trang chọn bài">🏠</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main App Container -->
+  <main class="app-container">
+
+    <!-- ======================================================================
+         SCREEN 1: SETUP SCREEN
+         ====================================================================== -->
+    <section class="screen active" id="setupScreen">
+      <div class="hero-banner">
+        <div class="hero-badge">⚡ 100% OFFLINE • PRACTICE ONLY</div>
+        <h1 class="hero-title">PRONUNCIATION PRACTICE PRO</h1>
+        <p class="hero-subtitle">Luyện tập phát âm chuẩn Tiếng Anh 6 — Global Success (Unit 1, 2, 3). Nhận diện âm, nghe chọn từ, phân loại và phân biệt cặp từ dễ nhầm.</p>
+      </div>
+
+      <div class="settings-bar">
+        <div class="setting-item">
+          <label for="autoPronounceSwitch">Tự phát âm khi mở câu:</label>
+          <label class="switch">
+            <input type="checkbox" id="autoPronounceSwitch" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="setting-item">
+          <label for="speechRateSelect">Tốc độ đọc:</label>
+          <select id="speechRateSelect" class="styled-select">
+            <option value="0.7">0.7x (Chậm)</option>
+            <option value="0.85">0.85x (Vừa)</option>
+            <option value="1.0" selected>1.0x (Chuẩn)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Step 1: Choose Unit -->
+      <div class="section-title">
+        <span>1. CHỌN BÀI LUYỆN PHÁT ÂM (UNIT)</span>
+        <span class="badge" id="unitCountBadge">Unit 1 – 3</span>
+      </div>
+      <div class="pill-grid" id="unitGrid">
+        <button class="pill-btn active" data-unit="u1">
+          <div class="pill-title">Unit 1 <small>/ɑː/ & /ʌ/</small></div>
+          <div class="pill-desc">smart, art, class, carton vs subject, study, Monday...</div>
+        </button>
+        <button class="pill-btn" data-unit="u2">
+          <div class="pill-title">Unit 2 <small>/s/, /z/, /ɪz/</small></div>
+          <div class="pill-desc">Đuôi s/es: lamps, sinks vs sofas, rooms vs houses, watches...</div>
+        </button>
+        <button class="pill-btn" data-unit="u3">
+          <div class="pill-title">Unit 3 <small>/b/ & /p/</small></div>
+          <div class="pill-desc">big/pig, bear/pear, buy/pie, robe/rope (Minimal pairs)...</div>
+        </button>
+        <button class="pill-btn" data-unit="mixed">
+          <div class="pill-title">Mixed Practice ★</div>
+          <div class="pill-desc">Trộn tổng hợp cả 3 Unit</div>
+        </button>
+      </div>
+
+      <!-- Step 2: Choose Mode -->
+      <div class="section-title">
+        <span>2. CHỌN CHẾ ĐỘ LUYỆN TẬP</span>
+      </div>
+      <div class="mode-toggle-group" id="modeGroup">
+        <div class="mode-card active" data-mode="practice">
+          <div class="mode-title">🎯 Practice Mode (Luyện tập)</div>
+          <div class="mode-desc">Phản hồi đúng/sai tức thì sau mỗi câu kèm giải thích quy tắc phát âm IPA chi tiết.</div>
+        </div>
+        <div class="mode-card" data-mode="test">
+          <div class="mode-title">📝 Test Mode (Kiểm tra)</div>
+          <div class="mode-desc">Làm bài liên tục không hiển thị đáp án, chỉ chấm điểm và xếp loại sau khi nộp bài.</div>
+        </div>
+      </div>
+
+      <!-- Step 3: Choose Question Count -->
+      <div class="section-title">
+        <span>3. CHỌN SỐ LƯỢNG CÂU HỎI</span>
+      </div>
+      <div class="pill-grid counts" id="countGrid">
+        <button class="pill-btn" data-count="10"><div class="pill-title" style="justify-content:center;">10 câu</div></button>
+        <button class="pill-btn active" data-count="15"><div class="pill-title" style="justify-content:center;">15 câu</div></button>
+        <button class="pill-btn" data-count="20"><div class="pill-title" style="justify-content:center;">20 câu</div></button>
+        <button class="pill-btn" data-count="30"><div class="pill-title" style="justify-content:center;">30 câu</div></button>
+        <button class="pill-btn" data-count="all"><div class="pill-title" style="justify-content:center;">Tất cả</div></button>
+      </div>
+
+      <!-- Step 4: Choose Task Type -->
+      <div class="section-title">
+        <span>4. CHỌN DẠNG BÀI TẬP (TASK 1 – 7)</span>
+      </div>
+      <div class="task-grid" id="taskGrid">
+        <button class="task-btn active" data-task="1">
+          <div class="task-num">T1</div>
+          <div class="task-info">
+            <div class="task-name">Choose the Sound</div>
+            <div class="task-sub">Hiển thị từ tiếng Anh, chọn âm IPA đúng</div>
+          </div>
+        </button>
+        <button class="task-btn" data-task="2">
+          <div class="task-num">T2</div>
+          <div class="task-info">
+            <div class="task-name">Listen and Choose</div>
+            <div class="task-sub">Nghe phát âm, chọn từ vựng đúng (ẩn từ mục tiêu)</div>
+          </div>
+        </button>
+        <button class="task-btn" data-task="3">
+          <div class="task-num">T3</div>
+          <div class="task-info">
+            <div class="task-name">Classify the Words</div>
+            <div class="task-sub">Kéo thả hoặc chạm chọn từ vào đúng nhóm âm</div>
+          </div>
+        </button>
+        <button class="task-btn" data-task="4">
+          <div class="task-num">T4</div>
+          <div class="task-info">
+            <div class="task-name">Find the Odd One Out</div>
+            <div class="task-sub">Tìm từ có phần phát âm khác với 3 từ còn lại</div>
+          </div>
+        </button>
+        <button class="task-btn" data-task="5">
+          <div class="task-num">T5</div>
+          <div class="task-info">
+            <div class="task-name">Minimal Pairs</div>
+            <div class="task-sub">Luyện phân biệt các cặp từ dễ nhầm lẫn (big/pig, robe/rope...)</div>
+          </div>
+        </button>
+   
+
+      <button class="btn-start" id="startBtn">
+        <span>🚀 BẮT ĐẦU LUYỆN TẬP</span>
+      </button>
+    </section>
+
+    <!-- ======================================================================
+         SCREEN 2: EXERCISE SCREEN
+         ====================================================================== -->
+    <section class="screen" id="exerciseScreen">
+      <!-- Progress & Stat Bar -->
+      <div class="exercise-header">
+        <div class="progress-info">
+          <span class="progress-count" id="qCurrentProgress">Câu 1/15</span>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="progressBarFill"></div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div class="stat-badge timer" id="timerBadge">⏱️ 00:00</div>
+          <div class="stat-badge score-correct" id="liveScoreCorrect">✓ 0</div>
+          <div class="stat-badge score-wrong" id="liveScoreWrong">✗ 0</div>
+        </div>
+      </div>
+
+      <!-- Main Exercise Card -->
+      <div class="exercise-card" id="exerciseCard">
+        <div class="card-top">
+          <span class="task-label-badge" id="taskLabelBadge">TASK 1 • CHOOSE THE SOUND</span>
+          <span class="badge" id="unitLabelBadge">Unit 1</span>
+        </div>
+
+        <div class="card-prompt" id="cardPrompt">Chọn âm chính xác của từ dưới đây:</div>
+
+        <!-- Hộp hiển thị mẹo -->
+        <div id="unitTip" class="unit-tip"></div>
+
+        <!-- Dynamic Container for Task Content -->
+        <div id="taskDynamicContent"></div>
+
+        <!-- Practice Mode Feedback Banner -->
+        <div class="feedback-banner" id="feedbackBanner">
+          <div class="fb-header">
+            <span id="fbTitle">Chính xác! 🎉</span>
+            <button class="btn-speaker" id="fbSpeakBtn" title="Nghe lại phát âm">🔊</button>
+          </div>
+          <div class="fb-explain" id="fbExplain">Quy tắc giải thích ở đây...</div>
+          <div class="fb-actions">
+            <button class="btn-next-question" id="nextQuestionBtn">
+              <span>Tiếp tục câu sau ➔</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Buttons -->
+      <div class="exercise-footer">
+        <button class="btn-exit-exercise" id="btnExitExercise">✕ Thoát ra</button>
+        <button class="btn-submit-test" id="btnSubmitTest" style="display:none;">Nộp bài & Chấm điểm ➔</button>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SCREEN 3: RESULT SCREEN
+         ====================================================================== -->
+    <section class="screen" id="resultScreen">
+      <div class="result-card">
+        <div class="score-circle" id="scoreCircle">
+          <div class="score-circle-inner">
+            <div class="score-percent" id="resPercent">100%</div>
+            <div class="score-label">ĐỘ CHÍNH XÁC</div>
+          </div>
+        </div>
+
+        <h2 class="result-title" id="resTitle">XUẤT SẮC! 🎉</h2>
+        <p class="result-message" id="resMessage">Bạn đã nắm rất vững các quy tắc phát âm!</p>
+
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="stat-val" id="resTotalQ">15</div>
+            <div class="stat-desc">Tổng số câu</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val score-correct" id="resCorrect">15</div>
+            <div class="stat-desc">Số câu đúng</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val score-wrong" id="resWrong">0</div>
+            <div class="stat-desc">Số câu sai</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" id="resTime">01:45</div>
+            <div class="stat-desc">Thời gian</div>
+          </div>
+        </div>
+
+        <!-- Review Mistakes / Review List -->
+        <div class="review-section">
+          <div class="section-title">
+            <span>CHI TIẾT BÀI LÀM & GIẢI THÍCH</span>
+            <span class="badge" id="reviewCountBadge">15 câu</span>
+          </div>
+          <div class="review-list" id="reviewList"></div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="result-actions">
+          <button class="btn-retry-mistakes" id="btnRetryMistakes" style="display:none;">
+            <span>↺ Luyện lại câu sai</span>
+          </button>
+          <button class="btn-new-session" id="btnNewSession">
+            <span>★ Làm bài mới</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- History Modal -->
+  <div class="modal-overlay" id="historyModal">
+    <div class="modal-card" style="max-width: 600px;">
+      <div class="modal-title">📜 Lịch sử luyện tập</div>
+      <div class="modal-text">Kết quả các bài luyện tập đã hoàn thành trên thiết bị này:</div>
+      <div style="max-height: 260px; overflow-y: auto; margin-bottom: 16px;">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Thời gian</th>
+              <th>Unit</th>
+              <th>Dạng bài</th>
+              <th>Điểm</th>
+              <th>Tỷ lệ</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody">
+            <tr><td colspan="5" style="text-align:center; color:var(--text-light);">Chưa có lịch sử làm bài.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-btns">
+        <button class="btn-secondary" id="btnClearHistory" style="color:var(--danger);">Xóa lịch sử</button>
+        <button class="btn-start" style="padding: 10px;" id="btnCloseHistory">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exit / Confirmation Modal -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-card">
+      <div class="modal-title" id="confirmModalTitle">Xác nhận quay lại?</div>
+      <div class="modal-text" id="confirmModalText">Kết quả bài luyện tập hiện tại sẽ không được lưu nếu bạn thoát ra ngay bây giờ.</div>
+      <div class="modal-btns">
+        <button class="btn-secondary" id="confirmModalCancel">Tiếp tục làm</button>
+        <button class="btn-start" style="padding: 10px; background:var(--danger);" id="confirmModalOk">Thoát ra</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-box" id="toastBox">Thông báo</div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    PRONUNCIATION PRACTICE PRO • Tiếng Anh 6 Global Success (Unit 1, 2, 3) • 100% Offline HTML5
+  </footer>
+
+  <!-- ========================================================================
+       DATA & APPLICATION JAVASCRIPT
+       ======================================================================== -->
+  <script>
+    
+    /* ==========================================================================
+       DATA DEFINITION: PRONUNCIATION DATABASE
+       ========================================================================== */
+    const DATABASE = {
+      u1_words: [{"word": "smart", "ipa": "/smɑːrt/", "sound": "/ɑː/", "focus": "ar", "meaning": "thông minh, sáng sủa", "isOriginal": true, "note": "Chữ 'ar' phát âm là /ɑː/ (A dài)."}, {"word": "art", "ipa": "/ɑːrt/", "sound": "/ɑː/", "focus": "ar", "meaning": "nghệ thuật, mỹ thuật", "isOriginal": true, "note": "Chữ 'ar' phát âm là /ɑː/ (A dài)."}, {"word": "class", "ipa": "/klɑːs/", "sound": "/ɑː/", "focus": "a", "meaning": "lớp học", "isOriginal": true, "note": "Chữ 'a' trong 'class' (Global Success) phát âm là /ɑː/."}, {"word": "carton", "ipa": "/ˈkɑːrtn/", "sound": "/ɑː/", "focus": "ar", "meaning": "hộp bìa cứng, hộp sữa", "isOriginal": true, "note": "Chữ 'ar' ở âm tiết đầu phát âm là /ɑː/."}, {"word": "subject", "ipa": "/ˈsʌbdʒɪkt/", "sound": "/ʌ/", "focus": "u", "meaning": "môn học", "isOriginal": true, "note": "Chữ 'u' trong 'subject' phát âm là /ʌ/ (Á ngắn)."}, {"word": "study", "ipa": "/ˈstʌdi/", "sound": "/ʌ/", "focus": "u", "meaning": "học tập, nghiên cứu", "isOriginal": true, "note": "Chữ 'u' trong 'study' phát âm là /ʌ/ (Á ngắn)."}, {"word": "Monday", "ipa": "/ˈmʌndeɪ/", "sound": "/ʌ/", "focus": "o", "meaning": "thứ Hai", "isOriginal": true, "note": "Chữ 'o' trong 'Monday' phát âm là /ʌ/ (Á ngắn)."}, {"word": "compass", "ipa": "/ˈkʌmpəs/", "sound": "/ʌ/", "focus": "o", "meaning": "com-pa (vẽ hình tròn)", "isOriginal": true, "note": "Chữ 'o' trong 'compass' phát âm là /ʌ/ (Á ngắn)."}, {"word": "star", "ipa": "/stɑːr/", "sound": "/ɑː/", "focus": "ar", "meaning": "ngôi sao", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "park", "ipa": "/pɑːrk/", "sound": "/ɑː/", "focus": "ar", "meaning": "công viên", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "farm", "ipa": "/fɑːrm/", "sound": "/ɑː/", "focus": "ar", "meaning": "nông trại", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "garden", "ipa": "/ˈɡɑːrdn/", "sound": "/ɑː/", "focus": "ar", "meaning": "khu vườn", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "hard", "ipa": "/hɑːrd/", "sound": "/ɑː/", "focus": "ar", "meaning": "chăm chỉ, vất vả", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "party", "ipa": "/ˈpɑːrti/", "sound": "/ɑː/", "focus": "ar", "meaning": "bữa tiệc", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "guitar", "ipa": "/ɡɪˈtɑːr/", "sound": "/ɑː/", "focus": "ar", "meaning": "đàn ghi-ta", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "yard", "ipa": "/jɑːrd/", "sound": "/ɑː/", "focus": "ar", "meaning": "cái sân", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "large", "ipa": "/lɑːrdʒ/", "sound": "/ɑː/", "focus": "ar", "meaning": "rộng lớn", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "fast", "ipa": "/fɑːst/", "sound": "/ɑː/", "focus": "a", "meaning": "nhanh nhẹn", "isOriginal": false, "note": "Chữ 'a' trong 'fast' phát âm là /ɑː/."}, {"word": "father", "ipa": "/ˈfɑːðər/", "sound": "/ɑː/", "focus": "a", "meaning": "người cha, bố", "isOriginal": false, "note": "Chữ 'a' trong 'father' phát âm là /ɑː/."}, {"word": "car", "ipa": "/kɑːr/", "sound": "/ɑː/", "focus": "ar", "meaning": "chiếc xe hơi", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "market", "ipa": "/ˈmɑːrkɪt/", "sound": "/ɑː/", "focus": "ar", "meaning": "ngôi chợ", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "start", "ipa": "/stɑːrt/", "sound": "/ɑː/", "focus": "ar", "meaning": "bắt đầu", "isOriginal": false, "note": "Chữ 'ar' phát âm là /ɑː/."}, {"word": "lunch", "ipa": "/lʌntʃ/", "sound": "/ʌ/", "focus": "u", "meaning": "bữa trưa", "isOriginal": false, "note": "Chữ 'u' phát âm là /ʌ/."}, {"word": "rubber", "ipa": "/ˈrʌbər/", "sound": "/ʌ/", "focus": "u", "meaning": "cục tẩy", "isOriginal": false, "note": "Chữ 'u' phát âm là /ʌ/."}, {"word": "brother", "ipa": "/ˈbrʌðər/", "sound": "/ʌ/", "focus": "o", "meaning": "anh/em trai", "isOriginal": false, "note": "Chữ 'o' trong 'brother' phát âm là /ʌ/."}, {"word": "mother", "ipa": "/ˈmʌðər/", "sound": "/ʌ/", "focus": "o", "meaning": "người mẹ", "isOriginal": false, "note": "Chữ 'o' trong 'mother' phát âm là /ʌ/."}, {"word": "country", "ipa": "/ˈkʌntri/", "sound": "/ʌ/", "focus": "ou", "meaning": "đất nước, vùng quê", "isOriginal": false, "note": "Chữ 'ou' trong 'country' phát âm là /ʌ/."}, {"word": "cup", "ipa": "/kʌp/", "sound": "/ʌ/", "focus": "u", "meaning": "cái tách, cái cúp", "isOriginal": false, "note": "Chữ 'u' phát âm là /ʌ/."}, {"word": "sun", "ipa": "/sʌn/", "sound": "/ʌ/", "focus": "u", "meaning": "mặt trời", "isOriginal": false, "note": "Chữ 'u' phát âm là /ʌ/."}, {"word": "month", "ipa": "/mʌnθ/", "sound": "/ʌ/", "focus": "o", "meaning": "tháng trong năm", "isOriginal": false, "note": "Chữ 'o' trong 'month' phát âm là /ʌ/."}, {"word": "funny", "ipa": "/ˈfʌni/", "sound": "/ʌ/", "focus": "u", "meaning": "hài hước, vui vẻ", "isOriginal": false, "note": "Chữ 'u' phát âm là /ʌ/."}, {"word": "club", "ipa": "/klʌb/", "sound": "/ʌ/", "focus": "u", "meaning": "câu lạc bộ", "isOriginal": false, "note": "Chữ 'u' phát âm là /ʌ/."}, {"word": "bus", "ipa": "/bʌs/", "sound": "/ʌ/", "focus": "u", "meaning": "xe buýt", "isOriginal": false, "note": "Chữ 'u' phát âm là /ʌ/."}, {"word": "summer", "ipa": "/ˈsʌmər/", "sound": "/ʌ/", "focus": "u", "meaning": "mùa hè", "isOriginal": false, "note": "Chữ 'u' phát âm là /ʌ/."}, {"word": "come", "ipa": "/kʌm/", "sound": "/ʌ/", "focus": "o", "meaning": "đến, đi tới", "isOriginal": false, "note": "Chữ 'o' trong 'come' phát âm là /ʌ/."}, {"word": "duck", "ipa": "/dʌk/", "sound": "/ʌ/", "focus": "u", "meaning": "con vịt", "isOriginal": false, "note": "Chữ 'u' phát âm là /ʌ/."}],
+      u2_words: [{"word": "lamps", "ipa": "/læmps/", "sound": "/s/", "root": "lamp", "endingSound": "/p/", "meaning": "những chiếc đèn bàn", "isOriginal": true, "note": "Từ gốc 'lamp' tận cùng bằng phụ âm vô thanh /p/ nên phát âm đuôi là /s/."}, {"word": "sinks", "ipa": "/sɪŋks/", "sound": "/s/", "root": "sink", "endingSound": "/k/", "meaning": "những bồn rửa", "isOriginal": true, "note": "Từ gốc 'sink' tận cùng bằng phụ âm vô thanh /k/ nên phát âm đuôi là /s/."}, {"word": "flats", "ipa": "/flæts/", "sound": "/s/", "root": "flat", "endingSound": "/t/", "meaning": "những căn hộ", "isOriginal": true, "note": "Từ gốc 'flat' tận cùng bằng phụ âm vô thanh /t/ nên phát âm đuôi là /s/."}, {"word": "sofas", "ipa": "/ˈsəʊfəz/", "sound": "/z/", "root": "sofa", "endingSound": "nguyên âm /ə/", "meaning": "những ghế sô-pha", "isOriginal": true, "note": "Từ gốc 'sofa' tận cùng bằng nguyên âm nên phát âm đuôi là /z/."}, {"word": "rooms", "ipa": "/ruːmz/", "sound": "/z/", "root": "room", "endingSound": "/m/", "meaning": "những căn phòng", "isOriginal": true, "note": "Từ gốc 'room' tận cùng bằng phụ âm hữu thanh /m/ nên phát âm đuôi là /z/."}, {"word": "cupboards", "ipa": "/ˈkʌbərdz/", "sound": "/z/", "root": "cupboard", "endingSound": "/d/", "meaning": "những tủ đựng chén bát", "isOriginal": true, "note": "Từ gốc 'cupboard' tận cùng bằng phụ âm hữu thanh /d/ nên phát âm đuôi là /z/."}, {"word": "houses", "ipa": "/ˈhaʊzɪz/", "sound": "/ɪz/", "root": "house", "endingSound": "/s/", "meaning": "những ngôi nhà", "isOriginal": true, "note": "Từ gốc 'house' tận cùng bằng âm xuýt /s/ nên phát âm đuôi là /ɪz/."}, {"word": "watches", "ipa": "/ˈwɒtʃɪz/", "sound": "/ɪz/", "root": "watch", "endingSound": "/tʃ/", "meaning": "những chiếc đồng hồ đeo tay", "isOriginal": true, "note": "Từ gốc 'watch' tận cùng bằng âm xuýt /tʃ/ nên phát âm đuôi là /ɪz/."}, {"word": "books", "ipa": "/bʊks/", "sound": "/s/", "root": "book", "endingSound": "/k/", "meaning": "những quyển sách", "isOriginal": false, "note": "Từ gốc 'book' tận cùng /k/ vô thanh -> /s/."}, {"word": "cats", "ipa": "/kæts/", "sound": "/s/", "root": "cat", "endingSound": "/t/", "meaning": "những con mèo", "isOriginal": false, "note": "Từ gốc 'cat' tận cùng /t/ vô thanh -> /s/."}, {"word": "stops", "ipa": "/stɒps/", "sound": "/s/", "root": "stop", "endingSound": "/p/", "meaning": "các điểm dừng", "isOriginal": false, "note": "Từ gốc 'stop' tận cùng /p/ vô thanh -> /s/."}, {"word": "cooks", "ipa": "/kʊks/", "sound": "/s/", "root": "cook", "endingSound": "/k/", "meaning": "những người đầu bếp", "isOriginal": false, "note": "Từ gốc 'cook' tận cùng /k/ vô thanh -> /s/."}, {"word": "desks", "ipa": "/desks/", "sound": "/s/", "root": "desk", "endingSound": "/k/", "meaning": "những bàn học", "isOriginal": false, "note": "Từ gốc 'desk' tận cùng /k/ vô thanh -> /s/."}, {"word": "hats", "ipa": "/hæts/", "sound": "/s/", "root": "hat", "endingSound": "/t/", "meaning": "những cái mũ", "isOriginal": false, "note": "Từ gốc 'hat' tận cùng /t/ vô thanh -> /s/."}, {"word": "laughs", "ipa": "/lɑːfs/", "sound": "/s/", "root": "laugh", "endingSound": "/f/", "meaning": "cười lớn", "isOriginal": false, "note": "'gh' trong 'laugh' phát âm là /f/ vô thanh -> /s/."}, {"word": "months", "ipa": "/mʌnθs/", "sound": "/s/", "root": "month", "endingSound": "/θ/", "meaning": "các tháng", "isOriginal": false, "note": "'th' trong 'month' phát âm là /θ/ vô thanh -> /s/."}, {"word": "roofs", "ipa": "/ruːfs/", "sound": "/s/", "root": "roof", "endingSound": "/f/", "meaning": "những mái nhà", "isOriginal": false, "note": "Từ gốc 'roof' tận cùng /f/ vô thanh -> /s/."}, {"word": "maps", "ipa": "/mæps/", "sound": "/s/", "root": "map", "endingSound": "/p/", "meaning": "những bản đồ", "isOriginal": false, "note": "Từ gốc 'map' tận cùng /p/ vô thanh -> /s/."}, {"word": "parents", "ipa": "/ˈpeərənts/", "sound": "/s/", "root": "parent", "endingSound": "/t/", "meaning": "bố mẹ", "isOriginal": false, "note": "Từ gốc 'parent' tận cùng /t/ vô thanh -> /s/."}, {"word": "beds", "ipa": "/bedz/", "sound": "/z/", "root": "bed", "endingSound": "/d/", "meaning": "những cái giường", "isOriginal": false, "note": "Từ gốc 'bed' tận cùng bằng /d/ hữu thanh -> /z/."}, {"word": "chairs", "ipa": "/tʃeərz/", "sound": "/z/", "root": "chair", "endingSound": "nguyên âm", "meaning": "những cái ghế", "isOriginal": false, "note": "Từ gốc 'chair' tận cùng bằng nguyên âm -> /z/."}, {"word": "doors", "ipa": "/dɔːrz/", "sound": "/z/", "root": "door", "endingSound": "nguyên âm", "meaning": "những cánh cửa", "isOriginal": false, "note": "Từ gốc 'door' tận cùng bằng nguyên âm -> /z/."}, {"word": "tables", "ipa": "/ˈteɪblz/", "sound": "/z/", "root": "table", "endingSound": "/l/", "meaning": "những cái bàn", "isOriginal": false, "note": "Từ gốc 'table' tận cùng bằng /l/ hữu thanh -> /z/."}, {"word": "pens", "ipa": "/penz/", "sound": "/z/", "root": "pen", "endingSound": "/n/", "meaning": "những cây bút", "isOriginal": false, "note": "Từ gốc 'pen' tận cùng bằng /n/ hữu thanh -> /z/."}, {"word": "bags", "ipa": "/bæɡz/", "sound": "/z/", "root": "bag", "endingSound": "/ɡ/", "meaning": "những cái túi/cặp", "isOriginal": false, "note": "Từ gốc 'bag' tận cùng bằng /ɡ/ hữu thanh -> /z/."}, {"word": "windows", "ipa": "/ˈwɪndəʊz/", "sound": "/z/", "root": "window", "endingSound": "nguyên âm", "meaning": "những cửa sổ", "isOriginal": false, "note": "Từ gốc 'window' tận cùng bằng nguyên âm -> /z/."}, {"word": "games", "ipa": "/ɡeɪmz/", "sound": "/z/", "root": "game", "endingSound": "/m/", "meaning": "các trò chơi", "isOriginal": false, "note": "Từ gốc 'game' tận cùng bằng /m/ hữu thanh -> /z/."}, {"word": "days", "ipa": "/deɪz/", "sound": "/z/", "root": "day", "endingSound": "nguyên âm", "meaning": "những ngày", "isOriginal": false, "note": "Từ gốc 'day' tận cùng bằng nguyên âm -> /z/."}, {"word": "boys", "ipa": "/bɔɪz/", "sound": "/z/", "root": "boy", "endingSound": "nguyên âm", "meaning": "những cậu bé", "isOriginal": false, "note": "Từ gốc 'boy' tận cùng bằng nguyên âm -> /z/."}, {"word": "schools", "ipa": "/skuːlz/", "sound": "/z/", "root": "school", "endingSound": "/l/", "meaning": "những ngôi trường", "isOriginal": false, "note": "Từ gốc 'school' tận cùng bằng /l/ hữu thanh -> /z/."}, {"word": "toys", "ipa": "/tɔɪz/", "sound": "/z/", "root": "toy", "endingSound": "nguyên âm", "meaning": "những món đồ chơi", "isOriginal": false, "note": "Từ gốc 'toy' tận cùng bằng nguyên âm -> /z/."}, {"word": "classes", "ipa": "/ˈklɑːsɪz/", "sound": "/ɪz/", "root": "class", "endingSound": "/s/", "meaning": "các lớp học", "isOriginal": false, "note": "Từ gốc 'class' tận cùng bằng âm xuýt /s/ -> /ɪz/."}, {"word": "boxes", "ipa": "/ˈbɒksɪz/", "sound": "/ɪz/", "root": "box", "endingSound": "/ks/", "meaning": "những chiếc hộp", "isOriginal": false, "note": "Từ gốc 'box' tận cùng bằng âm xuýt /ks/ -> /ɪz/."}, {"word": "buses", "ipa": "/ˈbʌsɪz/", "sound": "/ɪz/", "root": "bus", "endingSound": "/s/", "meaning": "những xe buýt", "isOriginal": false, "note": "Từ gốc 'bus' tận cùng bằng âm xuýt /s/ -> /ɪz/."}, {"word": "dishes", "ipa": "/ˈdɪʃɪz/", "sound": "/ɪz/", "root": "dish", "endingSound": "/ʃ/", "meaning": "những cái đĩa", "isOriginal": false, "note": "Từ gốc 'dish' tận cùng bằng âm xuýt /ʃ/ -> /ɪz/."}, {"word": "brushes", "ipa": "/ˈbrʌʃɪz/", "sound": "/ɪz/", "root": "brush", "endingSound": "/ʃ/", "meaning": "những bàn chải", "isOriginal": false, "note": "Từ gốc 'brush' tận cùng bằng âm xuýt /ʃ/ -> /ɪz/."}, {"word": "oranges", "ipa": "/ˈɒrɪndʒɪz/", "sound": "/ɪz/", "root": "orange", "endingSound": "/dʒ/", "meaning": "những quả cam", "isOriginal": false, "note": "Từ gốc 'orange' tận cùng bằng âm xuýt /dʒ/ -> /ɪz/."}, {"word": "fridges", "ipa": "/ˈfrɪdʒɪz/", "sound": "/ɪz/", "root": "fridge", "endingSound": "/dʒ/", "meaning": "những cái tủ lạnh", "isOriginal": false, "note": "Từ gốc 'fridge' tận cùng bằng âm xuýt /dʒ/ -> /ɪz/."}, {"word": "sandwiches", "ipa": "/ˈsænwɪtʃɪz/", "sound": "/ɪz/", "root": "sandwich", "endingSound": "/tʃ/", "meaning": "những bánh mì kẹp", "isOriginal": false, "note": "Từ gốc 'sandwich' tận cùng bằng âm xuýt /tʃ/ -> /ɪz/."}, {"word": "beaches", "ipa": "/ˈbiːtʃɪz/", "sound": "/ɪz/", "root": "beach", "endingSound": "/tʃ/", "meaning": "những bãi biển", "isOriginal": false, "note": "Từ gốc 'beach' tận cùng bằng âm xuýt /tʃ/ -> /ɪz/."}, {"word": "places", "ipa": "/ˈpleɪsɪz/", "sound": "/ɪz/", "root": "place", "endingSound": "/s/", "meaning": "những địa điểm", "isOriginal": false, "note": "Từ gốc 'place' tận cùng bằng âm xuýt /s/ -> /ɪz/."}],
+      u3_pairs: [{"wordA": "big", "wordB": "pig", "ipaA": "/bɪɡ/", "ipaB": "/pɪɡ/", "meanA": "to lớn", "meanB": "con heo, lợn", "position": "initial", "isOriginal": true, "note": "Cặp từ gốc: /b/ hữu thanh (rung họng) trong 'big' đối lập với /p/ vô thanh bật hơi trong 'pig'."}, {"wordA": "bear", "wordB": "pear", "ipaA": "/beər/", "ipaB": "/peər/", "meanA": "con gấu", "meanB": "quả lê", "position": "initial", "isOriginal": true, "note": "Cặp từ gốc: /b/ hữu thanh trong 'bear' đối lập với /p/ vô thanh trong 'pear'."}, {"wordA": "buy", "wordB": "pie", "ipaA": "/baɪ/", "ipaB": "/paɪ/", "meanA": "mua sắm", "meanB": "bánh nướng ngọt", "position": "initial", "isOriginal": true, "note": "Cặp từ gốc: /b/ trong 'buy' rung cổ họng, /p/ trong 'pie' bật luồng hơi gió dứt khoát."}, {"wordA": "robe", "wordB": "rope", "ipaA": "/rəʊb/", "ipaB": "/rəʊp/", "meanA": "áo choàng", "meanB": "dây thừng", "position": "final", "isOriginal": true, "note": "Cặp từ gốc (Âm cuối): 'robe' kết thúc bằng /b/ hữu thanh kéo dài nguyên âm, 'rope' kết thúc bằng /p/ vô thanh ngắt hơi."}, {"wordA": "bat", "wordB": "pat", "ipaA": "/bæt/", "ipaB": "/pæt/", "meanA": "con dơi, cây gậy", "meanB": "vỗ nhẹ", "position": "initial", "isOriginal": false, "note": "/b/ trong 'bat' đối lập với /p/ trong 'pat'."}, {"wordA": "bin", "wordB": "pin", "ipaA": "/bɪn/", "ipaB": "/pɪn/", "meanA": "thùng rác", "meanB": "chiếc ghim", "position": "initial", "isOriginal": false, "note": "/b/ trong 'bin' đối lập với /p/ trong 'pin'."}, {"wordA": "bill", "wordB": "pill", "ipaA": "/bɪl/", "ipaB": "/pɪl/", "meanA": "hóa đơn", "meanB": "viên thuốc", "position": "initial", "isOriginal": false, "note": "/b/ trong 'bill' đối lập với /p/ trong 'pill'."}, {"wordA": "bark", "wordB": "park", "ipaA": "/bɑːrk/", "ipaB": "/pɑːrk/", "meanA": "tiếng sủa", "meanB": "công viên", "position": "initial", "isOriginal": false, "note": "/b/ trong 'bark' đối lập với /p/ trong 'park'."}, {"wordA": "beach", "wordB": "peach", "ipaA": "/biːtʃ/", "ipaB": "/piːtʃ/", "meanA": "bãi biển", "meanB": "quả đào", "position": "initial", "isOriginal": false, "note": "/b/ trong 'beach' đối lập với /p/ trong 'peach'."}, {"wordA": "ban", "wordB": "pan", "ipaA": "/bæn/", "ipaB": "/pæn/", "meanA": "lệnh cấm", "meanB": "cái chảo", "position": "initial", "isOriginal": false, "note": "/b/ trong 'ban' đối lập với /p/ trong 'pan'."}, {"wordA": "cab", "wordB": "cap", "ipaA": "/kæb/", "ipaB": "/kæp/", "meanA": "xe tắc-xi", "meanB": "mũ lưỡi trai", "position": "final", "isOriginal": false, "note": "Âm cuối: /b/ trong 'cab' đối lập với /p/ trong 'cap'."}, {"wordA": "rib", "wordB": "rip", "ipaA": "/rɪb/", "ipaB": "/rɪp/", "meanA": "xương sườn", "meanB": "xé rách", "position": "final", "isOriginal": false, "note": "Âm cuối: /b/ trong 'rib' đối lập với /p/ trong 'rip'."}, {"wordA": "cub", "wordB": "cup", "ipaA": "/kʌb/", "ipaB": "/kʌp/", "meanA": "thú con", "meanB": "cái tách", "position": "final", "isOriginal": false, "note": "Âm cuối: /b/ trong 'cub' đối lập với /p/ trong 'cup'."}, {"wordA": "tab", "wordB": "tap", "ipaA": "/tæb/", "ipaB": "/tæp/", "meanA": "thẻ tab, nhãn", "meanB": "vòi nước, gõ nhẹ", "position": "final", "isOriginal": false, "note": "Âm cuối: /b/ trong 'tab' đối lập với /p/ trong 'tap'."}, {"wordA": "lab", "wordB": "lap", "ipaA": "/læb/", "ipaB": "/læp/", "meanA": "phòng thí nghiệm", "meanB": "vòng chạy, đùi", "position": "final", "isOriginal": false, "note": "Âm cuối: /b/ trong 'lab' đối lập với /p/ trong 'lap'."}, {"wordA": "mob", "wordB": "mop", "ipaA": "/mɒb/", "ipaB": "/mɒp/", "meanA": "đám đông", "meanB": "cây lau nhà", "position": "final", "isOriginal": false, "note": "Âm cuối: /b/ trong 'mob' đối lập với /p/ trong 'mop'."}],
+      u3_words: [{"word": "big", "ipa": "/bɪɡ/", "sound": "/b/", "position": "initial", "meaning": "to lớn", "isOriginal": true, "note": "Âm đầu /b/ hữu thanh trong 'big'."}, {"word": "bear", "ipa": "/beər/", "sound": "/b/", "position": "initial", "meaning": "con gấu", "isOriginal": true, "note": "Âm đầu /b/ hữu thanh trong 'bear'."}, {"word": "buy", "ipa": "/baɪ/", "sound": "/b/", "position": "initial", "meaning": "mua sắm", "isOriginal": true, "note": "Âm đầu /b/ hữu thanh trong 'buy'."}, {"word": "robe", "ipa": "/rəʊb/", "sound": "/b/", "position": "final", "meaning": "áo choàng", "isOriginal": true, "note": "Âm cuối /b/ hữu thanh trong 'robe'."}, {"word": "pig", "ipa": "/pɪɡ/", "sound": "/p/", "position": "initial", "meaning": "con heo, lợn", "isOriginal": true, "note": "Âm đầu /p/ vô thanh bật hơi trong 'pig'."}, {"word": "pear", "ipa": "/peər/", "sound": "/p/", "position": "initial", "meaning": "quả lê", "isOriginal": true, "note": "Âm đầu /p/ vô thanh bật hơi trong 'pear'."}, {"word": "pie", "ipa": "/paɪ/", "sound": "/p/", "position": "initial", "meaning": "bánh ngọt nướng", "isOriginal": true, "note": "Âm đầu /p/ vô thanh bật hơi trong 'pie'."}, {"word": "rope", "ipa": "/rəʊp/", "sound": "/p/", "position": "final", "meaning": "dây thừng", "isOriginal": true, "note": "Âm cuối /p/ vô thanh dứt khoát trong 'rope'."}, {"word": "boy", "ipa": "/bɔɪ/", "sound": "/b/", "position": "initial", "meaning": "cậu bé", "isOriginal": false, "note": "Âm đầu /b/ trong 'boy'."}, {"word": "ball", "ipa": "/bɔːl/", "sound": "/b/", "position": "initial", "meaning": "quả bóng", "isOriginal": false, "note": "Âm đầu /b/ trong 'ball'."}, {"word": "book", "ipa": "/bʊk/", "sound": "/b/", "position": "initial", "meaning": "quyển sách", "isOriginal": false, "note": "Âm đầu /b/ trong 'book'."}, {"word": "bag", "ipa": "/bæɡ/", "sound": "/b/", "position": "initial", "meaning": "cái cặp, túi xách", "isOriginal": false, "note": "Âm đầu /b/ trong 'bag'."}, {"word": "bed", "ipa": "/bed/", "sound": "/b/", "position": "initial", "meaning": "chiếc giường", "isOriginal": false, "note": "Âm đầu /b/ trong 'bed'."}, {"word": "cab", "ipa": "/kæb/", "sound": "/b/", "position": "final", "meaning": "xe tắc-xi", "isOriginal": false, "note": "Âm cuối /b/ trong 'cab'."}, {"word": "rib", "ipa": "/rɪb/", "sound": "/b/", "position": "final", "meaning": "xương sườn", "isOriginal": false, "note": "Âm cuối /b/ trong 'rib'."}, {"word": "club", "ipa": "/klʌb/", "sound": "/b/", "position": "final", "meaning": "câu lạc bộ", "isOriginal": false, "note": "Âm cuối /b/ trong 'club'."}, {"word": "tub", "ipa": "/tʌb/", "sound": "/b/", "position": "final", "meaning": "bồn tắm", "isOriginal": false, "note": "Âm cuối /b/ trong 'tub'."}, {"word": "pen", "ipa": "/pen/", "sound": "/p/", "position": "initial", "meaning": "cây bút mực", "isOriginal": false, "note": "Âm đầu /p/ trong 'pen'."}, {"word": "pet", "ipa": "/pet/", "sound": "/p/", "position": "initial", "meaning": "thú cưng", "isOriginal": false, "note": "Âm đầu /p/ trong 'pet'."}, {"word": "park", "ipa": "/pɑːrk/", "sound": "/p/", "position": "initial", "meaning": "công viên", "isOriginal": false, "note": "Âm đầu /p/ trong 'park'."}, {"word": "pool", "ipa": "/puːl/", "sound": "/p/", "position": "initial", "meaning": "hồ bơi", "isOriginal": false, "note": "Âm đầu /p/ trong 'pool'."}, {"word": "cap", "ipa": "/kæp/", "sound": "/p/", "position": "final", "meaning": "mũ lưỡi trai", "isOriginal": false, "note": "Âm cuối /p/ trong 'cap'."}, {"word": "rip", "ipa": "/rɪp/", "sound": "/p/", "position": "final", "meaning": "xé rách", "isOriginal": false, "note": "Âm cuối /p/ trong 'rip'."}, {"word": "cup", "ipa": "/kʌp/", "sound": "/p/", "position": "final", "meaning": "cái tách chén", "isOriginal": false, "note": "Âm cuối /p/ trong 'cup'."}, {"word": "map", "ipa": "/mæp/", "sound": "/p/", "position": "final", "meaning": "tấm bản đồ", "isOriginal": false, "note": "Âm cuối /p/ trong 'map'."}, {"word": "top", "ipa": "/tɒp/", "sound": "/p/", "position": "final", "meaning": "đỉnh chóp", "isOriginal": false, "note": "Âm cuối /p/ trong 'top'."}, {"word": "ship", "ipa": "/ʃɪp/", "sound": "/p/", "position": "final", "meaning": "con tàu thủy", "isOriginal": false, "note": "Âm cuối /p/ trong 'ship'."}]
+    };
+
+    /* ==========================================================================
+       SOUND EFFECTS (WEB AUDIO API SYNTHESIZER - 100% OFFLINE)
+       ========================================================================== */
+    const SoundFX = {
+      ctx: null,
+      muted: false,
+      init() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) {
+            this.ctx = new AudioContext();
+          }
+        }
+      },
+      playTone(freq, type, duration, vol = 0.2) {
+        if (this.muted) return;
+        try {
+          this.init();
+          if (!this.ctx) return;
+          if (this.ctx.state === 'suspended') {
+            this.ctx.resume();
+          }
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+          gain.gain.setValueAtTime(vol, this.ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+          osc.start();
+          osc.stop(this.ctx.currentTime + duration);
+        } catch (e) {
+          console.warn("AudioContext error:", e);
+        }
+      },
+      playCorrect() {
+        if (this.muted) return;
+        this.playTone(523.25, 'sine', 0.12, 0.22);
+        setTimeout(() => this.playTone(659.25, 'sine', 0.12, 0.22), 90);
+        setTimeout(() => this.playTone(783.99, 'sine', 0.28, 0.25), 180);
+      },
+      playWrong() {
+        if (this.muted) return;
+        this.playTone(260, 'sawtooth', 0.15, 0.2);
+        setTimeout(() => this.playTone(190, 'sawtooth', 0.25, 0.25), 120);
+      },
+      playMatch() {
+        if (this.muted) return;
+        this.playTone(880, 'sine', 0.15, 0.25);
+      },
+      playClick() {
+        if (this.muted) return;
+        this.playTone(400, 'triangle', 0.04, 0.08);
+      },
+      playVictory() {
+        if (this.muted) return;
+        const notes = [523.25, 659.25, 783.99, 1046.50];
+        notes.forEach((freq, idx) => {
+          setTimeout(() => this.playTone(freq, 'triangle', 0.35, 0.2), idx * 110);
+        });
+      }
+    };
+
+    /* ==========================================================================
+       SPEECH ENGINE (WEB SPEECH API - EN-US OPTIMIZED)
+       ========================================================================== */
+    const SpeechEngine = {
+      synth: window.speechSynthesis,
+      voice: null,
+      rate: 1.0,
+      autoPlay: true,
+      muted: false,
+      init() {
+        if (!this.synth) return;
+        const loadVoices = () => {
+          const voices = this.synth.getVoices();
+          if (!voices || voices.length === 0) return;
+          // Prefer en-US natural voices
+          this.voice = voices.find(v => (v.lang === 'en-US' || v.lang === 'en_US') && !v.name.includes('Bad')) ||
+                       voices.find(v => v.lang.startsWith('en')) ||
+                       voices[0];
+        };
+        loadVoices();
+        if (this.synth.onvoiceschanged !== undefined) {
+          this.synth.onvoiceschanged = loadVoices;
+        }
+      },
+      speak(text, onStart, onEnd) {
+        if (this.muted || !this.synth) {
+          if (onEnd) onEnd();
+          return;
+        }
+        try {
+          this.synth.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.rate = this.rate;
+          utterance.lang = 'en-US';
+          if (this.voice) {
+            utterance.voice = this.voice;
+          }
+          if (onStart) utterance.onstart = onStart;
+          utterance.onend = () => {
+            if (onEnd) onEnd();
+          };
+          utterance.onerror = (e) => {
+            console.warn("Speech error:", e);
+            if (onEnd) onEnd();
+          };
+          this.synth.speak(utterance);
+        } catch (e) {
+          console.warn("Speech error:", e);
+          if (onEnd) onEnd();
+        }
+      },
+      cancel() {
+        if (this.synth) {
+          this.synth.cancel();
+        }
+      }
+    };
+
+    /* ==========================================================================
+       MAIN APPLICATION CONTROLLER
+       ========================================================================== */
+    const PronunApp = {
+      currentUnit: 'u1',
+      currentTask: '1',
+      currentMode: 'practice',
+      questionCount: 15,
+      questions: [],
+      currentIndex: 0,
+      score: { correct: 0, wrong: 0 },
+      userAnswers: [],
+      wrongMistakes: [],
+      timer: { seconds: 0, interval: null },
+      classifyState: { wordBank: [], buckets: {}, selectedChip: null },
+      isAnswered: false,
+
+      init() {
+        SoundFX.init();
+        SpeechEngine.init();
+
+        this.bindEvents();
+        this.renderHistory();
+      },
+
+      bindEvents() {
+        // Module Switcher / Brand
+        document.getElementById('brandBtn').addEventListener('click', () => this.showScreen('setupScreen'));
+        document.getElementById('homeBtn').addEventListener('click', () => this.confirmExit());
+
+        // Audio Toggle
+        const audioBtn = document.getElementById('audioToggleBtn');
+        audioBtn.addEventListener('click', () => {
+          SoundFX.muted = !SoundFX.muted;
+          SpeechEngine.muted = SoundFX.muted;
+          audioBtn.classList.toggle('muted', SoundFX.muted);
+          audioBtn.textContent = SoundFX.muted ? '🔇' : '🔊';
+          this.showToast(SoundFX.muted ? 'Đã tắt âm thanh' : 'Đã bật âm thanh');
+        });
+
+        // Speech rate & auto-pronounce
+        const rateSelect = document.getElementById('speechRateSelect');
+        rateSelect.addEventListener('change', (e) => {
+          SpeechEngine.rate = parseFloat(e.target.value);
+          this.showToast(`Tốc độ đọc: ${e.target.value}x`);
+        });
+
+        const autoSwitch = document.getElementById('autoPronounceSwitch');
+        autoSwitch.addEventListener('change', (e) => {
+          SpeechEngine.autoPlay = e.target.checked;
+          this.showToast(e.target.checked ? 'Đã bật tự động phát âm' : 'Đã tắt tự động phát âm');
+        });
+
+        // Fullscreen Toggle
+        document.getElementById('fullscreenToggleBtn').addEventListener('click', () => {
+          if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(() => {});
+          } else {
+            document.exitFullscreen().catch(() => {});
+          }
+        });
+
+        // Unit Selection
+        const unitBtns = document.querySelectorAll('#unitGrid .pill-btn');
+        unitBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            unitBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            this.currentUnit = btn.dataset.unit;
+            SoundFX.playClick();
+          });
+        });
+
+        // Mode Selection
+        const modeCards = document.querySelectorAll('#modeGroup .mode-card');
+        modeCards.forEach(card => {
+          card.addEventListener('click', () => {
+            modeCards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+            this.currentMode = card.dataset.mode;
+            SoundFX.playClick();
+          });
+        });
+
+        // Count Selection
+        const countBtns = document.querySelectorAll('#countGrid .pill-btn');
+        countBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            countBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            this.questionCount = btn.dataset.count === 'all' ? 'all' : parseInt(btn.dataset.count, 10);
+            SoundFX.playClick();
+          });
+        });
+
+        // Task Selection
+        const taskBtns = document.querySelectorAll('#taskGrid .task-btn');
+        taskBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            taskBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            this.currentTask = btn.dataset.task;
+            SoundFX.playClick();
+          });
+        });
+
+        // Start Exercise Button
+        document.getElementById('startBtn').addEventListener('click', () => {
+          SoundFX.playClick();
+          this.startSession();
+        });
+
+        // Next Question Button (Practice Mode)
+        document.getElementById('nextQuestionBtn').addEventListener('click', () => {
+          SoundFX.playClick();
+          this.nextQuestion();
+        });
+
+        // Exit / Back Buttons
+        document.getElementById('btnExitExercise').addEventListener('click', () => {
+          this.confirmExit();
+        });
+
+        // Test Submit Button
+        document.getElementById('btnSubmitTest').addEventListener('click', () => {
+          this.finishSession();
+        });
+
+        // Result Actions
+        document.getElementById('btnNewSession').addEventListener('click', () => {
+          SoundFX.playClick();
+          this.showScreen('setupScreen');
+        });
+
+        document.getElementById('btnRetryMistakes').addEventListener('click', () => {
+          SoundFX.playClick();
+          this.retryMistakes();
+        });
+
+        // History Modal
+        document.getElementById('historyBtn').addEventListener('click', () => {
+          this.openHistoryModal();
+        });
+        document.getElementById('btnCloseHistory').addEventListener('click', () => {
+          document.getElementById('historyModal').classList.remove('active');
+        });
+        document.getElementById('btnClearHistory').addEventListener('click', () => {
+          if (confirm('Bạn có chắc chắn muốn xóa toàn bộ lịch sử luyện tập không?')) {
+            localStorage.removeItem('pronun_practice_history');
+            this.renderHistory();
+            this.showToast('Đã xóa lịch sử luyện tập');
+          }
+        });
+
+        // Confirm Exit Modal
+        document.getElementById('confirmModalCancel').addEventListener('click', () => {
+          document.getElementById('confirmModal').classList.remove('active');
+        });
+        document.getElementById('confirmModalOk').addEventListener('click', () => {
+          document.getElementById('confirmModal').classList.remove('active');
+          this.endTimer();
+          SpeechEngine.cancel();
+          this.showScreen('setupScreen');
+        });
+      },
+
+      confirmExit() {
+        const activeScreen = document.querySelector('.screen.active');
+        if (activeScreen && activeScreen.id === 'exerciseScreen') {
+          document.getElementById('confirmModal').classList.add('active');
+        } else {
+          this.showScreen('setupScreen');
+        }
+      },
+
+      showScreen(screenId) {
+        document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+        const target = document.getElementById(screenId);
+        if (target) {
+          target.classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      },
+
+      showToast(msg) {
+        const toast = document.getElementById('toastBox');
+        toast.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(this.toastTimer);
+        this.toastTimer = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2200);
+      },
+
+      /* ========================================================================
+         QUESTION GENERATION ENGINE (ALL TASKS & UNITS)
+         ======================================================================== */
+      generateQuestions(unit, task, count) {
+        let qList = [];
+
+        // Helper shuffle
+        const shuffle = (arr) => arr.slice().sort(() => Math.random() - 0.5);
+
+        // Helper to select words for a unit
+        const getWords = (u) => {
+          if (u === 'u1') return DATABASE.u1_words;
+          if (u === 'u2') return DATABASE.u2_words;
+          if (u === 'u3') return DATABASE.u3_words;
+          return [...DATABASE.u1_words, ...DATABASE.u2_words, ...DATABASE.u3_words];
+        };
+
+        const currentWords = getWords(unit);
+
+        // TASK 1: Choose the sound
+        if (task === '1') {
+          const pool = shuffle(currentWords);
+          pool.forEach((item, idx) => {
+            let options = [];
+            let unitName = unit === 'u1' ? 'Unit 1' : (unit === 'u2' ? 'Unit 2' : (unit === 'u3' ? 'Unit 3' : 'Mixed'));
+            if (item.sound === '/ɑː/' || item.sound === '/ʌ/') {
+              options = ['/ɑː/', '/ʌ/'];
+            } else if (item.sound === '/s/' || item.sound === '/z/' || item.sound === '/ɪz/') {
+              options = ['/s/', '/z/', '/ɪz/'];
+            } else {
+              options = ['/b/', '/p/'];
+            }
+            qList.push({
+              id: `q_t1_${idx}`,
+              taskType: '1',
+              unit: unitName,
+              prompt: `Chọn âm đúng của từ tiếng Anh sau:`,
+              targetWord: item.word,
+              ipa: item.ipa,
+              correctSound: item.sound,
+              focus: item.focus || '',
+              meaning: item.meaning,
+              options: options,
+              isOriginal: item.isOriginal,
+              explain: `${item.word} có phiên âm IPA là ${item.ipa}. ${item.note}`
+            });
+          });
+        }
+
+        // TASK 2: Listen and Choose (hidden word until answered)
+        else if (task === '2') {
+          const pool = shuffle(currentWords);
+          pool.forEach((item, idx) => {
+            // Pick 3 distractors from the same or other units
+            const others = currentWords.filter(w => w.word !== item.word);
+            const distractors = shuffle(others).slice(0, 3).map(w => w.word);
+            const options = shuffle([item.word, ...distractors]);
+            let unitName = unit === 'u1' ? 'Unit 1' : (unit === 'u2' ? 'Unit 2' : (unit === 'u3' ? 'Unit 3' : 'Mixed'));
+            qList.push({
+              id: `q_t2_${idx}`,
+              taskType: '2',
+              unit: unitName,
+              prompt: `Nghe âm thanh và chọn từ đúng nhất:`,
+              targetWord: item.word,
+              ipa: item.ipa,
+              correctAnswer: item.word,
+              meaning: item.meaning,
+              options: options,
+              isOriginal: item.isOriginal,
+              explain: `Từ được phát âm là "${item.word}" (${item.ipa}) nghĩa là "${item.meaning}". ${item.note}`
+            });
+          });
+        }
+
+        // TASK 3: Classify the words
+        else if (task === '3') {
+          // Break into groups of 8-10 words
+          const pool = shuffle(currentWords);
+          const groupSize = 8;
+          for (let i = 0; i < pool.length; i += groupSize) {
+            const group = pool.slice(i, i + groupSize);
+            if (group.length < 6) continue;
+            let buckets = [];
+            if (unit === 'u1') {
+              buckets = [
+                { id: 'b1', sound: '/ɑː/', name: 'Nhóm âm /ɑː/' },
+                { id: 'b2', sound: '/ʌ/', name: 'Nhóm âm /ʌ/' }
+              ];
+            } else if (unit === 'u2') {
+              buckets = [
+                { id: 'b1', sound: '/s/', name: 'Nhóm đuôi /s/' },
+                { id: 'b2', sound: '/z/', name: 'Nhóm đuôi /z/' },
+                { id: 'b3', sound: '/ɪz/', name: 'Nhóm đuôi /ɪz/' }
+              ];
+            } else if (unit === 'u3') {
+              buckets = [
+                { id: 'b1', sound: '/b/', name: 'Nhóm âm /b/' },
+                { id: 'b2', sound: '/p/', name: 'Nhóm âm /p/' }
+              ];
+            } else {
+              buckets = [
+                { id: 'b1', sound: '/ɑː/', name: 'Âm /ɑː/' },
+                { id: 'b2', sound: '/ʌ/', name: 'Âm /ʌ/' },
+                { id: 'b3', sound: '/s/', name: 'Đuôi /s/' }
+              ];
+            }
+            qList.push({
+              id: `q_t3_${i}`,
+              taskType: '3',
+              unit: unit === 'u1' ? 'Unit 1' : (unit === 'u2' ? 'Unit 2' : (unit === 'u3' ? 'Unit 3' : 'Mixed')),
+              prompt: `Phân loại các từ bên dưới vào đúng nhóm âm tương ứng:`,
+              buckets: buckets,
+              words: group,
+              explain: `Hãy đối chiếu phiên âm IPA của từng từ để phân nhóm chính xác!`
+            });
+          }
+        }
+
+        // TASK 4: Find the odd one out
+        else if (task === '4') {
+          // Generate 4-word sets where 3 share one sound and 1 differs
+          if (unit === 'u1') {
+            const aList = DATABASE.u1_words.filter(w => w.sound === '/ɑː/');
+            const vList = DATABASE.u1_words.filter(w => w.sound === '/ʌ/');
+            for (let i = 0; i < 20; i++) {
+              let isOddV = (i % 2 === 0);
+              let baseList = isOddV ? aList : vList;
+              let oddList = isOddV ? vList : aList;
+              let three = shuffle(baseList).slice(0, 3);
+              let one = shuffle(oddList)[0];
+              let four = shuffle([...three, one]);
+              qList.push({
+                id: `q_t4_u1_${i}`,
+                taskType: '4',
+                unit: 'Unit 1',
+                prompt: `Chọn từ có phần phát âm khác với các từ còn lại:`,
+                options: four.map(w => w.word),
+                correctAnswer: one.word,
+                detailWords: four,
+                oddWord: one,
+                explain: `"${one.word}" có âm ${one.sound} (${one.ipa}), trong khi 3 từ còn lại đều có âm ${three[0].sound} (${three.map(w => w.word).join(', ')}).`
+              });
+            }
+          } else if (unit === 'u2') {
+            const sList = DATABASE.u2_words.filter(w => w.sound === '/s/');
+            const zList = DATABASE.u2_words.filter(w => w.sound === '/z/');
+            const izList = DATABASE.u2_words.filter(w => w.sound === '/ɪz/');
+            const pools = [sList, zList, izList];
+            for (let i = 0; i < 20; i++) {
+              let baseIdx = i % 3;
+              let oddIdx = (i + 1 + Math.floor(Math.random() * 2)) % 3;
+              let three = shuffle(pools[baseIdx]).slice(0, 3);
+              let one = shuffle(pools[oddIdx])[0];
+              let four = shuffle([...three, one]);
+              qList.push({
+                id: `q_t4_u2_${i}`,
+                taskType: '4',
+                unit: 'Unit 2',
+                prompt: `Chọn từ có phần phát âm đuôi s/es khác với các từ còn lại:`,
+                options: four.map(w => w.word),
+                correctAnswer: one.word,
+                detailWords: four,
+                oddWord: one,
+                explain: `"${one.word}" có đuôi ${one.sound} (${one.ipa}), trong khi 3 từ còn lại đều có đuôi ${three[0].sound} (${three.map(w => w.word).join(', ')}).`
+              });
+            }
+          } else if (unit === 'u3') {
+            const bList = DATABASE.u3_words.filter(w => w.sound === '/b/');
+            const pList = DATABASE.u3_words.filter(w => w.sound === '/p/');
+            for (let i = 0; i < 20; i++) {
+              let isOddP = (i % 2 === 0);
+              let baseList = isOddP ? bList : pList;
+              let oddList = isOddP ? pList : bList;
+              let three = shuffle(baseList).slice(0, 3);
+              let one = shuffle(oddList)[0];
+              let four = shuffle([...three, one]);
+              qList.push({
+                id: `q_t4_u3_${i}`,
+                taskType: '4',
+                unit: 'Unit 3',
+                prompt: `Chọn từ có âm /b/ hoặc /p/ khác với các từ còn lại:`,
+                options: four.map(w => w.word),
+                correctAnswer: one.word,
+                detailWords: four,
+                oddWord: one,
+                explain: `"${one.word}" có âm ${one.sound} (${one.ipa}), trong khi 3 từ còn lại đều có âm ${three[0].sound} (${three.map(w => w.word).join(', ')}).`
+              });
+            }
+          } else {
+            // Mixed
+            const pool1 = DATABASE.u1_words;
+            const pool2 = DATABASE.u2_words;
+            for (let i = 0; i < 20; i++) {
+              let src = (i % 2 === 0) ? pool1 : pool2;
+              let soundTypes = [...new Set(src.map(w => w.sound))];
+              let baseSound = soundTypes[0];
+              let oddSound = soundTypes[1];
+              let three = shuffle(src.filter(w => w.sound === baseSound)).slice(0, 3);
+              let one = shuffle(src.filter(w => w.sound === oddSound))[0];
+              let four = shuffle([...three, one]);
+              qList.push({
+                id: `q_t4_mixed_${i}`,
+                taskType: '4',
+                unit: 'Mixed',
+                prompt: `Chọn từ có phần phát âm khác với các từ còn lại:`,
+                options: four.map(w => w.word),
+                correctAnswer: one.word,
+                detailWords: four,
+                oddWord: one,
+                explain: `"${one.word}" có âm ${one.sound} (${one.ipa}), trong khi 3 từ còn lại đều có âm ${three[0].sound}.`
+              });
+            }
+          }
+        }
+
+        // TASK 5: Minimal Pairs
+        else if (task === '5') {
+          const pairs = DATABASE.u3_pairs;
+          pairs.forEach((pair, idx) => {
+            // Randomly choose wordA or wordB as the mystery target
+            const isA = Math.random() < 0.5;
+            const targetWord = isA ? pair.wordA : pair.wordB;
+            const otherWord = isA ? pair.wordB : pair.wordA;
+            const targetIpa = isA ? pair.ipaA : pair.ipaB;
+            const targetMean = isA ? pair.meanA : pair.meanB;
+
+            qList.push({
+              id: `q_t5_${idx}`,
+              taskType: '5',
+              unit: 'Unit 3',
+              prompt: `Luyện nghe cặp từ đối lập. Bấm nút nghe và chọn từ bạn nghe được:`,
+              targetWord: targetWord,
+              ipa: targetIpa,
+              correctAnswer: targetWord,
+              pair: pair,
+              options: [pair.wordA, pair.wordB],
+              meaning: targetMean,
+              explain: `Từ bạn vừa nghe là "${targetWord}" (${targetIpa} - ${targetMean}). Cặp từ đối lập: ${pair.wordA} (${pair.ipaA}) vs ${pair.wordB} (${pair.ipaB}). ${pair.note}`
+            });
+          });
+        }
+
+        // TASK 6: Listen and Type
+        else if (task === '6') {
+          const pool = shuffle(currentWords);
+          pool.forEach((item, idx) => {
+            qList.push({
+              id: `q_t6_${idx}`,
+              taskType: '6',
+              unit: unit === 'u1' ? 'Unit 1' : (unit === 'u2' ? 'Unit 2' : (unit === 'u3' ? 'Unit 3' : 'Mixed')),
+              prompt: `Nghe phát âm và gõ lại chính xác từ tiếng Anh:`,
+              targetWord: item.word,
+              ipa: item.ipa,
+              correctAnswer: item.word,
+              meaning: item.meaning,
+              isOriginal: item.isOriginal,
+              explain: `Chính tả đúng: "${item.word}" (${item.ipa}) nghĩa là "${item.meaning}". ${item.note}`
+            });
+          });
+        }
+
+        // TASK 7: Pronunciation Challenge (Mixed tasks)
+        else if (task === '7') {
+          // Combine tasks 1, 2, 4, 5, 6
+          const q1 = this.generateQuestions(unit, '1', 6);
+          const q2 = this.generateQuestions(unit, '2', 6);
+          const q4 = this.generateQuestions(unit, '4', 6);
+          const q5 = this.generateQuestions('u3', '5', 4);
+          const q6 = this.generateQuestions(unit, '6', 6);
+          qList = shuffle([...q1, ...q2, ...q4, ...q5, ...q6]);
+        }
+
+        // Limit count if specified
+        if (count !== 'all') {
+          qList = shuffle(qList).slice(0, count);
+        } else {
+          qList = shuffle(qList);
+        }
+
+        return qList;
+      },
+
+      /* ========================================================================
+         SESSION MANAGEMENT
+         ======================================================================== */
+      startSession() {
+        this.questions = this.generateQuestions(this.currentUnit, this.currentTask, this.questionCount);
+        if (this.questions.length === 0) {
+          alert("Không đủ dữ liệu cho lựa chọn này. Vui lòng chọn lại!");
+          return;
+        }
+
+        this.currentIndex = 0;
+        this.score = { correct: 0, wrong: 0 };
+        this.userAnswers = [];
+        this.wrongMistakes = [];
+
+        this.startTimer();
+        this.showScreen('exerciseScreen');
+        this.renderQuestion();
+      },
+
+      retryMistakes() {
+        if (!this.wrongMistakes || this.wrongMistakes.length === 0) {
+          this.showToast("Không có câu sai để luyện lại!");
+          return;
+        }
+
+        // Re-run with only the wrong questions in Practice Mode
+        this.questions = this.wrongMistakes.slice();
+        this.currentMode = 'practice';
+        this.currentIndex = 0;
+        this.score = { correct: 0, wrong: 0 };
+        this.userAnswers = [];
+        this.wrongMistakes = [];
+
+        this.startTimer();
+        this.showScreen('exerciseScreen');
+        this.renderQuestion();
+        this.showToast(`Bắt đầu luyện lại ${this.questions.length} câu làm sai!`);
+      },
+
+      startTimer() {
+        this.endTimer();
+        this.timer.seconds = 0;
+        const badge = document.getElementById('timerBadge');
+        badge.textContent = '⏱️ 00:00';
+        this.timer.interval = setInterval(() => {
+          this.timer.seconds++;
+          const m = String(Math.floor(this.timer.seconds / 60)).padStart(2, '0');
+          const s = String(this.timer.seconds % 60).padStart(2, '0');
+          badge.textContent = `⏱️ ${m}:${s}`;
+        }, 1000);
+      },
+
+      endTimer() {
+        if (this.timer.interval) {
+          clearInterval(this.timer.interval);
+          this.timer.interval = null;
+        }
+      },
+
+      /* ========================================================================
+         QUESTION RENDERING
+         ======================================================================== */
+      renderQuestion() {
+        const q = this.questions[this.currentIndex];
+        this.isAnswered = false;
+
+        // Update progress bar & counters
+        const total = this.questions.length;
+        const current = this.currentIndex + 1;
+        document.getElementById('qCurrentProgress').textContent = `Câu ${current}/${total}`;
+        document.getElementById('progressBarFill').style.width = `${Math.round((current / total) * 100)}%`;
+        document.getElementById('liveScoreCorrect').textContent = `✓ ${this.score.correct}`;
+        document.getElementById('liveScoreWrong').textContent = `✗ ${this.score.wrong}`;
+
+        // Badges
+        const taskBadge = document.getElementById('taskLabelBadge');
+        const unitBadge = document.getElementById('unitLabelBadge');
+        unitBadge.textContent = q.unit || 'Global Success';
+
+        const taskNames = {
+          '1': 'TASK 1 • CHOOSE THE SOUND',
+          '2': 'TASK 2 • LISTEN AND CHOOSE',
+          '3': 'TASK 3 • CLASSIFY THE WORDS',
+          '4': 'TASK 4 • FIND THE ODD ONE OUT',
+          '5': 'TASK 5 • MINIMAL PAIRS',
+          '6': 'TASK 6 • LISTEN AND TYPE',
+          '7': 'TASK 7 • CHALLENGE'
+        };
+        taskBadge.textContent = taskNames[q.taskType] || 'PRACTICE';
+
+        document.getElementById('cardPrompt').textContent = q.prompt;
+
+        // Hiển thị Tips dựa trên Unit đang học
+        const tipBox = document.getElementById('unitTip');
+        if (this.currentUnit === 'u1') {
+          // Nội dung tip lấy từ ảnh bạn cung cấp
+          tipBox.innerHTML = `💡 <b>Mẹo Unit 1:</b> /ɑː/ thường là <i>a, ar, al</i> (ngoại lệ: heart, laugh). /ʌ/ thường là <i>u, o, ou</i> (ngoại lệ: blood, does).`;
+          tipBox.style.display = 'block';
+        } else if (this.currentUnit === 'u2') {
+          tipBox.innerHTML = `💡 <b>Mẹo Unit 2:</b> Đuôi /s/ (p, k, t, f, th) = Thời Phong Kiến Phương Tây. Đuôi /ɪz/ (s, ss, ch, sh, x, z, ge, ce) = Chú Sáu chạy xe sh zỏm chị em (ce) ssợ. Còn lại là /z/.`;
+          tipBox.style.display = 'block';
+        } else if (this.currentUnit === 'u3') {
+          tipBox.innerHTML = `💡 <b>Mẹo Unit 3:</b> Âm /b/ rung cổ họng (hữu thanh). Âm /p/ bật mạnh luồng hơi (vô thanh).`;
+          tipBox.style.display = 'block';
+        } else {
+          tipBox.style.display = 'none'; // Ẩn tip nếu chọn Mixed (trộn)
+        }
+
+        // Hide feedback banner
+        const fb = document.getElementById('feedbackBanner');
+        fb.className = 'feedback-banner';
+        fb.classList.remove('show', 'correct', 'wrong');
+
+        // Test Submit Button handling
+        const submitBtn = document.getElementById('btnSubmitTest');
+        if (this.currentMode === 'test' && current === total) {
+          submitBtn.style.display = 'inline-block';
+        } else {
+          submitBtn.style.display = 'none';
+        }
+
+        // Render card body depending on taskType
+        const container = document.getElementById('taskDynamicContent');
+        container.innerHTML = '';
+
+        if (q.taskType === '1') {
+          this.renderTask1(container, q);
+        } else if (q.taskType === '2') {
+          this.renderTask2(container, q);
+        } else if (q.taskType === '3') {
+          this.renderTask3(container, q);
+        } else if (q.taskType === '4') {
+          this.renderTask4(container, q);
+        } else if (q.taskType === '5') {
+          this.renderTask5(container, q);
+        } else if (q.taskType === '6') {
+          this.renderTask6(container, q);
+        }
+
+        // Auto-pronounce if enabled (except for classification and odd-one-out before click)
+        if (SpeechEngine.autoPlay && (q.taskType === '1' || q.taskType === '2' || q.taskType === '5' || q.taskType === '6')) {
+          setTimeout(() => {
+            const wordToSpeak = q.targetWord;
+            if (wordToSpeak) {
+              const speakerBtn = document.querySelector('.btn-speaker, .big-speaker-btn');
+              SpeechEngine.speak(wordToSpeak, () => {
+                if (speakerBtn) speakerBtn.classList.add('speaking');
+              }, () => {
+                if (speakerBtn) speakerBtn.classList.remove('speaking');
+              });
+            }
+          }, 200);
+        }
+      },
+
+      /* TASK 1: CHOOSE SOUND */
+      renderTask1(container, q) {
+        let displayWord = q.targetWord;
+        let originalBadge = q.isOriginal ? `<span class="badge badge-original" style="font-size:0.7rem; margin-left:8px;">[Tài liệu gốc]</span>` : '';
+
+        container.innerHTML = `
+          <div class="target-word-box">
+            <div class="target-word-text">
+              <span>${displayWord}</span>
+              ${originalBadge}
+              <button class="btn-speaker" id="btnSpeakTarget" title="Nghe phát âm">🔊</button>
+            </div>
+            <div class="target-meaning">Nghĩa: ${q.meaning}</div>
+          </div>
+          <div class="options-grid" id="optionsGrid">
+            ${q.options.map(opt => `
+              <button class="option-btn" data-choice="${opt}">
+                <span style="font-size:1.35rem; font-family:Georgia,serif;">${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+        `;
+
+        const speakBtn = document.getElementById('btnSpeakTarget');
+        speakBtn.addEventListener('click', () => {
+          SpeechEngine.speak(q.targetWord, () => speakBtn.classList.add('speaking'), () => speakBtn.classList.remove('speaking'));
+        });
+
+        const optBtns = container.querySelectorAll('.option-btn');
+        optBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (this.isAnswered) return;
+            const choice = btn.dataset.choice;
+            this.handleChoiceAnswer(btn, choice, q.correctSound, q);
+          });
+        });
+      },
+
+      /* TASK 2: LISTEN AND CHOOSE */
+      renderTask2(container, q) {
+        container.innerHTML = `
+          <div class="big-speaker-wrap">
+            <button class="big-speaker-btn" id="btnBigSpeak" title="Bấm để nghe phát âm">🔊</button>
+            <div class="speaker-hint">Bấm nút để nghe âm thanh từ vựng</div>
+            <div id="mysteryWordBox" style="display:none; margin-top:8px; font-size:1.2rem; font-weight:800; color:var(--primary);">
+              ${q.targetWord} <span style="font-family:Georgia,serif; font-weight:normal; color:var(--text-muted); font-size:1rem;">${q.ipa}</span>
+            </div>
+          </div>
+          <div class="options-grid" id="optionsGrid">
+            ${q.options.map(opt => `
+              <button class="option-btn" data-choice="${opt}">
+                <span>${opt}</span>
+              </button>
+            `).join('')}
+          </div>
+        `;
+
+        const bigBtn = document.getElementById('btnBigSpeak');
+        bigBtn.addEventListener('click', () => {
+          SpeechEngine.speak(q.targetWord, () => bigBtn.classList.add('speaking'), () => bigBtn.classList.remove('speaking'));
+        });
+
+        const optBtns = container.querySelectorAll('.option-btn');
+        optBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            if (this.isAnswered) return;
+            document.getElementById('mysteryWordBox').style.display = 'block';
+            this.handleChoiceAnswer(btn, btn.dataset.choice, q.correctAnswer, q);
+          });
+        });
+      },
+
+      /* TASK 3: CLASSIFY THE WORDS */
+      renderTask3(container, q) {
+        this.classifyState = {
+          wordBank: q.words.slice(),
+          buckets: {},
+          selectedChip: null
+        };
+        q.buckets.forEach(b => {
+          this.classifyState.buckets[b.id] = [];
+        });
+
+        container.innerHTML = `
+          <div class="classify-container">
+            <div class="buckets-grid">
+              ${q.buckets.map(b => `
+                <div class="bucket-zone" data-bucket="${b.id}">
+                  <div class="bucket-header">
+                    <span class="bucket-sound">${b.sound}</span>
+                    <span class="bucket-count" id="count_${b.id}">0 từ</span>
+                  </div>
+                  <div class="bucket-items" id="items_${b.id}"></div>
+                </div>
+              `).join('')}
+            </div>
+
+            <div class="word-bank-wrap">
+              <div class="bank-title">
+                <span>NGÂN HÀNG TỪ VỰNG (Kéo thả hoặc chạm chọn từ rồi chạm nhóm):</span>
+                <span id="bankCount">${q.words.length} từ còn lại</span>
+              </div>
+              <div class="bank-chips" id="bankChips"></div>
+            </div>
+
+            <button class="btn-check-typing" id="btnCheckClassify" style="align-self:center; margin-top:8px;">
+              Kiểm tra phân loại ✓
+            </button>
+          </div>
+        `;
+
+        this.renderClassifyBank();
+        this.bindClassifyInteractions(q);
+      },
+
+      renderClassifyBank() {
+        const bankContainer = document.getElementById('bankChips');
+        const countSpan = document.getElementById('bankCount');
+        bankContainer.innerHTML = '';
+        countSpan.textContent = `${this.classifyState.wordBank.length} từ còn lại`;
+
+        this.classifyState.wordBank.forEach((item, idx) => {
+          const chip = document.createElement('div');
+          chip.className = 'word-chip';
+          chip.draggable = true;
+          chip.dataset.word = item.word;
+          chip.innerHTML = `
+            <span>${item.word}</span>
+            <span class="chip-speaker" title="Nghe từ">🔊</span>
+          `;
+
+          // Tap speaker to pronounce
+          chip.querySelector('.chip-speaker').addEventListener('click', (e) => {
+            e.stopPropagation();
+            SpeechEngine.speak(item.word);
+          });
+
+          // Tap to select (Mobile-friendly)
+          chip.addEventListener('click', () => {
+            if (this.isAnswered) return;
+            document.querySelectorAll('.word-chip').forEach(c => c.classList.remove('selected'));
+            if (this.classifyState.selectedChip === item.word) {
+              this.classifyState.selectedChip = null;
+            } else {
+              this.classifyState.selectedChip = item.word;
+              chip.classList.add('selected');
+              SoundFX.playClick();
+            }
+          });
+
+          // Desktop Drag-and-drop
+          chip.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', item.word);
+            this.classifyState.selectedChip = item.word;
+          });
+
+          bankContainer.appendChild(chip);
+        });
+      },
+
+      bindClassifyInteractions(q) {
+        const bucketZones = document.querySelectorAll('.bucket-zone');
+
+        bucketZones.forEach(zone => {
+          const bId = zone.dataset.bucket;
+
+          // Drag over
+          zone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            zone.classList.add('dragover');
+          });
+          zone.addEventListener('dragleave', () => {
+            zone.classList.remove('dragover');
+          });
+
+          // Drop
+          zone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            zone.classList.remove('dragover');
+            const word = e.dataTransfer.getData('text/plain');
+            this.moveWordToBucket(word, bId, q);
+          });
+
+          // Tap bucket to place selected chip (Mobile)
+          zone.addEventListener('click', () => {
+            if (this.isAnswered) return;
+            if (this.classifyState.selectedChip) {
+              this.moveWordToBucket(this.classifyState.selectedChip, bId, q);
+              this.classifyState.selectedChip = null;
+            }
+          });
+        });
+
+        // Check Button
+        document.getElementById('btnCheckClassify').addEventListener('click', () => {
+          if (this.isAnswered) return;
+          this.checkClassifyAnswer(q);
+        });
+      },
+
+      moveWordToBucket(word, bId, q) {
+        if (!word) return;
+        const itemIdx = this.classifyState.wordBank.findIndex(w => w.word === word);
+        if (itemIdx === -1) return;
+        const [item] = this.classifyState.wordBank.splice(itemIdx, 1);
+        this.classifyState.buckets[bId].push(item);
+
+        SoundFX.playMatch();
+        this.renderClassifyBank();
+        this.renderBucketItems(bId, q);
+      },
+
+      renderBucketItems(bId, q) {
+        const itemsBox = document.getElementById(`items_${bId}`);
+        const countBadge = document.getElementById(`count_${bId}`);
+        itemsBox.innerHTML = '';
+        const list = this.classifyState.buckets[bId];
+        countBadge.textContent = `${list.length} từ`;
+
+        list.forEach((item, idx) => {
+          const chip = document.createElement('div');
+          chip.className = 'word-chip in-bucket';
+          chip.innerHTML = `<span>${item.word}</span> <span style="font-size:0.75rem; opacity:0.6;">✕</span>`;
+          chip.title = 'Bấm để trả từ về ngân hàng';
+
+          chip.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (this.isAnswered) return;
+            // Return to bank
+            list.splice(idx, 1);
+            this.classifyState.wordBank.push(item);
+            SoundFX.playClick();
+            this.renderClassifyBank();
+            this.renderBucketItems(bId, q);
+          });
+
+          itemsBox.appendChild(chip);
+        });
+      },
+
+      checkClassifyAnswer(q) {
+        this.isAnswered = true;
+        let totalWords = q.words.length;
+        let correctCount = 0;
+
+        q.buckets.forEach(b => {
+          const itemsInBucket = this.classifyState.buckets[b.id];
+          itemsInBucket.forEach(item => {
+            if (item.sound === b.sound) {
+              correctCount++;
+            }
+          });
+        });
+
+        const isFullyCorrect = correctCount === totalWords;
+        const isHalfCorrect = correctCount >= Math.ceil(totalWords / 2);
+
+        if (isFullyCorrect) {
+          this.score.correct++;
+          SoundFX.playCorrect();
+        } else {
+          this.score.wrong++;
+          SoundFX.playWrong();
+          this.wrongMistakes.push(q);
+        }
+
+        this.userAnswers.push({
+          qId: q.id,
+          taskType: q.taskType,
+          prompt: q.prompt,
+          userChoice: `${correctCount}/${totalWords} từ đúng`,
+          correctAnswer: `${totalWords}/${totalWords} từ phân loại chuẩn`,
+          isCorrect: isFullyCorrect,
+          explain: q.words.map(w => `${w.word}: ${w.sound} (${w.ipa})`).join(' | ')
+        });
+
+        if (this.currentMode === 'practice') {
+          this.showFeedback(isFullyCorrect, `Bạn đã phân loại đúng ${correctCount}/${totalWords} từ!`, q.words.map(w => `• <b>${w.word}</b> (${w.ipa}): thuộc nhóm ${w.sound} - ${w.meaning}`).join('<br>'));
+        } else {
+          this.nextQuestion();
+        }
+      },
+
+      /* TASK 4: FIND THE ODD ONE OUT */
+      renderTask4(container, q) {
+        container.innerHTML = `
+          <div class="odd-grid">
+            ${q.options.map((opt, idx) => `
+              <div class="odd-card" data-choice="${opt}">
+                <div class="odd-word-wrap">
+                  <span class="odd-word">${String.fromCharCode(65 + idx)}. ${opt}</span>
+                  <span class="odd-ipa" id="ipa_${opt}"></span>
+                </div>
+                <button class="btn-speaker" data-word="${opt}" title="Nghe phát âm">🔊</button>
+              </div>
+            `).join('')}
+          </div>
+        `;
+
+        // Speaker buttons
+        container.querySelectorAll('.btn-speaker').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const w = btn.dataset.word;
+            SpeechEngine.speak(w, () => btn.classList.add('speaking'), () => btn.classList.remove('speaking'));
+          });
+        });
+
+        // Click odd card
+        const oddCards = container.querySelectorAll('.odd-card');
+        oddCards.forEach(card => {
+          card.addEventListener('click', () => {
+            if (this.isAnswered) return;
+            const choice = card.dataset.choice;
+
+            // Reveal all IPAs
+            q.detailWords.forEach(w => {
+              const span = document.getElementById(`ipa_${w.word}`);
+              if (span) {
+                span.textContent = `${w.sound} (${w.ipa})`;
+                span.classList.add('show');
+              }
+            });
+
+            this.handleChoiceAnswer(card, choice, q.correctAnswer, q);
+          });
+        });
+      },
+
+      /* TASK 5: MINIMAL PAIRS */
+      renderTask5(container, q) {
+        const p = q.pair;
+        container.innerHTML = `
+          <div class="big-speaker-wrap">
+            <button class="big-speaker-btn" id="btnBigPairSpeak" title="Bấm để nghe âm thanh bí mật">🔊</button>
+            <div class="speaker-hint">Nghe và chọn từ bạn nghe được giữa 2 từ đối lập:</div>
+          </div>
+
+          <div class="pair-container">
+            <div class="pair-choice-card" data-choice="${p.wordA}">
+              <div class="pair-word">${p.wordA}</div>
+              <div class="pair-ipa">${p.ipaA}</div>
+              <div class="pair-meaning">${p.meanA}</div>
+            </div>
+            <div class="pair-choice-card" data-choice="${p.wordB}">
+              <div class="pair-word">${p.wordB}</div>
+              <div class="pair-ipa">${p.ipaB}</div>
+              <div class="pair-meaning">${p.meanB}</div>
+            </div>
+          </div>
+
+          <div class="pair-compare-drawer">
+            <div class="compare-side">
+              <span>${p.wordA} (${p.ipaA})</span>
+              <button class="btn-speaker" id="btnSpeakA" style="width:34px; height:34px; font-size:0.95rem;">🔊</button>
+            </div>
+            <span style="color:var(--text-light); font-weight:800;">VS</span>
+            <div class="compare-side">
+              <span>${p.wordB} (${p.ipaB})</span>
+              <button class="btn-speaker" id="btnSpeakB" style="width:34px; height:34px; font-size:0.95rem;">🔊</button>
+            </div>
+          </div>
+        `;
+
+        const bigBtn = document.getElementById('btnBigPairSpeak');
+        bigBtn.addEventListener('click', () => {
+          SpeechEngine.speak(q.targetWord, () => bigBtn.classList.add('speaking'), () => bigBtn.classList.remove('speaking'));
+        });
+
+        document.getElementById('btnSpeakA').addEventListener('click', () => {
+          SpeechEngine.speak(p.wordA);
+        });
+        document.getElementById('btnSpeakB').addEventListener('click', () => {
+          SpeechEngine.speak(p.wordB);
+        });
+
+        const cards = container.querySelectorAll('.pair-choice-card');
+        cards.forEach(card => {
+          card.addEventListener('click', () => {
+            if (this.isAnswered) return;
+            this.handleChoiceAnswer(card, card.dataset.choice, q.correctAnswer, q);
+          });
+        });
+      },
+
+      /* TASK 6: LISTEN AND TYPE */
+      renderTask6(container, q) {
+        container.innerHTML = `
+          <div class="big-speaker-wrap">
+            <button class="big-speaker-btn" id="btnBigSpeakType" title="Bấm để nghe từ">🔊</button>
+            <div class="speaker-hint">Nghe từ và gõ chính tả vào ô bên dưới</div>
+          </div>
+
+          <div class="typing-box-wrap">
+            <input type="text" class="typing-input" id="typingInput" placeholder="Nhập từ tiếng Anh..." autocomplete="off" autocapitalize="none" spellcheck="false">
+            <button class="btn-check-typing" id="btnCheckTyping">Kiểm tra đáp án ➔</button>
+          </div>
+        `;
+
+        const bigBtn = document.getElementById('btnBigSpeakType');
+        bigBtn.addEventListener('click', () => {
+          SpeechEngine.speak(q.targetWord, () => bigBtn.classList.add('speaking'), () => bigBtn.classList.remove('speaking'));
+        });
+
+        const input = document.getElementById('typingInput');
+        const checkBtn = document.getElementById('btnCheckTyping');
+
+        setTimeout(() => input.focus(), 150);
+
+        const checkAnswer = () => {
+          if (this.isAnswered) return;
+          const userVal = input.value.trim().toLowerCase();
+          if (!userVal) {
+            this.showToast("Vui lòng nhập từ bạn nghe được!");
+            input.focus();
+            return;
+          }
+          this.isAnswered = true;
+          const isCorrect = userVal === q.correctAnswer.toLowerCase();
+
+          if (isCorrect) {
+            input.classList.add('correct');
+            this.score.correct++;
+            SoundFX.playCorrect();
+          } else {
+            input.classList.add('wrong');
+            this.score.wrong++;
+            SoundFX.playWrong();
+            this.wrongMistakes.push(q);
+          }
+
+          this.userAnswers.push({
+            qId: q.id,
+            taskType: q.taskType,
+            prompt: q.prompt,
+            userChoice: userVal,
+            correctAnswer: q.correctAnswer,
+            isCorrect: isCorrect,
+            explain: q.explain
+          });
+
+          if (this.currentMode === 'practice') {
+            this.showFeedback(isCorrect, isCorrect ? `Chính xác: "${q.correctAnswer}"! 🎉` : `Chưa đúng! Đáp án đúng là: "${q.correctAnswer}"`, q.explain);
+          } else {
+            this.nextQuestion();
+          }
+        };
+
+        checkBtn.addEventListener('click', checkAnswer);
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            checkAnswer();
+          }
+        });
+      },
+
+      /* ========================================================================
+         COMMON ANSWER EVALUATION & FEEDBACK
+         ======================================================================== */
+      handleChoiceAnswer(selectedEl, userChoice, correctAnswer, q) {
+        this.isAnswered = true;
+        const isCorrect = userChoice === correctAnswer;
+
+        // Visual highlights
+        if (selectedEl) {
+          selectedEl.classList.add(isCorrect ? 'correct' : 'wrong');
+        }
+
+        // Highlight correct element if wrong
+        if (!isCorrect) {
+          const allOptions = document.querySelectorAll('.option-btn, .odd-card, .pair-choice-card');
+          allOptions.forEach(el => {
+            if (el.dataset.choice === correctAnswer) {
+              el.classList.add('correct');
+            }
+          });
+        }
+
+        // Play Sound
+        if (isCorrect) {
+          this.score.correct++;
+          SoundFX.playCorrect();
+        } else {
+          this.score.wrong++;
+          SoundFX.playWrong();
+          this.wrongMistakes.push(q);
+        }
+
+        // Record Answer
+        this.userAnswers.push({
+          qId: q.id,
+          taskType: q.taskType,
+          prompt: q.prompt,
+          userChoice: userChoice,
+          correctAnswer: correctAnswer,
+          isCorrect: isCorrect,
+          explain: q.explain
+        });
+
+        // Mode handling
+        if (this.currentMode === 'practice') {
+          this.showFeedback(isCorrect, isCorrect ? 'Chính xác! 🎉' : 'Chưa đúng!', q.explain);
+        } else {
+          // In test mode, silently proceed to next question
+          setTimeout(() => {
+            this.nextQuestion();
+          }, 400);
+        }
+      },
+
+      showFeedback(isCorrect, title, explainText) {
+        const fb = document.getElementById('feedbackBanner');
+        fb.className = `feedback-banner show ${isCorrect ? 'correct' : 'wrong'}`;
+        document.getElementById('fbTitle').innerHTML = title;
+        document.getElementById('fbExplain').innerHTML = explainText;
+
+        const speakBtn = document.getElementById('fbSpeakBtn');
+        const q = this.questions[this.currentIndex];
+        const targetToReplay = q.targetWord || q.correctAnswer;
+
+        speakBtn.onclick = () => {
+          if (targetToReplay) {
+            SpeechEngine.speak(targetToReplay, () => speakBtn.classList.add('speaking'), () => speakBtn.classList.remove('speaking'));
+          }
+        };
+
+        // Scroll to feedback if needed
+        fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      },
+
+      nextQuestion() {
+        this.currentIndex++;
+        if (this.currentIndex >= this.questions.length) {
+          this.finishSession();
+        } else {
+          this.renderQuestion();
+        }
+      },
+
+      /* ========================================================================
+         RESULT SCREEN & EVALUATION
+         ======================================================================== */
+      finishSession() {
+        this.endTimer();
+        SpeechEngine.cancel();
+
+        const total = this.questions.length;
+        const correct = this.score.correct;
+        const wrong = total - correct;
+        const percent = Math.round((correct / total) * 100);
+
+        // Render Score Circle
+        const scoreCircle = document.getElementById('scoreCircle');
+        scoreCircle.style.background = `conic-gradient(var(--primary) ${percent}%, #e2e8f0 ${percent}%)`;
+        document.getElementById('resPercent').textContent = `${percent}%`;
+
+        // Render Verdict
+        const resTitle = document.getElementById('resTitle');
+        const resMessage = document.getElementById('resMessage');
+        if (percent === 100) {
+          resTitle.textContent = "XUẤT SẮC! 🏆";
+          resTitle.style.color = "var(--success)";
+          resMessage.textContent = "Bạn đã nắm vững hoàn toàn tất cả các quy tắc phát âm!";
+          SoundFX.playVictory();
+        } else if (percent >= 80) {
+          resTitle.textContent = "RẤT TỐT! 🌟";
+          resTitle.style.color = "var(--primary)";
+          resMessage.textContent = "Kỹ năng nghe và nhận diện âm của bạn rất tốt, hãy tiếp tục phát huy!";
+          SoundFX.playVictory();
+        } else if (percent >= 50) {
+          resTitle.textContent = "ĐẠT YÊU CẦU! 👍";
+          resTitle.style.color = "var(--warning)";
+          resMessage.textContent = "Bạn đã nắm được phần lớn kiến thức, cần chú ý thêm một số âm ngoại lệ.";
+        } else {
+          resTitle.textContent = "CẦN ÔN LUYỆN THÊM! 💪";
+          resTitle.style.color = "var(--danger)";
+          resMessage.textContent = "Hãy bấm nút 'Luyện lại câu sai' bên dưới để rèn luyện lại các câu chưa đúng nhé!";
+        }
+
+        // Stats Box
+        document.getElementById('resTotalQ').textContent = total;
+        document.getElementById('resCorrect').textContent = correct;
+        document.getElementById('resWrong').textContent = wrong;
+
+        const m = String(Math.floor(this.timer.seconds / 60)).padStart(2, '0');
+        const s = String(this.timer.seconds % 60).padStart(2, '0');
+        document.getElementById('resTime').textContent = `${m}:${s}`;
+
+        // Retry mistakes button
+        const retryBtn = document.getElementById('btnRetryMistakes');
+        if (wrong > 0) {
+          retryBtn.style.display = 'inline-flex';
+          retryBtn.innerHTML = `<span>↺ Luyện lại ${wrong} câu sai</span>`;
+        } else {
+          retryBtn.style.display = 'none';
+        }
+
+        // Render Review List
+        this.renderReviewList();
+
+        // Save to LocalStorage History
+        this.saveHistoryRecord({
+          date: new Date().toLocaleString('vi-VN'),
+          unit: this.currentUnit.toUpperCase(),
+          task: `Task ${this.currentTask}`,
+          mode: this.currentMode === 'practice' ? 'Luyện tập' : 'Kiểm tra',
+          score: `${correct}/${total}`,
+          percent: `${percent}%`
+        });
+
+        this.showScreen('resultScreen');
+      },
+
+      renderReviewList() {
+        const list = document.getElementById('reviewList');
+        const badge = document.getElementById('reviewCountBadge');
+        list.innerHTML = '';
+        badge.textContent = `${this.userAnswers.length} câu`;
+
+        this.userAnswers.forEach((ans, idx) => {
+          const item = document.createElement('div');
+          item.className = `review-item ${ans.isCorrect ? 'correct' : 'wrong'}`;
+
+          item.innerHTML = `
+            <div class="review-item-top">
+              <span class="review-q-text">Câu ${idx + 1}: ${ans.prompt}</span>
+              <button class="btn-speaker" style="width:32px; height:32px; font-size:0.85rem;" data-replay="${ans.correctAnswer}" title="Nghe lại đáp án">🔊</button>
+            </div>
+            <div class="review-ans-row">
+              <span class="review-ans-you">Bạn chọn: <b>${ans.userChoice}</b> ${ans.isCorrect ? '✓' : '✗'}</span>
+              ${!ans.isCorrect ? `<span class="review-ans-correct">Đáp án đúng: <b>${ans.correctAnswer}</b></span>` : ''}
+            </div>
+            <div class="review-explain">${ans.explain}</div>
+          `;
+
+          const speakBtn = item.querySelector('.btn-speaker');
+          speakBtn.addEventListener('click', () => {
+            SpeechEngine.speak(ans.correctAnswer, () => speakBtn.classList.add('speaking'), () => speakBtn.classList.remove('speaking'));
+          });
+
+          list.appendChild(item);
+        });
+      },
+
+      /* ========================================================================
+         LOCAL STORAGE HISTORY
+         ======================================================================== */
+      saveHistoryRecord(record) {
+        try {
+          const history = JSON.parse(localStorage.getItem('pronun_practice_history') || '[]');
+          history.unshift(record);
+          if (history.length > 30) history.pop();
+          localStorage.setItem('pronun_practice_history', JSON.stringify(history));
+          this.renderHistory();
+        } catch (e) {
+          console.warn("Storage error:", e);
+        }
+      },
+
+      renderHistory() {
+        try {
+          const tbody = document.getElementById('historyTableBody');
+          const history = JSON.parse(localStorage.getItem('pronun_practice_history') || '[]');
+          if (history.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-light);">Chưa có lịch sử làm bài.</td></tr>`;
+            return;
+          }
+          tbody.innerHTML = history.map(h => `
+            <tr>
+              <td>${h.date}</td>
+              <td><b>${h.unit}</b></td>
+              <td>${h.task}</td>
+              <td style="font-weight:700;">${h.score}</td>
+              <td style="font-weight:800; color:var(--primary);">${h.percent}</td>
+            </tr>
+          `).join('');
+        } catch (e) {
+          console.warn("Render history error:", e);
+        }
+      },
+
+      openHistoryModal() {
+        this.renderHistory();
+        document.getElementById('historyModal').classList.add('active');
+      }
+    };
+
+    // Auto-initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      PronunApp.init();
+    });
+    window.PronunApp = PronunApp;
+    window.DATABASE = DATABASE;
+    window.SoundFX = SoundFX;
+    window.SpeechEngine = SpeechEngine;
+
+  </script>
+  <a class="shared-home-button" href="index.html" aria-label="Quay về trang chủ">⌂ <span>Trang chủ</span></a>
+</body>
+</html>
