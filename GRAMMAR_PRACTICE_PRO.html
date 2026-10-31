@@ -1738,7 +1738,7 @@
           <div class="setting-item">
             <label for="grammarAutoPronounceSwitch">Tự phát âm câu tiếng Anh:</label>
             <label class="switch">
-              <input type="checkbox" id="grammarAutoPronounceSwitch" checked>
+              <input type="checkbox" id="grammarAutoPronounceSwitch">
               <span class="slider"></span>
             </label>
           </div>
@@ -4735,6 +4735,170 @@ const GRAMMAR_DATABASE = {
       }
     };
 
+const GRAMMAR_AUDIO_MAP = {
+      "g_u1_t1_01": [0.00, 3.72],
+      "g_u1_t1_02": [3.72, 7.64],
+      "g_u1_t1_03": [7.64, 12.12],
+      "g_u1_t1_04": [12.12, 16.32],
+      "g_u1_t1_05": [16.32, 19.32],
+      "g_u1_t1_06": [19.32, 22.16],
+      "g_u1_t1_07": [22.16, 25.56],
+      "g_u1_t1_08": [25.56, 30.40],
+      "g_u1_t1_09": [30.40, 35.04],
+      "g_u1_t1_10": [35.04, 38.88],
+      "g_u1_t1_11": [38.88, 41.48],
+      "g_u1_t1_12": [41.48, 46.52],
+      "g_u1_t1_13": [46.52, 52.12],
+      "g_u1_t1_14": [52.12, 55.72],
+      "g_u1_t1_15": [55.80, 60.00],
+      "g_u1_t1_16": [60.00, 65.60],
+      "g_u1_t8_01": [65.60, 69.08],
+      "g_u1_t8_02": [69.08, 73.20],
+      "g_u1_t8_03": [73.20, 76.20],
+      "g_u1_t8_04": [76.20, 79.36],
+      "g_u1_t8_05": [79.36, 82.64],
+      "g_u1_t8_06": [82.64, 85.44],
+      "g_u1_t8_07": [85.44, 106.68],
+      "g_u1_t8_08": [106.68, 116.32],
+      "g_u1_t8_09": [116.32, 127.52],
+      "g_u1_t8_10": [127.52, 137.56],
+      "g_u1_t8_11": [137.56, 147.28],
+      "g_u1_t8_12": [147.28, 149.92],
+      "g_u1_t8_13": [149.92, 152.92],
+      "g_u1_t8_14": [152.92, 157.08],
+      "g_u1_t8_15": [157.08, 161.32],
+      "g_u2_t1_01": [161.32, 165.44],
+      "g_u2_t1_02": [165.44, 170.36],
+      "g_u2_t1_03": [170.36, 172.80],
+      "g_u2_t1_04": [172.80, 175.44],
+      "g_u2_t1_05": [175.44, 178.60],
+      "g_u2_t1_06": [178.60, 181.80],
+      "g_u2_t1_07": [181.80, 184.76],
+      "g_u2_t1_08": [184.76, 187.36],
+      "g_u2_t1_09": [187.36, 189.84],
+      "g_u2_t1_10": [189.84, 193.72],
+      "g_u2_t1_11": [193.72, 195.84],
+      "g_u2_t1_12": [195.84, 198.36],
+      "g_u2_t1_13": [198.36, 201.12],
+      "g_u2_t1_14": [201.12, 205.24],
+      "g_u2_t1_15": [205.24, 208.56],
+      "g_u2_t1_16": [208.56, 211.40],
+      "g_u2_t8_01": [211.40, 216.12],
+      "g_u2_t8_02": [216.12, 220.68],
+      "g_u2_t8_03": [220.68, 224.68],
+      "g_u2_t8_04": [224.68, 228.04],
+      "g_u2_t8_05": [228.04, 233.12],
+      "g_u2_t8_06": [233.12, 236.80],
+      "g_u2_t8_07": [236.80, 242.28],
+      "g_u2_t8_08": [242.28, 249.68],
+      "g_u2_t8_09": [249.68, 254.60],
+      "g_u2_t8_10": [254.60, 269.84],
+      "g_u2_t8_11": [269.84, 285.76],
+      "g_u2_t8_12": [285.76, 289.36],
+      "g_u2_t8_13": [289.36, 292.04],
+      "g_u2_t8_14": [292.04, 294.84],
+      "g_u2_t8_15": [294.84, 301.24],
+      "g_u3_t1_01": [301.24, 304.24],
+      "g_u3_t1_02": [304.24, 308.16],
+      "g_u3_t1_03": [308.16, 312.04],
+      "g_u3_t1_04": [312.04, 315.24],
+      "g_u3_t1_05": [315.24, 318.88],
+      "g_u3_t1_06": [318.88, 322.60],
+      "g_u3_t1_07": [322.60, 326.16],
+      "g_u3_t1_08": [326.16, 330.04],
+      "g_u3_t1_09": [330.04, 334.68],
+      "g_u3_t1_10": [334.68, 338.20],
+      "g_u3_t1_11": [338.20, 340.24],
+      "g_u3_t1_12": [340.24, 343.72],
+      "g_u3_t1_13": [343.72, 347.56],
+      "g_u3_t1_14": [347.56, 351.72],
+      "g_u3_t1_15": [351.72, 357.04],
+      "g_u3_t1_16": [357.04, 362.68],
+      "g_u3_t8_01": [362.68, 367.40],
+      "g_u3_t8_02": [367.40, 371.24],
+      "g_u3_t8_03": [371.24, 375.04],
+      "g_u3_t8_04": [375.04, 380.40],
+      "g_u3_t8_05": [380.40, 383.40],
+      "g_u3_t8_06": [383.40, 389.28],
+      "g_u3_t8_07": [389.28, 397.68],
+      "g_u3_t8_08": [397.68, 404.64],
+      "g_u3_t8_09": [404.64, 422.44],
+      "g_u3_t8_10": [422.44, 438.28],
+      "g_u3_t8_11": [438.28, 443.60],
+      "g_u3_t8_12": [443.60, 447.12],
+      "g_u3_t8_13": [447.12, 453.28],
+      "g_u3_t8_14": [453.28, 456.36],
+      "g_u3_t8_15": [456.36, 459.16]
+    };
+
+    /* ==========================================================================
+       GRAMMAR AUDIO SPRITE PLAYER (Tích hợp phát âm từ file textdapan.mp3)
+       ========================================================================== */
+    const GrammarAudioPlayer = {
+      audio: null,
+      stopTimer: null,
+      muted: false,
+      map: GRAMMAR_AUDIO_MAP,
+
+      init() {
+        if (!this.audio) {
+          try {
+            this.audio = new Audio('sounds/textdapan.mp3');
+            this.audio.preload = 'auto';
+            this.audio.addEventListener('error', () => {
+              if (this.audio && this.audio.src.includes('sounds/')) {
+                this.audio.src = 'textdapan.mp3';
+              }
+            }, { once: true });
+          } catch (e) {
+            console.warn('Audio init error:', e);
+          }
+        }
+      },
+
+      stop() {
+        if (this.stopTimer) {
+          clearTimeout(this.stopTimer);
+          this.stopTimer = null;
+        }
+        if (this.audio) {
+          try {
+            this.audio.pause();
+          } catch (e) {}
+        }
+      },
+
+      playQuestion(qid) {
+        if (this.muted || (typeof SoundFX !== 'undefined' && SoundFX.muted)) return;
+        this.stop();
+        if (window.speechSynthesis) {
+          window.speechSynthesis.cancel();
+        }
+        const range = this.map[qid];
+        if (!range) return;
+
+        this.init();
+        if (!this.audio) return;
+
+        const start = range[0];
+        const end = range[1];
+        const durationMs = Math.max(300, (end - start) * 1000);
+
+        try {
+          this.audio.currentTime = start;
+          const p = this.audio.play();
+          if (p !== undefined) {
+            p.catch(() => {});
+          }
+          this.stopTimer = setTimeout(() => {
+            this.stop();
+          }, durationMs);
+        } catch (err) {
+          console.warn('Audio play error:', err);
+        }
+      }
+    };
+
     /* ==========================================================================
        III. HELPER UTILITIES
        ========================================================================== */
@@ -4918,6 +5082,7 @@ const GRAMMAR_DATABASE = {
       },
 
       renderQuestion() {
+        if (typeof GrammarAudioPlayer !== 'undefined') GrammarAudioPlayer.stop();
         const q = this.session.questions[this.session.currentIndex];
         if (!q) { this.finishQuiz(); return; }
 
@@ -5638,7 +5803,7 @@ const GRAMMAR_DATABASE = {
         mode: 'practice', // 'practice' or 'test'
         count: 15,
         task: 1,        // 1 to 8
-        autoSpeak: true,
+        autoSpeak: false,
         speechRate: 1.0
       },
 
@@ -5920,19 +6085,11 @@ const GRAMMAR_DATABASE = {
         // Prompt text
         const mainTextEl = document.getElementById('gQMainText');
         mainTextEl.textContent = q.prompt;
-        mainTextEl.dataset.speakEn = q.prompt;
 
         // Render specific grammar task input
         this.renderGrammarTaskInput(q);
 
-        // Auto speak if enabled
-        if (this.config.autoSpeak && !isTestMode) {
-          setTimeout(() => {
-            if (!this.session.isAnswered && this.session.questions[this.session.currentIndex] === q) {
-              SpeechEngine.speak(q.prompt, this.config.speechRate);
-            }
-          }, 350);
-        }
+        // Đã tắt tự động phát âm TTS câu hỏi trước khi chọn đáp án
       },
 
       renderGrammarTaskInput(q) {
@@ -5949,7 +6106,7 @@ const GRAMMAR_DATABASE = {
             container.innerHTML = `
               <div class="options-grid">
                 ${q.choices.map((c, i) => `
-                  <button class="opt-btn ${savedAnswer === c ? 'selected' : ''}" data-choice="${c}" data-idx="${i}" data-speak-en="${c}">
+                  <button class="opt-btn ${savedAnswer === c ? 'selected' : ''}" data-choice="${c}" data-idx="${i}">
                     <div class="opt-badge">${String.fromCharCode(65 + i)}</div>
                     <span>${c}</span>
                     <span class="speak-hint-icon">🔊</span>
@@ -5959,8 +6116,12 @@ const GRAMMAR_DATABASE = {
             `;
 
             container.querySelectorAll('.opt-btn').forEach(btn => {
-              btn.addEventListener('click', () => {
-                if (btn.dataset.speakEn) SpeechEngine.speak(btn.dataset.speakEn, this.config.speechRate);
+              btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Play audio corresponding to this question from textdapan.mp3
+                if (typeof GrammarAudioPlayer !== 'undefined') {
+                  GrammarAudioPlayer.playQuestion(q.id);
+                }
                 const chosen = btn.dataset.choice;
 
                 if (isTestMode) {
@@ -6308,6 +6469,7 @@ const GRAMMAR_DATABASE = {
       },
 
       finishTest() {
+        if (typeof GrammarAudioPlayer !== 'undefined') GrammarAudioPlayer.stop();
         this.endTimer();
         const total = this.session.questions.length;
         let correctCount = 0;
@@ -6410,6 +6572,7 @@ const GRAMMAR_DATABASE = {
 
       init() {
         SpeechEngine.init();
+        if (typeof GrammarAudioPlayer !== 'undefined') GrammarAudioPlayer.init();
         this.bindEvents();
         VocabApp.init();
         GrammarApp.init();
@@ -6425,14 +6588,25 @@ const GRAMMAR_DATABASE = {
         });
 
         // Module switcher buttons
-        document.getElementById('tabVocabBtn').addEventListener('click', () => this.switchModule('vocab'));
-        document.getElementById('tabGrammarBtn').addEventListener('click', () => this.switchModule('grammar'));
+        document.getElementById('tabVocabBtn').addEventListener('click', () => {
+          if (typeof GrammarAudioPlayer !== 'undefined') GrammarAudioPlayer.stop();
+          this.switchModule('vocab');
+        });
+        document.getElementById('tabGrammarBtn').addEventListener('click', () => {
+          if (typeof GrammarAudioPlayer !== 'undefined') GrammarAudioPlayer.stop();
+          this.switchModule('grammar');
+        });
 
         // Audio toggle button
         const audioBtn = document.getElementById('audioToggleBtn');
         audioBtn.addEventListener('click', () => {
           SoundFX.muted = !SoundFX.muted;
           SpeechEngine.muted = SoundFX.muted;
+          if (typeof GrammarAudioPlayer !== 'undefined') {
+            GrammarAudioPlayer.muted = SoundFX.muted;
+            if (GrammarAudioPlayer.audio) GrammarAudioPlayer.audio.muted = SoundFX.muted;
+            if (SoundFX.muted) GrammarAudioPlayer.stop();
+          }
           audioBtn.classList.toggle('muted', SoundFX.muted);
           audioBtn.textContent = SoundFX.muted ? '🔇' : '🔊';
           this.showToast(SoundFX.muted ? 'Đã tắt âm thanh' : 'Đã bật âm thanh');

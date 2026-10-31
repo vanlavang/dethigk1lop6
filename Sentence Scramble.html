@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Ngăn zoom màn hình khi bấm đúp trên điện thoại để trải nghiệm game mượt hơn -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Sentence Scramble | Ôn thi Tiếng Anh 6</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Thư viện hiệu ứng pháo hoa -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    @font-face {
+      font-family: 'UTM Avo';
+      src: url('fonts/utm-avo.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'UTM Avo', Arial, sans-serif;
+      margin: 0;
+      background-color: #f0e2cd;
+      padding-top: 20px; /* Giảm padding vì không còn header */
+      padding-bottom: 130px; /* Chừa không gian cho thanh toolbar bên dưới */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fffaf2;
+      margin: 0 auto;
+      padding: 20px;
+      width: 95%;
+      max-width: 1200px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid #e6ccb2;
+    }
+
+    .title-header {
+      font-size: clamp(24px, 4vw, 32px);
+      color: #8b5e3c;
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    /* Khu vực thả từ và ngân hàng từ */
+    #drop-area, #word-bank {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 15px auto;
+      min-height: 100px;
+      padding: 15px;
+      width: 100%;
+      border: 2px dashed #c9a77b;
+      border-radius: 10px;
+      background-color: #fefaf3;
+      gap: 10px;
+    }
+
+    #drop-area {
+      border: 2px solid #8b5e3c;
+      background-color: #fff;
+    }
+
+    .word {
+      background: #ffffff;
+      border: 2px solid #333;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: clamp(20px, 3.5vw, 32px); /* Tự động thu phóng theo màn hình */
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .word:hover { 
+      background: #f1f1f1; 
+      transform: translateY(-2px);
+    }
+    
+    .word:active {
+      transform: translateY(2px);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .word.used { 
+      background: #e0e0e0; 
+      color: #a0a0a0; 
+      border-color: #ccc;
+      pointer-events: none; 
+      box-shadow: none;
+    }
+
+    #result {
+      font-size: clamp(20px, 3vw, 24px);
+      font-weight: bold;
+      margin-top: 20px;
+      min-height: 30px;
+    }
+
+    .score-summary {
+      margin-top: 15px;
+      font-size: clamp(18px, 2.5vw, 22px);
+      color: #333;
+    }
+
+    /* Thanh công cụ cố định bên dưới (Bottom Toolbar) */
+    .footer-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #f3dbc1;
+      border-top: 3px solid #d4bfa6;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      padding: 15px 10px;
+      z-index: 1000;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
+    }
+
+    .footer-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-label {
+      font-weight: bold;
+      color: #555;
+      font-size: 16px;
+    }
+
+    #timer, #current-question, #total-question {
+      font-weight: bold;
+      font-size: 18px;
+      color: #2c3e50;
+    }
+
+    .footer-bar button {
+      padding: 12px 20px;
+      background-color: #ffffff;
+      color: #8b5e3c;
+      border: 2px solid #c9a77b;
+      border-radius: 8px;
+      font-size: clamp(14px, 2vw, 16px);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .footer-bar button:hover {
+      background-color: #e6ccb2;
+    }
+    
+    .footer-bar button:active {
+      transform: scale(0.95);
+    }
+
+    .footer-bar button.btn-check {
+      background-color: #8b5e3c;
+      color: #fff;
+      border-color: #5c3a21;
+    }
+    .footer-bar button.btn-check:hover {
+      background-color: #724c30;
+    }
+
+    .btn-speed-active {
+      background-color: #ffcc80 !important;
+      color: #333 !important;
+      border-color: #e65100 !important;
+    }
+
+    /* Popup dịch nghĩa (Chuột phải hoặc giữ lâu trên điện thoại) */
+    #trans-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      border: 4px solid #c9a77b;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+      z-index: 10001;
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+      animation: fadeIn 0.3s ease;
+      cursor: pointer;
+    }
+
+    #close-popup {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 32px;
+      font-weight: bold;
+      color: #c9a77b;
+      cursor: pointer;
+    }
+
+    #trans-text {
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: bold;
+      color: #2c3e50;
+      line-height: 1.4;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -55%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    /* Tùy chỉnh nhỏ cho màn hình điện thoại (Dưới 600px) */
+    @media (max-width: 600px) {
+      .footer-bar { padding: 10px 5px; gap: 8px; }
+      .footer-bar button { padding: 10px 12px; }
+      .footer-section { width: 100%; justify-content: space-evenly; }
+      .hide-on-mobile { display: none; }
+    }
+  
+    /* Nút Trang chủ */
+    .shared-home-button {
+      position: fixed;
+      right: 20px;
+      top: 15px;
+      z-index: 1001;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border: 2px solid #8b5e3c;
+      border-radius: 999px;
+      background: #ffd765;
+      color: #14213d;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 3px 4px 0 #8b5e3c;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .shared-home-button:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 6px 0 #8b5e3c;
+    }
+
+  </style>
+</head>
+<body>
+  <a class="shared-home-button" href="index.html" aria-label="Quay về trang chủ">⌂ <span>Trang chủ</span></a>
+
+  <div class="container">
+    <div class="title-header">Scramble Sentences</div>
+    <div id="drop-area" oncontextmenu="showTranslation(event)"></div>
+    <div id="word-bank" oncontextmenu="playFullSentence(event)"></div>
+    <div id="result"></div>
+    <div class="score-summary" id="summary"></div>
+  </div>
+
+  <div id="trans-popup" onclick="this.style.display='none'">
+    <span id="close-popup">&times;</span>
+    <h3 style="margin-top:0; color:#8b5e3c;">Nghĩa tiếng Việt</h3>
+    <div id="trans-text"></div>
+  </div>
+
+  <!-- Thanh công cụ điều hướng bên dưới -->
+  <div class="footer-bar">
+    <div class="footer-section">
+      <span class="footer-label">Câu:</span>
+      <span id="current-question">1</span> / <span id="total-question">10</span>
+      <span style="margin: 0 10px; color: #ccc;">|</span>
+      <span class="footer-label">⏱️</span> <span id="timer">0</span>s
+    </div>
+
+    <div class="footer-section">
+      <button id="speed-btn" onclick="toggleSpeed()">Tốc độ: 1x</button>
+      <button onclick="undo()">Hoàn tác</button>
+      <button onclick="showHint()">Gợi ý</button>
+      <button onclick="restart()">Chơi lại</button>
+      <button class="btn-check" onclick="checkOrNext()" id="main-action-btn">Kiểm tra</button>
+    </div>
+  </div>
+
+<script>
+const originalSentences = [
+  {
+    "id": 1,
+    "text": "My brother plays the piano very well.",
+    "vi": "Anh trai tôi chơi đàn piano rất giỏi.",
+    "audio": "sounds/q1.mp3"
+  },
+  {
+    "id": 2,
+    "text": "Vi and I often do our homework after school.",
+    "vi": "Vy và tôi thường làm bài tập về nhà sau giờ học.",
+    "audio": "sounds/q2.mp3"
+  },
+  {
+    "id": 3,
+    "text": "In Maths lessons, we use a calculator to add numbers quickly.",
+    "vi": "Trong các tiết Toán, chúng tôi dùng máy tính cầm tay để cộng các con số nhanh chóng.",
+    "audio": "sounds/q3.mp3"
+  },
+  {
+    "id": 4,
+    "text": "At break time, we play games in the school playground.",
+    "vi": "Vào giờ ra chơi, chúng tôi chơi các trò chơi ở sân trường.",
+    "audio": "sounds/q4.mp3"
+  },
+  {
+    "id": 5,
+    "text": "We keep food and drinks cold in the fridge.",
+    "vi": "Chúng tôi giữ thức ăn và đồ uống mát lạnh trong tủ lạnh.",
+    "audio": "sounds/q5.mp3"
+  },
+  {
+    "id": 6,
+    "text": "My mom is washing the dishes in the sink.",
+    "vi": "Mẹ tôi đang rửa bát trong bồn rửa.",
+    "audio": "sounds/q6.mp3"
+  },
+  {
+    "id": 7,
+    "text": "We watch TV in the living room.",
+    "vi": "Chúng tôi xem TV trong phòng khách.",
+    "audio": "sounds/q7.mp3"
+  },
+  {
+    "id": 8,
+    "text": "Mina is very creative. She likes drawing and always has new ideas.",
+    "vi": "Mina rất sáng tạo. Bạn ấy thích vẽ và luôn có những ý tưởng mới.",
+    "audio": "sounds/q8.mp3"
+  },
+  {
+    "id": 9,
+    "text": "Mai learns things quickly and easily. She's clever.",
+    "vi": "Mai học mọi thứ nhanh chóng và dễ dàng. Bạn ấy rất thông minh.",
+    "audio": "sounds/q9.mp3"
+  },
+  {
+    "id": 10,
+    "text": "My best friend has long, curly hair.",
+    "vi": "Bạn thân của tôi có mái tóc dài và xoăn.",
+    "audio": "sounds/q10.mp3"
+  },
+  {
+    "id": 11,
+    "text": "We carry things on our shoulders.",
+    "vi": "Chúng ta mang vác đồ đạc trên vai.",
+    "audio": "sounds/q11.mp3"
+  },
+  {
+    "id": 12,
+    "text": "Phong is funny. He makes everyone laugh.",
+    "vi": "Phong rất hài hước. Bạn ấy khiến mọi người bật cười.",
+    "audio": "sounds/q12.mp3"
+  },
+  {
+    "id": 13,
+    "text": "Duy cycles to school every day.",
+    "vi": "Duy đạp xe đi học mỗi ngày.",
+    "audio": "sounds/q13.mp3"
+  },
+  {
+    "id": 14,
+    "text": "My friend has a sister, but she doesn't have a brother.",
+    "vi": "Bạn tôi có một người chị gái, nhưng bạn ấy không có anh trai.",
+    "audio": "sounds/q14.mp3"
+  },
+  {
+    "id": 15,
+    "text": "I live near here. Where do you live?",
+    "vi": "Tôi sống ở gần đây. Bạn sống ở đâu?",
+    "audio": "sounds/q15.mp3"
+  },
+  {
+    "id": 16,
+    "text": "Do you often travel at weekends?",
+    "vi": "Bạn có thường đi du lịch vào cuối tuần không?",
+    "audio": "sounds/q16.mp3"
+  },
+  {
+    "id": 17,
+    "text": "She is never late for school. She always gets up early.",
+    "vi": "Cô ấy không bao giờ đi học muộn. Cô ấy luôn dậy sớm.",
+    "audio": "sounds/q17.mp3"
+  },
+  {
+    "id": 18,
+    "text": "Nam's house is small.",
+    "vi": "Nhà của Nam nhỏ.",
+    "audio": "sounds/q18.mp3"
+  },
+  {
+    "id": 19,
+    "text": "The lamp is between the bed and the wardrobe.",
+    "vi": "Cây đèn ở giữa giường ngủ và tủ quần áo.",
+    "audio": "sounds/q19.mp3"
+  },
+  {
+    "id": 20,
+    "text": "There are two bedrooms in my flat.",
+    "vi": "Có hai phòng ngủ trong căn hộ của tôi.",
+    "audio": "sounds/q20.mp3"
+  },
+  {
+    "id": 21,
+    "text": "How about putting a picture on the wall?",
+    "vi": "Hay là chúng ta treo một bức tranh lên tường nhé?",
+    "audio": "sounds/q21.mp3"
+  },
+  {
+    "id": 22,
+    "text": "Look! The children are playing football in the playground.",
+    "vi": "Nhìn kìa! Bọn trẻ đang chơi bóng đá trong sân chơi.",
+    "audio": "sounds/q22.mp3"
+  },
+  {
+    "id": 23,
+    "text": "I am doing my homework at the moment.",
+    "vi": "Hiện tại tôi đang làm bài tập về nhà.",
+    "audio": "sounds/q23.mp3"
+  },
+  {
+    "id": 24,
+    "text": "My sister isn't making a sandwich at present.",
+    "vi": "Lúc này chị tôi không làm bánh mì kẹp.",
+    "audio": "sounds/q24.mp3"
+  },
+  {
+    "id": 25,
+    "text": "We are having a picnic tomorrow. Do you want to come?",
+    "vi": "Ngày mai chúng tôi sẽ đi dã ngoại. Bạn có muốn đi cùng không?",
+    "audio": "sounds/q25.mp3"
+  },
+  {
+    "id": 26,
+    "text": "She's tall with long black hair.",
+    "vi": "Cô ấy cao với mái tóc đen dài.",
+    "audio": "sounds/q26.mp3"
+  },
+  {
+    "id": 27,
+    "text": "Hi, I'm Lan. I live in a townhouse in Hai Phong.",
+    "vi": "Xin chào, tôi là Lan. Tôi sống trong một ngôi nhà phố ở Hải Phòng.",
+    "audio": "sounds/q27.mp3"
+  },
+  {
+    "id": 28,
+    "text": "There is a bed next to the window.",
+    "vi": "Có một chiếc giường ở cạnh cửa sổ.",
+    "audio": "sounds/q28.mp3"
+  },
+  {
+    "id": 29,
+    "text": "There is a desk next to the bed, and there is a lamp on the desk.",
+    "vi": "Có một chiếc bàn học cạnh giường, và có một chiếc đèn ở trên bàn.",
+    "audio": "sounds/q29.mp3"
+  },
+  {
+    "id": 30,
+    "text": "My clothes are in the wardrobe.",
+    "vi": "Quần áo của tôi ở trong tủ quần áo.",
+    "audio": "sounds/q30.mp3"
+  },
+  {
+    "id": 31,
+    "text": "At the moment, she is cooking dinner,",
+    "vi": "Lúc này, mẹ đang nấu bữa tối,",
+    "audio": "sounds/q31.mp3"
+  },
+  {
+    "id": 32,
+    "text": "and I am helping her.",
+    "vi": "và tôi đang phụ giúp mẹ.",
+    "audio": "sounds/q32.mp3"
+  },
+  {
+    "id": 33,
+    "text": "You must not talk loudly or eat in the library.",
+    "vi": "Bạn không được nói to hoặc ăn uống trong thư viện.",
+    "audio": "sounds/q33.mp3"
+  },
+  {
+    "id": 34,
+    "text": "You can rent a flat with two bedrooms.",
+    "vi": "Bạn có thể thuê một căn hộ có hai phòng ngủ.",
+    "audio": "sounds/q34.mp3"
+  },
+  {
+    "id": 35,
+    "text": "Small children need an adult with them.",
+    "vi": "Trẻ nhỏ cần có người lớn đi cùng.",
+    "audio": "sounds/q35.mp3"
+  },
+  {
+    "id": 36,
+    "text": "Linh's new school and her best friend.",
+    "vi": "Ngôi trường mới của Linh và người bạn thân nhất của bạn ấy.",
+    "audio": "sounds/q36.mp3"
+  },
+  {
+    "id": 37,
+    "text": "My classroom is next to the library.",
+    "vi": "Lớp học của tôi ở cạnh thư viện.",
+    "audio": "sounds/q37.mp3"
+  },
+  {
+    "id": 38,
+    "text": "It's good, but sometimes it's a bit salty.",
+    "vi": "Món ăn ngon, nhưng đôi khi hơi mặn một chút.",
+    "audio": "sounds/q38.mp3"
+  },
+  {
+    "id": 39,
+    "text": "Encourages means helps and supports.",
+    "vi": "Encourages có nghĩa là giúp đỡ và hỗ trợ.",
+    "audio": "sounds/q39.mp3"
+  },
+  {
+    "id": 40,
+    "text": "She's on the school volleyball team.",
+    "vi": "Cô ấy ở trong đội bóng chuyền của trường.",
+    "audio": "sounds/q40.mp3"
+  },
+  {
+    "id": 41,
+    "text": "Linh and Ngoc are making sandwiches.",
+    "vi": "Linh và Ngọc đang làm bánh mì kẹp.",
+    "audio": "sounds/q41.mp3"
+  },
+  {
+    "id": 42,
+    "text": "She is tall and slim with long straight black hair and big brown eyes.",
+    "vi": "Bạn ấy cao ráo, mảnh mai với mái tóc đen dài thẳng và đôi mắt nâu to tròn.",
+    "audio": "sounds/q42.mp3"
+  },
+  {
+    "id": 43,
+    "text": "She is very friendly, kind and hardworking.",
+    "vi": "Bạn ấy rất thân thiện, tốt bụng và chăm chỉ.",
+    "audio": "sounds/q43.mp3"
+  },
+  {
+    "id": 44,
+    "text": "Because she loves drawing pictures.",
+    "vi": "Bởi vì bạn ấy rất thích vẽ tranh.",
+    "audio": "sounds/q44.mp3"
+  },
+  {
+    "id": 45,
+    "text": "She often plays badminton with her friends in her free time.",
+    "vi": "Bạn ấy thường chơi cầu lông với bạn bè vào thời gian rảnh rỗi.",
+    "audio": "sounds/q45.mp3"
+  },
+  {
+    "id": 46,
+    "text": "She is drawing a picture in her bedroom.",
+    "vi": "Bạn ấy đang vẽ một bức tranh trong phòng ngủ.",
+    "audio": "sounds/q46.mp3"
+  },
+  {
+    "id": 47,
+    "text": "My sister usually goes to school by bicycle every morning.",
+    "vi": "Chị gái tôi thường đạp xe đi học vào mỗi buổi sáng.",
+    "audio": "sounds/q47.mp3"
+  },
+  {
+    "id": 48,
+    "text": "Does your brother often play football after school?",
+    "vi": "Anh trai bạn có thường chơi bóng đá sau giờ học không?",
+    "audio": "sounds/q48.mp3"
+  },
+  {
+    "id": 49,
+    "text": "There is a big sofa and two armchairs in the living room.",
+    "vi": "Có một chiếc ghế sofa lớn và hai chiếc ghế bành trong phòng khách.",
+    "audio": "sounds/q49.mp3"
+  },
+  {
+    "id": 50,
+    "text": "My parents' bedroom is next to the bathroom on the second floor.",
+    "vi": "Phòng ngủ của bố mẹ tôi ở cạnh phòng tắm trên tầng hai.",
+    "audio": "sounds/q50.mp3"
+  },
+  {
+    "id": 51,
+    "text": "Look! The children are playing badminton in the school playground.",
+    "vi": "Nhìn kìa! Bọn trẻ đang chơi cầu lông ở sân trường.",
+    "audio": "sounds/q51.mp3"
+  },
+  {
+    "id": 52,
+    "text": "My best friend has long black hair and big brown eyes.",
+    "vi": "Bạn thân nhất của tôi có mái tóc đen dài và đôi mắt nâu to.",
+    "audio": "sounds/q52.mp3"
+  },
+  {
+    "id": 53,
+    "text": "Linh is a careful student. She always checks her homework.",
+    "vi": "Linh là một học sinh cẩn thận. Bạn ấy luôn kiểm tra lại bài tập về nhà.",
+    "audio": "sounds/q53.mp3"
+  },
+  {
+    "id": 54,
+    "text": "How often do your sisters go to the school library?",
+    "vi": "Các chị gái của bạn có thường đến thư viện trường không?",
+    "audio": "sounds/q54.mp3"
+  },
+  {
+    "id": 55,
+    "text": "My brother is very friendly, and he always helps his classmates with their homework.",
+    "vi": "Anh trai tôi rất thân thiện, và anh ấy luôn giúp đỡ các bạn cùng lớp làm bài tập về nhà.",
+    "audio": "sounds/q55.mp3"
+  },
+  {
+    "id": 56,
+    "text": "What does your new classmate look like? She is tall and slim.",
+    "vi": "Bạn cùng lớp mới của bạn trông như thế nào? Bạn ấy cao và mảnh mai.",
+    "audio": "sounds/q56.mp3"
+  },
+  {
+    "id": 57,
+    "text": "My brother goes to school every day.",
+    "vi": "Em trai tôi đi học mỗi ngày.",
+    "audio": "sounds/q57.mp3"
+  },
+  {
+    "id": 58,
+    "text": "Linh usually does her homework in the evening.",
+    "vi": "Linh thường làm bài tập về nhà vào buổi tối.",
+    "audio": "sounds/q58.mp3"
+  },
+  {
+    "id": 59,
+    "text": "There is a sofa in the living room.",
+    "vi": "Có một chiếc ghế sofa trong phòng khách.",
+    "audio": "sounds/q59.mp3"
+  },
+  {
+    "id": 60,
+    "text": "The cat is under the table.",
+    "vi": "Con mèo đang ở dưới gầm bàn.",
+    "audio": "sounds/q60.mp3"
+  },
+  {
+    "id": 61,
+    "text": "The school bag is next to the desk.",
+    "vi": "Cặp sách ở bên cạnh bàn học.",
+    "audio": "sounds/q61.mp3"
+  },
+  {
+    "id": 62,
+    "text": "This is Nam's bedroom.",
+    "vi": "Đây là phòng ngủ của Nam.",
+    "audio": "sounds/q62.mp3"
+  },
+  {
+    "id": 63,
+    "text": "My parents' house is big.",
+    "vi": "Nhà của bố mẹ tôi rất to.",
+    "audio": "sounds/q63.mp3"
+  },
+  {
+    "id": 64,
+    "text": "Look! Hoa is reading a book.",
+    "vi": "Nhìn kìa! Hoa đang đọc sách.",
+    "audio": "sounds/q64.mp3"
+  },
+  {
+    "id": 65,
+    "text": "My best friend has short black hair.",
+    "vi": "Bạn thân của tôi có mái tóc đen ngắn.",
+    "audio": "sounds/q65.mp3"
+  },
+  {
+    "id": 66,
+    "text": "What does your best friend look like?",
+    "vi": "Bạn thân của bạn trông như thế nào?",
+    "audio": "sounds/q66.mp3"
+  }
+];
+
+function shuffle(array) {
+  return array.map(x => ({ val: x, sort: Math.random() }))
+              .sort((a, b) => a.sort - b.sort)
+              .map(x => x.val);
+}
+
+let sentences = shuffle([...originalSentences]);
+let currentIndex = 0;
+let correctWords = [];
+let history = [];
+let correctCount = 0;
+let totalTime = 0;
+let timer = 0;
+let interval = null;
+let popupTimeout = null;
+let currentPlaybackRate = 1;
+let isChecked = false; // Biến cờ để kiểm soát nút Check / Next
+
+function toggleSpeed() {
+    const btn = document.getElementById("speed-btn");
+    if (currentPlaybackRate === 1) {
+        currentPlaybackRate = 0.75;
+        btn.classList.add("btn-speed-active");
+    } else if (currentPlaybackRate === 0.75) {
+        currentPlaybackRate = 0.5;
+        btn.classList.add("btn-speed-active");
+    } else {
+        currentPlaybackRate = 1;
+        btn.classList.remove("btn-speed-active");
+    }
+    btn.textContent = `Tốc độ: ${currentPlaybackRate}x`;
+}
+
+function pronounce(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-US";
+  utterance.rate = currentPlaybackRate;
+  const voices = speechSynthesis.getVoices();
+  utterance.voice = voices.find(v => v.lang === "en-US" && v.name.includes("Google")) || voices[0];
+  speechSynthesis.speak(utterance);
+}
+
+function playSentenceAudio(index) {
+  const sentence = sentences[index];
+  if (!sentence) return;
+  const audioSrc = sentence.audio || `sounds/q${sentence.id}.mp3`;
+  const audio = new Audio(audioSrc);
+  audio.playbackRate = currentPlaybackRate;
+  
+  audio.play().catch(e => {
+    // Fallback sang TTS neu khong tim thay file audio offline
+    try {
+      const utterance = new SpeechSynthesisUtterance(sentence.text);
+      utterance.lang = "en-US";
+      utterance.rate = currentPlaybackRate;
+      speechSynthesis.speak(utterance);
+    } catch(err) {
+      console.log("Khong the phat am thanh:", err);
+    }
+  });
+}
+
+function showTranslation(event) {
+    event.preventDefault();
+    const popup = document.getElementById("trans-popup");
+    const textEl = document.getElementById("trans-text");
+    textEl.textContent = sentences[currentIndex].vi;
+    popup.style.display = "block";
+    if (popupTimeout) clearTimeout(popupTimeout);
+    popupTimeout = setTimeout(() => { popup.style.display = "none"; }, 4500);
+}
+
+function playFullSentence(event) {
+    event.preventDefault();
+    playSentenceAudio(currentIndex);
+}
+
+function loadSentence(index) {
+  clearInterval(interval);
+  timer = 0;
+  isChecked = false;
+  
+  const mainBtn = document.getElementById("main-action-btn");
+  mainBtn.textContent = "Kiểm tra";
+  mainBtn.style.backgroundColor = "#8b5e3c";
+
+  document.getElementById("timer").textContent = timer;
+  interval = setInterval(() => {
+    timer++;
+    document.getElementById("timer").textContent = timer;
+  }, 1000);
+
+  document.getElementById("result").textContent = "";
+  document.getElementById("summary").textContent = "";
+  document.getElementById("current-question").textContent = index + 1;
+  document.getElementById("total-question").textContent = sentences.length;
+
+  const sentence = sentences[index];
+  // Tách dấu câu để ghép chuẩn hơn
+  correctWords = sentence.text.replace(/([.?!])/g, " $1").split(/\s+/).filter(w => w !== "");
+  const shuffled = shuffle(correctWords);
+
+  history = [];
+  const wordBank = document.getElementById("word-bank");
+  wordBank.innerHTML = "";
+  
+  shuffled.forEach(word => {
+    const span = document.createElement("span");
+    span.className = "word";
+    span.textContent = word;
+    span.onclick = () => {
+      if(!isChecked) {
+        pronounce(word);
+        selectWord(span);
+      }
+    };
+    wordBank.appendChild(span);
+  });
+  document.getElementById("drop-area").innerHTML = "";
+}
+
+function selectWord(span) {
+  const text = span.textContent;
+  span.classList.add("used");
+  const newSpan = document.createElement("span");
+  newSpan.className = "word";
+  newSpan.textContent = text;
+  newSpan.onclick = () => {
+    if(!isChecked) {
+      newSpan.remove();
+      span.classList.remove("used");
+      const histIndex = history.findIndex(h => h.span === newSpan);
+      if(histIndex > -1) history.splice(histIndex, 1);
+    }
+  };
+  document.getElementById("drop-area").appendChild(newSpan);
+  history.push({ span: newSpan, source: span });
+}
+
+function undo() {
+  if (isChecked) return;
+  const last = history.pop();
+  if (last) {
+    last.span.remove();
+    last.source.classList.remove("used");
+  }
+}
+
+function restart() { loadSentence(currentIndex); }
+
+function checkOrNext() {
+  if (!isChecked) {
+    checkSentence();
+  } else {
+    nextSentence();
+  }
+}
+
+function checkSentence() {
+  const dropWords = Array.from(document.getElementById("drop-area").children).map(el => el.textContent);
+  const result = dropWords.join(" ") === correctWords.join(" ");
+  
+  isChecked = true;
+  const mainBtn = document.getElementById("main-action-btn");
+  mainBtn.textContent = "Câu tiếp theo ➔";
+  mainBtn.style.backgroundColor = "#27ae60";
+
+  if (result) {
+    document.getElementById("result").innerHTML = "✅ Chính xác!";
+    document.getElementById("result").style.color = "#27ae60";
+    clearInterval(interval);
+    totalTime += timer;
+    correctCount++;
+
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#2ecc71', '#f1c40f', '#3498db', '#e74c3c']
+    });
+
+    playSentenceAudio(currentIndex);
+  } else {
+    document.getElementById("result").innerHTML = `❌ Chưa chính xác!<br><span style="color:#27ae60; font-size:0.9em; margin-top:8px; display:block;">✔ Đáp án: ${correctWords.join(" ")}</span>`;
+    document.getElementById("result").style.color = "#e74c3c";
+    playSentenceAudio(currentIndex); 
+  }
+}
+
+function showHint() {
+  if (isChecked) return;
+  const dropWords = Array.from(document.getElementById("drop-area").children).map(el => el.textContent);
+  const nextWord = correctWords[dropWords.length];
+  if (nextWord) { 
+    // Gợi ý nhẹ nhàng ngay trên khu vực kết quả thay vì dùng hàm alert gây gián đoạn
+    document.getElementById("result").innerHTML = `<span style="color:#e67e22">💡 Gợi ý từ tiếp theo: <b>${nextWord}</b></span>`;
+  }
+}
+
+function nextSentence() {
+  if (currentIndex < sentences.length - 1) {
+    currentIndex++;
+    loadSentence(currentIndex);
+  } else {
+    clearInterval(interval);
+    const avgTime = (correctCount > 0) ? (totalTime / correctCount).toFixed(2) : 0;
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("drop-area").innerHTML = "";
+    document.getElementById("word-bank").innerHTML = "";
+    document.getElementById("main-action-btn").style.display = "none";
+    document.getElementById("summary").innerHTML = `<br>🎯 <b>HOÀN THÀNH BÀI TẬP!</b><br><br>✅ Số câu đúng: ${correctCount} / ${sentences.length}<br>⏱️ Thời gian trung bình: ${avgTime} giây/câu`;
+  }
+}
+
+// Khởi chạy câu đầu tiên
+loadSentence(currentIndex);
+
+// Bắt sự kiện phím tắt cho bút trình chiếu Logitech R800
+window.addEventListener('keydown', function(event) {
+  if(['PageUp', 'PageDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+    event.preventDefault();
+  }
+
+  switch(event.key) {
+    case 'PageDown':
+    case 'ArrowRight':
+      checkOrNext(); 
+      break;
+      
+    case 'PageUp':
+    case 'ArrowLeft':
+      undo(); 
+      break;
+      
+    case 'b':
+    case '.':
+      showHint(); 
+      break;
+
+    case 'Escape':
+      restart(); 
+      break;
+  }
+});
+</script>
+</body>
+</html>

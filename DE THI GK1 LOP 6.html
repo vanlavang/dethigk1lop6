@@ -1165,19 +1165,6 @@
     }
 
 </style>
-<style>
-  .shared-home-button {
-    position: fixed; right: 22px; bottom: 22px; z-index: 10000;
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 12px 17px; border: 2px solid #14213d; border-radius: 999px;
-    background: #fff; color: #14213d; box-shadow: 3px 4px 0 #14213d;
-    font: 800 14px/1 "Segoe UI", Arial, sans-serif; text-decoration: none;
-    transition: transform .18s ease, box-shadow .18s ease;
-  }
-  .shared-home-button:hover, .shared-home-button:focus-visible { transform: translate(-2px, -2px); box-shadow: 5px 6px 0 #14213d; outline: none; }
-  .shared-home-button:focus-visible { outline: 3px solid #ffd765; outline-offset: 3px; }
-  @media (max-width: 600px) { .shared-home-button { right: 14px; bottom: 14px; padding: 10px 14px; } }
-</style>
 </head>
 <body>
 
@@ -4403,6 +4390,8 @@ function renderCurrentQuestion() {
         replayBtnHtml = `<button class="btn-replay" onclick="replayCurrentQuestion()" title="Xáo trộn thứ tự các lựa chọn A, B, C, D của câu này">🔄 REPLAY</button>`;
     }
 
+    let homeBtnHtml = `<a href="index.html" class="btn-replay" style="text-decoration:none; color:#15803d; border-color:#86efac; background:#f0fdf4;" title="Quay về trang chủ">⌂ Trang chủ</a>`;
+
     // Toàn bộ HTML của câu hỏi hiện tại
     container.innerHTML = `
         <div class="question-card">
@@ -4419,6 +4408,7 @@ function renderCurrentQuestion() {
                     </button>
                     ${checkBtnHtml}
                     ${replayBtnHtml}
+                    ${homeBtnHtml}
                 </div>
                 <div class="action-group-right">
                     <button class="btn-nav" onclick="nextQuestion()">
@@ -4757,6 +4747,5 @@ window.onload = () => {
 };
 </script>
 
-<a class="shared-home-button" href="index.html" aria-label="Quay về trang chủ">⌂ <span>Trang chủ</span></a>
 </body>
 </html>
