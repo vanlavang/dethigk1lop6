@@ -1982,7 +1982,7 @@ const quizData = [
         "type": "scramble",
         "words": ["plays", "her", "badminton", "She", "friends", "often", "in", "time.", "with", "free", "her"],
         "correctSentence": "She often plays badminton with her friends in her free time.",
-        "explain": "<b>Đáp án đúng:</b> She often plays badminton with her friends in her free time.<br>• Dẫn chứng: <i>'In her free time, she often plays badminton with her friends.'</i>"
+        "explain": "<b>Đáp án đúng:</b> She often plays badminton with her friends in her free time.<br>• Dẫn chứng: <i>'In her free time, she often plays badminton với bạn bè.'</i>"
     },
     {
         "section": "p6",
@@ -4387,7 +4387,7 @@ function renderCurrentQuestion() {
     // Nút REPLAY (chỉ hiển thị cho câu hỏi trắc nghiệm có lựa chọn)
     let replayBtnHtml = '';
     if (q.type !== 'scramble' && q.opts && q.opts.length > 1) {
-        replayBtnHtml = `<button class="btn-replay" onclick="replayCurrentQuestion()" title="Xáo trộn thứ tự các lựa chọn A, B, C, D của câu này">🔄 REPLAY</button>`;
+        replayBtnHtml = `<button class="btn-replay" onclick="replayAllQuestions()" title="Xáo trộn đáp án A, B, C, D của TOÀN BỘ 66 câu hỏi">🔄 REPLAY ĐỀ</button>`;
     }
 
     let homeBtnHtml = `<a href="index.html" class="btn-replay" style="text-decoration:none; color:#15803d; border-color:#86efac; background:#f0fdf4;" title="Quay về trang chủ">⌂ Trang chủ</a>`;
@@ -4444,34 +4444,39 @@ function selectOption(origOptIdx) {
     updateStatsBar();
 }
 
-// Tính năng REPLAY: Xáo trộn các lựa chọn A, B, C, D của câu hỏi hiện tại
-function replayCurrentQuestion() {
-    const q = quizData[currentQuestionIndex];
-    if (q.type === 'scramble' || !q.opts || q.opts.length <= 1) return;
+// Tính năng REPLAY: Xáo trộn các lựa chọn A, B, C, D của TOÀN BỘ 66 CÂU trong đề
+function replayAllQuestions() {
+    let isShuffled = false;
+    quizData.forEach((q, idx) => {
+        if (q.type === 'scramble' || !q.opts || q.opts.length <= 1) return;
 
-    const n = q.opts.length;
-    let oldOrder = (questionOptionOrders[currentQuestionIndex] && questionOptionOrders[currentQuestionIndex].length === n)
-        ? questionOptionOrders[currentQuestionIndex]
-        : q.opts.map((_, i) => i);
-    
-    let newOrder = [...oldOrder];
-    let attempts = 0;
-    while (attempts < 12) {
-        for (let i = n - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+        const n = q.opts.length;
+        let oldOrder = (questionOptionOrders[idx] && questionOptionOrders[idx].length === n)
+            ? questionOptionOrders[idx]
+            : q.opts.map((_, i) => i);
+        
+        let newOrder = [...oldOrder];
+        let attempts = 0;
+        while (attempts < 12) {
+            for (let i = n - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+            }
+            if (newOrder.some((val, k) => val !== oldOrder[k])) break;
+            attempts++;
         }
-        if (newOrder.some((val, idx) => val !== oldOrder[idx])) break;
-        attempts++;
-    }
+        questionOptionOrders[idx] = newOrder;
+        isShuffled = true;
+    });
 
-    questionOptionOrders[currentQuestionIndex] = newOrder;
-    renderCurrentQuestion();
-
-    // Hiệu ứng visual nhấp nháy chuyển động xáo trộn mượt mà
-    const optList = document.querySelector('.options-list');
-    if (optList) {
-        optList.classList.add('shuffled');
+    if (isShuffled) {
+        renderCurrentQuestion();
+        
+        // Hiệu ứng visual nhấp nháy chuyển động xáo trộn mượt mà
+        const optList = document.querySelector('.options-list');
+        if (optList) {
+            optList.classList.add('shuffled');
+        }
     }
 }
 
@@ -4724,7 +4729,21 @@ function resetAllQuiz() {
     if (confirm("Em có chắc chắn muốn làm lại toàn bộ 66 câu hỏi từ đầu không?")) {
         userAnswers = new Array(TOTAL_QUESTIONS).fill(null);
         checkedState = new Array(TOTAL_QUESTIONS).fill(false);
+        
+        // Xáo trộn vị trí A, B, C, D của toàn bộ 66 câu
         questionOptionOrders = {};
+        quizData.forEach((q, idx) => {
+            if (q.type !== 'scramble' && q.opts && q.opts.length > 1) {
+                const n = q.opts.length;
+                let newOrder = q.opts.map((_, i) => i);
+                for (let i = n - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [newOrder[i], newOrder[j]] = [newOrder[j], newOrder[i]];
+                }
+                questionOptionOrders[idx] = newOrder;
+            }
+        });
+
         currentQuestionIndex = 0;
         closeAllDrawers();
         renderCurrentQuestion();
